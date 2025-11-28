@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initCounterAnimation();
   initContactForm();
   initSmoothScroll();
+  initGoToTop();
 });
 
 /**
@@ -236,6 +237,33 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/**
+ * Go to Top Button
+ */
+function initGoToTop() {
+  var goToTopBtn = document.getElementById("goToTop");
+  if (!goToTopBtn) return;
+
+  function toggleButton() {
+    if (window.pageYOffset > 400) {
+      goToTopBtn.classList.add("visible");
+    } else {
+      goToTopBtn.classList.remove("visible");
+    }
+  }
+
+  window.addEventListener("scroll", toggleButton, { passive: true });
+
+  goToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  toggleButton();
 }
 
 /**

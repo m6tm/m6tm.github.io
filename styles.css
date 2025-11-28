@@ -1101,6 +1101,55 @@ body {
 }
 
 /* ========================================
+   Go to Top Button
+======================================== */
+.go-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition-base);
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.go-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.go-to-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
+}
+
+.go-to-top:focus,
+.go-to-top:active {
+  outline: none;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.go-to-top svg {
+  pointer-events: none;
+  outline: none;
+  background: none;
+}
+
+/* ========================================
    Animations d'apparition
 ======================================== */
 .fade-in {
