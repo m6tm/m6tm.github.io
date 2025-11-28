@@ -199,7 +199,7 @@ function initContactForm() {
 
     // Simulation d'envoi
     setTimeout(function () {
-      submitBtn.innerHTML = "<span>Message envoye !</span>";
+      submitBtn.innerHTML = "<span>Message envoy&eacute; !</span>";
       submitBtn.style.background =
         "linear-gradient(135deg, #10b981 0%, #059669 100%)";
 
