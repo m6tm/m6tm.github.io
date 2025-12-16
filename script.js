@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
   initSmoothScroll();
   initGoToTop();
+  initProductModal();
 });
 
 /**
@@ -386,4 +387,85 @@ function throttle(func, limit) {
       }, limit);
     }
   };
+}
+
+/**
+ * Product Modal & Carousel
+ */
+function initProductModal() {
+  const modalOverlay = document.getElementById("productModal");
+  if (!modalOverlay) return;
+
+  const closeBtn = modalOverlay.querySelector(".modal-close");
+  const modalTriggers = document.querySelectorAll(".modal-trigger");
+  const modalContainer = modalOverlay.querySelector(".modal-container");
+
+  // Open Modal
+  modalTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+      modalOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Close Modal
+  function closeModal() {
+    modalOverlay.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  modalOverlay.addEventListener("click", (e) => {
+    if (e.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
+      closeModal();
+    }
+  });
+
+  // Carousel Logic (Swiper)
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        // Medium screens (>= 768px)
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        // Large screens (>= 1024px)
+        1024: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // Extra Large screens (>= 1280px)
+        1280: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
 }
