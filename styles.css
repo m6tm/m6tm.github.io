@@ -63,6 +63,27 @@ body {
 }
 
 /* ========================================
+   Scrollbar
+======================================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+  border: 2px solid var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ========================================
    Utilitaires
 ======================================== */
 .container {
@@ -1633,6 +1654,7 @@ body {
 
 .modal-banner {
   height: 200px;
+  max-height: 100vh;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   position: relative;
   display: flex;
@@ -1660,6 +1682,10 @@ body {
   padding: 2rem;
 }
 
+.modal-description-content {
+  margin-bottom: 1rem;
+}
+
 /* Carousel */
 .swiper {
   width: 100%;
@@ -1675,6 +1701,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* Important pour le positionnement du badge */
+}
+
+.video-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ef4444; /* Rouge plus clair/vif */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px; /* Bordures arrondies style pillule */
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .swiper-slide img,
@@ -1691,4 +1734,120 @@ body {
 
 .swiper-pagination-bullet-active {
   background: var(--primary) !important;
+}
+
+/* Stack Details in Modal */
+.modal-stack-details {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.modal-stack-details h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.modal-stack-details p {
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.stack-category {
+  margin-bottom: 1.5rem;
+}
+
+.stack-category h4 {
+  color: var(--primary-light);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.stack-category ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.stack-category li {
+  margin-bottom: 0.5rem;
+}
+
+/* Architecture Quote */
+.architecture-quote {
+  background: var(--dark-lighter);
+  border-left: 4px solid var(--primary);
+  padding: 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 2rem 0;
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.architecture-quote p {
+  color: var(--text-primary) !important;
+  margin: 0 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.architecture-quote strong {
+  color: var(--primary-light);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Demo Credentials */
+.demo-credentials {
+  background: rgba(234, 179, 8, 0.1); /* Yellow/Orange tint */
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.demo-credentials h4 {
+  color: #eab308; /* Yellow-500 */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.credential-item {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.credential-role {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.credential-value {
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.credential-note {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
 }

@@ -445,10 +445,7 @@ function initProductModal() {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-      },
+
       breakpoints: {
         // Medium screens (>= 768px)
         768: {

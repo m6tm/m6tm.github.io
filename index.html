@@ -603,23 +603,17 @@
                 </article>
                 <article class="project-card">
                     <div class="project-image">
-                        <div class="project-placeholder">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                            </svg>
-                        </div>
+                        <img src="projects/fluidio/bannier.png" alt="TaskFlow Mobile" class="project-img">
                     </div>
                     <div class="project-content">
                         <div class="project-tags">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Redux</span>
+                            <span>Flutter</span>
+                            <span>Supabase</span>
                         </div>
-                        <h3 class="project-title">TaskFlow Mobile</h3>
+                        <h3 class="project-title">Fluidio Shop</h3>
                         <p class="project-description">
-                            Application mobile de gestion de tâches collaborative.
-                            Gérez vos projets en équipe, assignez des tâches et suivez la progression en temps réel.
+                            Plateforme e-commerce innovante connectant vendeurs, acheteurs et affiliés.
+                            Une expérience d'achat fluide avec géolocalisation et système d'affiliation intégré.
                         </p>
                         <div class="project-links">
                             <a href="#" class="project-link modal-trigger">
@@ -789,38 +783,45 @@
                     <path d="M18 6L6 18M6 6l12 12" />
                 </svg>
             </button>
-            <div class="modal-banner">
+            <div class="modal-banner" style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%), url('projects/fluidio/bannier.png'); background-size: cover; background-position: center;">
                 <div class="modal-banner-content">
-                    <h2 class="modal-app-name">TaskFlow Mobile</h2>
+                    <h2 class="modal-app-name">Fluidio Shop</h2>
                     <div class="project-tags">
-                        <span>v2.4.0</span>
-                        <span>Productivité</span>
+                        <span>v1.0.0</span>
+                        <span>Vente en ligne</span>
                     </div>
                 </div>
             </div>
             <div class="modal-scroll-area">
-                <p>
-                    TaskFlow est la solution ultime pour gérer vos projets en déplacement.
-                    Avec une interface intuitive et des fonctionnalités puissantes, restez connecté à votre équipe où que
-                    vous soyez.
+                <p class="modal-description-content">
+                    Fluidio Shop révolutionne le commerce de proximité et en ligne en réunissant vendeurs, acheteurs et affiliés sur une même plateforme intuitive.
+                    Grâce à la géolocalisation, trouvez les produits autour de vous, suivez vos commandes en temps réal et profitez d'un programme d'affiliation puissant pour monétiser votre réseau.
                 </p>
 
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="project-placeholder" style="background: #1e293b; color: white;">
-                                <span style="font-size: 1.5rem;">Dashboard Intuitif</span>
-                            </div>
+                            <img src="projects/fluidio/vendeur_1.jpg" alt="Vendeur 1" class="swiper-img">
                         </div>
                         <div class="swiper-slide">
-                            <div class="project-placeholder" style="background: #0f172a; color: white;">
-                                <span style="font-size: 1.5rem;">Gestion d'équipe</span>
-                            </div>
+                            <img src="projects/fluidio/vendeur_2.jpg" alt="Vendeur 2" class="swiper-img">
                         </div>
                         <div class="swiper-slide">
-                            <div class="project-placeholder" style="background: #334155; color: white;">
-                                <span style="font-size: 1.5rem;">Suivi Temps Réel</span>
-                            </div>
+                            <img src="projects/fluidio/acheteur.jpg" alt="Acheteur" class="swiper-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <span class="video-badge">Vidéo</span>
+                            <video src="projects/fluidio/acheteur.mp4" autoplay muted loop playsinline class="swiper-video"></video>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="projects/fluidio/affilie.jpg" alt="Affilié" class="swiper-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="projects/fluidio/affilie_2.jpg" alt="Affilié 2" class="swiper-img">
+                        </div>
+                        <div class="swiper-slide">
+                            <span class="video-badge">Vidéo</span>
+                            <video src="projects/fluidio/affilie.mp4" autoplay muted loop playsinline class="swiper-video"></video>
                         </div>
                     </div>
                     <div class="swiper-button-next"></div>
@@ -828,8 +829,95 @@
                     <div class="swiper-pagination"></div>
                 </div>
 
+                <div class="modal-stack-details">
+                    <h3>Stack Technique : Fluidio Shop</h3>
+                    <p>Pour bâtir cette plateforme e-commerce multi-acteurs (vendeurs, acheteurs, affiliés), j'ai sélectionné un ensemble de bibliothèques robustes axées sur la performance, la scalabilité et l'expérience utilisateur.</p>
+
+                    <blockquote class="architecture-quote">
+                        <p>
+                            <strong>Mon standard : L'Architecture Hexagonale</strong><br>
+                            J'utilise cette architecture pour séparer proprement la logique métier (le cœur de l'app) des outils techniques (bases de données, interfaces). C'est comme construire une maison dont on peut changer la décoration ou le type de climatiseur sans toucher aux murs porteurs : l'application est plus stable, facile à tester et prête à évoluer.
+                        </p>
+                    </blockquote>
+
+                    <div class="stack-category">
+                        <h4>Architecture et Gestion d'État</h4>
+                        <ul>
+                            <li><strong>BLoC (Business Logic Component)</strong> : Utilisation du design pattern BLoC pour une séparation stricte entre l'interface utilisateur et la logique métier, garantissant une application testable et maintenable.</li>
+                            <li><strong>GetIt</strong> : Mise en œuvre de l'injection de dépendances pour découpler les modules et faciliter la gestion des instances (services, dépôts).</li>
+                            <li><strong>Freezed & JsonSerializable</strong> : Génération de code pour des modèles de données immuables et une sérialisation JSON sécurisée.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-category">
+                        <h4>Persistance et Réseau</h4>
+                        <ul>
+                            <li><strong>Isar Database</strong> : Base de données NoSQL ultra-rapide pour le stockage local et le support du mode hors-ligne.</li>
+                            <li><strong>Dio & Http</strong> : Gestion avancée des appels API REST avec intercepteurs et gestion globale des erreurs.</li>
+                            <li><strong>Cached Network Image</strong> : Optimisation de la bande passante et de la fluidité via une mise en cache intelligente des images produits.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-category">
+                        <h4>Géolocalisation et Cartographie</h4>
+                        <ul>
+                            <li><strong>Flutter Map (OpenStreetMap)</strong> : Intégration de cartes interactives pour la localisation des points de vente sans dépendance aux services payants propriétaires.</li>
+                            <li><strong>Geolocator & Geocoding</strong> : Services de calcul de distance et de transformation d'adresses en coordonnées GPS.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-category">
+                        <h4>Expérience Utilisateur (UX/UI)</h4>
+                        <ul>
+                            <li><strong>FL Chart</strong> : Tableaux de bord analytiques interactifs pour le suivi des ventes et des commissions des affiliés.</li>
+                            <li><strong>Shimmer</strong> : Amélioration de la perception de vitesse via des indicateurs de chargement élégants.</li>
+                            <li><strong>QR Flutter</strong> : Système de génération de QR codes pour la validation rapide des transactions ou le partage de profils vendeurs.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stack-category">
+                        <h4>Multimédia et Outils</h4>
+                        <ul>
+                            <li><strong>Just Audio & Record</strong> : Support des messages vocaux ou descriptions audio au sein de la plateforme.</li>
+                            <li><strong>Image & File Picker</strong> : Gestion fluide de l'upload des catalogues produits et des documents d'identité.</li>
+                            <li><strong>Share Plus</strong> : Fonctionnalités de partage social pour booster le marketing d'affiliation.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="demo-credentials">
+                    <h4>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        Accès Démo
+                    </h4>
+                    <p class="credential-note">Cette version de démonstration fonctionne sans backend persistant. Utilisez les identifiants suivants pour tester les différents rôles :</p>
+                    
+                    <div class="credentials-grid">
+                        <div class="credential-item">
+                            <span class="credential-role">Acheteur</span>
+                            <span class="credential-value">acheteur@test.com</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-role">Vendeur</span>
+                            <span class="credential-value">vendeur@test.com</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-role">Affilié</span>
+                            <span class="credential-value">affilie@test.com</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-role">Mot de passe (Tous)</span>
+                            <span class="credential-value">test123</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div style="text-align: center; margin-top: 2rem;">
-                    <a href="#" class="btn btn-primary btn-full">
+                    <a href="/projects/fluidio/fluidio-shop.apk" class="btn btn-primary btn-full">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                             <polyline points="7 10 12 15 17 10" />
