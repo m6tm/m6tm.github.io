@@ -534,6 +534,16 @@ body {
 
 .stat-number {
   display: block;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-number-2 {
+  display: block;
+  text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -653,6 +663,13 @@ body {
   grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
   align-items: center;
+}
+
+.about-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .about-image {
