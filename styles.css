@@ -1729,11 +1729,53 @@ body {
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: var(--primary) !important;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.25rem !important;
+  font-weight: 700;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--primary);
+  border-color: var(--primary-light);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+  color: white !important;
+}
+
+.swiper-button-prev:hover {
+  transform: translateX(-3px) scale(1.1);
+}
+
+.swiper-button-next:hover {
+  transform: translateX(3px) scale(1.1);
+}
+
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
   background: var(--primary) !important;
+  width: 24px !important;
+  border-radius: 5px !important;
 }
 
 /* Stack Details in Modal */
