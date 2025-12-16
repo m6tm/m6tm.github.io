@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initSmoothScroll();
   initGoToTop();
   initProductModal();
+  initMediaViewer();
 });
 
 /**
@@ -465,4 +466,197 @@ function initProductModal() {
       },
     });
   }
+}
+
+/**
+ * Media Viewer (Lightroom style)
+ */
+function initMediaViewer() {
+  const viewerOverlay = document.getElementById("mediaViewer");
+  if (!viewerOverlay) return;
+
+  const viewerImage = viewerOverlay.querySelector(".viewer-image");
+  const viewerVideoContainer = viewerOverlay.querySelector(
+    ".viewer-video-container"
+  );
+  const viewerVideo = viewerOverlay.querySelector(".viewer-video");
+  const closeBtn = viewerOverlay.querySelector(".viewer-close");
+
+  // Video Controls
+  const playPauseBtn = viewerOverlay.querySelector(".play-pause-btn");
+  const iconPlay = playPauseBtn.querySelector(".icon-play");
+  const iconPause = playPauseBtn.querySelector(".icon-pause");
+  const progressBarContainer = viewerOverlay.querySelector(
+    ".progress-bar-container"
+  );
+  const progressFill = viewerOverlay.querySelector(".progress-fill");
+  const timeDisplay = viewerOverlay.querySelector(".time-display");
+  const volumeBtn = viewerOverlay.querySelector(".volume-btn");
+  const iconVolumeHigh = volumeBtn.querySelector(".icon-volume-high");
+  const iconVolumeMute = volumeBtn.querySelector(".icon-volume-mute");
+  const volumeSlider = viewerOverlay.querySelector(".volume-slider");
+  const fullscreenBtn = viewerOverlay.querySelector(".fullscreen-btn");
+
+  // Open Viewer Delegation
+  document.addEventListener("click", function (e) {
+    const slide = e.target.closest(".swiper-slide");
+    if (
+      slide &&
+      !e.target.closest(".swiper-button-next") &&
+      !e.target.closest(".swiper-button-prev")
+    ) {
+      const img = slide.querySelector("img");
+      const video = slide.querySelector("video");
+
+      if (img) {
+        openImageViewer(img.src);
+      } else if (video) {
+        openVideoViewer(video.src);
+      }
+    }
+  });
+
+  function openImageViewer(src) {
+    viewerImage.src = src;
+    viewerImage.style.display = "block";
+    viewerVideoContainer.style.display = "none";
+    viewerVideo.pause();
+    displayViewer();
+  }
+
+  function openVideoViewer(src) {
+    viewerVideo.src = src;
+    viewerImage.style.display = "none";
+    viewerVideoContainer.style.display = "block";
+    displayViewer();
+    // Reset controls
+    resetVideoControls();
+  }
+
+  function displayViewer() {
+    viewerOverlay.classList.add("active");
+    // Ensure it's above everything
+    viewerOverlay.style.zIndex = "3000";
+  }
+
+  function closeViewer() {
+    viewerOverlay.classList.remove("active");
+    viewerVideo.pause();
+    setTimeout(() => {
+      viewerImage.src = "";
+      viewerVideo.src = "";
+    }, 300);
+  }
+
+  // Close Events
+  closeBtn.addEventListener("click", closeViewer);
+  viewerOverlay.addEventListener("click", function (e) {
+    if (
+      e.target === viewerOverlay ||
+      e.target.classList.contains("viewer-content")
+    ) {
+      closeViewer();
+    }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && viewerOverlay.classList.contains("active")) {
+      closeViewer();
+    }
+  });
+
+  // Video Controls Logic
+  function togglePlay() {
+    if (viewerVideo.paused) {
+      viewerVideo.play();
+    } else {
+      viewerVideo.pause();
+    }
+  }
+
+  function updatePlayButton() {
+    if (viewerVideo.paused) {
+      iconPlay.style.display = "block";
+      iconPause.style.display = "none";
+    } else {
+      iconPlay.style.display = "none";
+      iconPause.style.display = "block";
+    }
+  }
+
+  playPauseBtn.addEventListener("click", togglePlay);
+  viewerVideo.addEventListener("play", updatePlayButton);
+  viewerVideo.addEventListener("pause", updatePlayButton);
+  viewerVideo.addEventListener("click", togglePlay);
+
+  // Progress
+  viewerVideo.addEventListener("timeupdate", function () {
+    const percent = (viewerVideo.currentTime / viewerVideo.duration) * 100;
+    progressFill.style.width = percent + "%";
+
+    // Time Display
+    const currentMins = Math.floor(viewerVideo.currentTime / 60);
+    const currentSecs = Math.floor(viewerVideo.currentTime % 60);
+    const durationMins = Math.floor(viewerVideo.duration / 60) || 0;
+    const durationSecs = Math.floor(viewerVideo.duration % 60) || 0;
+
+    timeDisplay.textContent = `${currentMins}:${
+      currentSecs < 10 ? "0" : ""
+    }${currentSecs} / ${durationMins}:${
+      durationSecs < 10 ? "0" : ""
+    }${durationSecs}`;
+  });
+
+  progressBarContainer.addEventListener("click", function (e) {
+    const rect = progressBarContainer.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    viewerVideo.currentTime = pos * viewerVideo.duration;
+  });
+
+  // Volume
+  volumeSlider.addEventListener("input", function (e) {
+    viewerVideo.volume = e.target.value;
+    updateVolumeIcon();
+  });
+
+  volumeBtn.addEventListener("click", function () {
+    if (viewerVideo.volume > 0) {
+      viewerVideo.dataset.lastVolume = viewerVideo.volume;
+      viewerVideo.volume = 0;
+      volumeSlider.value = 0;
+    } else {
+      viewerVideo.volume = viewerVideo.dataset.lastVolume || 1;
+      volumeSlider.value = viewerVideo.volume;
+    }
+    updateVolumeIcon();
+  });
+
+  function updateVolumeIcon() {
+    if (viewerVideo.volume === 0) {
+      iconVolumeHigh.style.display = "none";
+      iconVolumeMute.style.display = "block";
+    } else {
+      iconVolumeHigh.style.display = "block";
+      iconVolumeMute.style.display = "none";
+    }
+  }
+
+  function resetVideoControls() {
+    progressFill.style.width = "0%";
+    iconPlay.style.display = "block";
+    iconPause.style.display = "none";
+    viewerVideo.volume = 1;
+    volumeSlider.value = 1;
+    updateVolumeIcon();
+  }
+
+  // Fullscreen
+  fullscreenBtn.addEventListener("click", function () {
+    if (viewerVideo.requestFullscreen) {
+      viewerVideo.requestFullscreen();
+    } else if (viewerVideo.webkitRequestFullscreen) {
+      viewerVideo.webkitRequestFullscreen();
+    } else if (viewerVideo.msRequestFullscreen) {
+      viewerVideo.msRequestFullscreen();
+    }
+  });
 }
