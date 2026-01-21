@@ -23,6 +23,26 @@
   let nextBtn = $state<HTMLElement>();
   let prevBtn = $state<HTMLElement>();
 
+  // État du visualiseur plein écran
+  let selectedMedia = $state<MediaItem | null>(null);
+
+  /**
+   * Ouvre le média en plein écran
+   */
+  function openFullscreen(item: MediaItem) {
+    selectedMedia = item;
+    // Empêcher le défilement du corps pendant que la modale est ouverte
+    document.body.style.overflow = "hidden";
+  }
+
+  /**
+   * Ferme le visualiseur
+   */
+  function closeFullscreen() {
+    selectedMedia = null;
+    document.body.style.overflow = "";
+  }
+
   $effect(() => {
     if (swiperContainer && items.length > 0 && nextBtn && prevBtn) {
       if (swiperInstance) swiperInstance.destroy();
@@ -72,18 +92,34 @@
     <div class="swiper-wrapper">
       {#each items as item, index}
         <div class="swiper-slide">
-          <div class="media-item-container">
+          <button
+            class="media-item-container"
+            onclick={() => openFullscreen(item)}
+            aria-label="Voir en plein écran"
+          >
             {#if item.type === "video"}
               <div class="media-badge-mini">Vidéo</div>
               <video
                 src={item.src}
-                controls
                 playsinline
                 preload="metadata"
                 class="carousel-video"
+                muted
               >
                 <track kind="captions" />
               </video>
+              <div class="play-overlay">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
             {:else}
               <img
                 src={item.src}
@@ -92,7 +128,24 @@
                 loading="lazy"
               />
             {/if}
-          </div>
+            <div class="zoom-overlay">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </button>
         </div>
       {/each}
     </div>
@@ -140,6 +193,47 @@
   </button>
 </div>
 
+<!-- Lightbox / Visualiseur Plein Écran -->
+{#if selectedMedia}
+  <!-- svelte-ignore a11y_click_events_have_key_events -->
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div class="lightbox-overlay" onclick={closeFullscreen}>
+    <button
+      class="lightbox-close"
+      onclick={closeFullscreen}
+      aria-label="Fermer"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="lightbox-content" onclick={(e) => e.stopPropagation()}>
+      {#if selectedMedia.type === "video"}
+        <!-- svelte-ignore a11y_media_has_caption -->
+        <video src={selectedMedia.src} controls autoplay class="lightbox-media"
+        ></video>
+      {:else}
+        <img
+          src={selectedMedia.src}
+          alt="Vue plein écran"
+          class="lightbox-media"
+        />
+      {/if}
+    </div>
+  </div>
+{/if}
+
 <style>
   .media-carousel-wrapper {
     width: 100%;
@@ -157,12 +251,51 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     position: relative;
-    transition: transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: zoom-in;
+    padding: 0;
+    display: block;
+    outline: none;
   }
 
   .media-item-container:hover {
-    transform: translateY(-5px);
-    border-color: rgba(99, 102, 241, 0.3);
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+  }
+
+  .media-item-container:hover .zoom-overlay {
+    opacity: 1;
+  }
+
+  .zoom-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(99, 102, 241, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding-left: 5px;
   }
 
   .carousel-image,
@@ -239,6 +372,73 @@
   @media (max-width: 640px) {
     .media-item-container {
       aspect-ratio: 4/5; /* Plus grand verticalement pour les apps mobiles */
+    }
+  }
+
+  /* Lightbox Styles */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 7, 10, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+  }
+
+  .lightbox-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+
+  .lightbox-media {
+    max-width: 95%;
+    max-height: 90vh;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 3010;
+  }
+
+  .lightbox-close:hover {
+    background: var(--primary);
+    transform: rotate(90deg);
+  }
+
+  @media (max-width: 768px) {
+    .lightbox-overlay {
+      padding: 1rem;
+    }
+
+    .lightbox-close {
+      top: 1rem;
+      right: 1rem;
+      width: 44px;
+      height: 44px;
     }
   }
 </style>
