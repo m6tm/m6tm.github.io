@@ -89,7 +89,7 @@
           <span class="stat-label">Années d'expérience</span>
         </div>
         <div class="stat">
-          <span class="stat-number" data-count="8">0</span>
+          <span class="stat-number" data-count="10">0</span>
           <span class="stat-label">Projets réalisés</span>
         </div>
         <div class="stat">

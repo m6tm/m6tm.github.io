@@ -17,6 +17,41 @@ export class StaticProjectRepository implements ProjectRepository {
             featured: true
         },
         {
+            id: 'k-sport',
+            title: 'K-Sport Agency',
+            description: "Agence de management sportif spécialisée dans l'accompagnement d'athlètes de haut niveau (football, basketball et plus). Gestion de carrière, négociation et développement d'image.",
+            image: '/projects/k-sportagency.png',
+            tags: ['SvelteKit', 'Tailwind CSS', 'Supabase', 'SEO'],
+            demoUrl: 'https://k-sportagency.com/',
+            features: [
+                "Management de carrière global et stratégique",
+                "Recherche et négociation de contrats professionnels",
+                "Gestion de l'image et communication médiatique",
+                "Conseil stratégique et accompagnement personnalisé"
+            ],
+            longDescription: "K-Sport est une agence de management sportif dédiée à l'accompagnement, au développement et à la valorisation de la carrière des athlètes, avec une vision moderne, stratégique et humaine du sportif professionnel. Fondée avec l'ambition de révéler et de structurer les talents, K-Sport intervient comme un partenaire de confiance auprès des athlètes, de leurs familles et des clubs.",
+            stackDetails: [
+                {
+                    category: "Mission & Vision",
+                    items: [
+                        "Optimisation de la progression sportive de l'athlète",
+                        "Sécurisation et orientation des choix de carrière",
+                        "Développement de la visibilité et de l'image de marque",
+                        "Facilitation d'opportunités avec les clubs internationaux"
+                    ]
+                },
+                {
+                    category: "Expertise métier",
+                    items: [
+                        "Management de carrière : Gestion globale du terrain aux choix stratégiques",
+                        "Négociation : Recherche active de clubs et contrats avec agents agréés",
+                        "Image & Com : Développement de la visibilité médiatique et digitale",
+                        "Conseil : Accompagnement personnalisé à chaque étape du parcours"
+                    ]
+                }
+            ],
+        },
+        {
             id: 'meetly',
             title: 'Meetly - AI Meeting Hub',
             description: 'Application de reunion en ligne assistee par IA avec enregistrement AWS S3, transcription Gemini AI, synthese et analyse des reunions.',
@@ -115,7 +150,42 @@ export class StaticProjectRepository implements ProjectRepository {
             ],
             downloadUrl: '/projects/fluidio/fluidio-shop.apk',
             downloadSize: '63.8 Mo'
-        }
+        },
+        {
+            id: 'pepites-academy',
+            title: 'Pépites Academy',
+            description: "Centre de formation d'élite pour les jeunes talents du football africain. Le pôle formation de K-Sport Agency.",
+            image: '/projects/pepites-acedemy.png',
+            tags: ['SvelteKit', 'Tailwind CSS', 'Supabase'],
+            demoUrl: 'https://pepites-academy.vercel.app/',
+            features: [
+                "Formation sportive et académique de haut niveau",
+                "Détection et accompagnement personnalisé des jeunes talents",
+                "Synergie unique avec K-Sport Agency pour la gestion de carrière",
+                "Infrastructures de développement modernes et innovantes"
+            ],
+            longDescription: "Pepites Academy est née d'une vision simple : offrir aux jeunes talents africains les ressources, l'encadrement et l'opportunité d'atteindre le sommet du football mondial. En tant que pôle formation de K-Sport Agency, l'académie assure une transition fluide entre la formation et le monde professionnel.",
+            stackDetails: [
+                {
+                    category: "Chiffres Clés",
+                    items: [
+                        "150+ Jeunes encadrés et formés",
+                        "10+ Talents déjà détectés au niveau national",
+                        "5+ Partenaires élite à l'international",
+                        "Création en 2025 pour un impact durable"
+                    ]
+                },
+                {
+                    category: "Valeurs & Vision",
+                    items: [
+                        "Excellence : Standards élevés dans toutes les activités",
+                        "Discipline : Rigueur au cœur de la formation",
+                        "Inclusivité : Accueil de tous les talents",
+                        "Passion : L'amour du football comme moteur"
+                    ]
+                }
+            ],
+        },
     ];
 
     async findAll(): Promise<Project[]> {
