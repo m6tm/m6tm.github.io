@@ -75,12 +75,8 @@
 
             <!-- Points clés / Caractéristiques -->
             {#if project.features && project.features.length > 0}
-              <div
-                style="margin-top: 2rem; background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(16, 185, 129, 0.1);"
-              >
-                <h4
-                  style="font-size: 1.1rem; color: var(--success); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.6rem;"
-                >
+              <div class="features-container">
+                <h4 class="features-header">
                   <svg
                     width="22"
                     height="22"
@@ -96,14 +92,10 @@
                   </svg>
                   Objectifs et Points Forts
                 </h4>
-                <ul
-                  style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;"
-                >
+                <ul class="features-list">
                   {#each project.features as feature}
-                    <li
-                      style="display: flex; gap: 0.75rem; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;"
-                    >
-                      <strong style="color: var(--success);">✓</strong>
+                    <li class="feature-item">
+                      <strong class="feature-check">✓</strong>
                       {feature}
                     </li>
                   {/each}
@@ -137,15 +129,9 @@
               </div>
               <div class="info-item">
                 <span class="info-label">Technologies Clés</span>
-                <div
-                  class="modal-hero-tags"
-                  style="margin-top: 0.5rem; flex-wrap: wrap;"
-                >
+                <div class="modal-hero-tags sidebar-tags">
                   {#each project.tags as tag}
-                    <span
-                      style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: var(--text-secondary)"
-                      >{tag}</span
-                    >
+                    <span class="sidebar-tag-item">{tag}</span>
                   {/each}
                 </div>
               </div>
@@ -165,10 +151,7 @@
 
         <!-- Galerie en PLEINE LARGEUR -->
         {#if project.gallery && project.gallery.length > 0}
-          <div
-            class="gallery-section-full"
-            style="margin: 4rem 0; width: 100%;"
-          >
+          <div class="gallery-section-full">
             <h3 class="modal-section-title">Aperçus du projet</h3>
             <MediaCarousel items={project.gallery} title={project.title} />
           </div>
@@ -224,9 +207,7 @@
                 Accès Démo
               </div>
 
-              <p
-                style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.5rem; font-style: italic;"
-              >
+              <p class="demo-intro-text">
                 Cette version de démonstration fonctionne sans backend
                 persistant. Utilisez les identifiants suivants pour tester les
                 différents rôles :
@@ -248,11 +229,41 @@
           {/if}
 
           <!-- Download Button -->
-          <div
-            style="margin-top: 4rem; display: flex; justify-content: center;"
-          >
-            <button class="btn btn-primary"> Télécharger l'application </button>
-          </div>
+          {#if project.downloadUrl}
+            <div class="download-container">
+              <a
+                href={project.downloadUrl}
+                class="btn-download"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <div class="download-text">
+                  <span
+                    >Télécharger <span class="download-text-title"
+                      >{project.title}</span
+                    ></span
+                  >
+                  {#if project.downloadSize}
+                    <span class="file-size">{project.downloadSize}</span>
+                  {/if}
+                </div>
+              </a>
+            </div>
+          {/if}
         </div>
       </div>
       <!-- Fin modal-body -->

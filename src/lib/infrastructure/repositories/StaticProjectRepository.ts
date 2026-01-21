@@ -111,7 +111,9 @@ export class StaticProjectRepository implements ProjectRepository {
                 { role: "Acheteur", email: "acheteur@test.com" },
                 { role: "Vendeur", email: "vendeur@test.com" },
                 { role: "Affilié", email: "affilie@test.com" }
-            ]
+            ],
+            downloadUrl: '/projects/fluidio/fluidio-shop.apk',
+            downloadSize: '63.8 Mo'
         }
     ];
 

@@ -16,4 +16,6 @@ export interface Project {
     longDescription?: string;
     stackDetails?: { category: string, items: string[] }[];
     credentials?: { role: string, email: string }[];
+    downloadUrl?: string;
+    downloadSize?: string;
 }

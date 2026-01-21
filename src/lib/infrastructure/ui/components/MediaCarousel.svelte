@@ -238,7 +238,7 @@
 
   @media (max-width: 640px) {
     .media-item-container {
-      aspect-ratio: 16/10; /* Mode paysage pour mobile unique pour mieux voir */
+      aspect-ratio: 4/5; /* Plus grand verticalement pour les apps mobiles */
     }
   }
 </style>
