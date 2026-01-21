@@ -12,4 +12,8 @@ export interface Project {
     isPrivate?: boolean;
     featured?: boolean;
     gallery?: { type: 'image' | 'video', src: string }[];
+    features?: string[];
+    longDescription?: string;
+    stackDetails?: { category: string, items: string[] }[];
+    credentials?: { role: string, email: string }[];
 }

@@ -57,6 +57,60 @@ export class StaticProjectRepository implements ProjectRepository {
                 { type: 'image', src: '/projects/fluidio/affilie_2.jpg' },
                 { type: 'image', src: '/projects/fluidio/vendeur_1.jpg' },
                 { type: 'image', src: '/projects/fluidio/vendeur_2.jpg' }
+            ],
+            features: [
+                "Système d'affiliation multicouches pour les partenaires",
+                "Géolocalisation des boutiques et produits en temps réel",
+                "Gestion complète des stocks et commandes pour les vendeurs",
+                "Interface acheteur optimisée pour une navigation fluide",
+                "Tableau de bord analytique détaillé pour le suivi des ventes"
+            ],
+            longDescription: "Pour bâtir cette plateforme e-commerce multi-acteurs (vendeurs, acheteurs, affiliés), j'ai sélectionné un ensemble de bibliothèques robustes axées sur la performance, la scalabilité et l'expérience utilisateur.",
+            stackDetails: [
+                {
+                    category: "Architecture et Gestion d'État",
+                    items: [
+                        "BLoC (Business Logic Component) : Utilisation du design pattern BLoC pour une séparation stricte entre l'interface utilisateur et la logique métier, garantissant une application testable et maintenable.",
+                        "GetIt : Mise en œuvre de l'injection de dépendances pour découpler les modules et faciliter la gestion des instances (services, dépôts).",
+                        "Freezed & JsonSerializable : Génération de code pour des modèles de données immuables et une sérialisation JSON sécurisée."
+                    ]
+                },
+                {
+                    category: "Persistance et Réseau",
+                    items: [
+                        "Isar Database : Base de données NoSQL ultra-rapide pour le stockage local et le support du mode hors-ligne.",
+                        "Dio & Http : Gestion avancée des appels API REST avec intercepteurs et gestion globale des erreurs.",
+                        "Cached Network Image : Optimisation de la bande passante et de la fluidité via une mise en cache intelligente des images produits."
+                    ]
+                },
+                {
+                    category: "Géolocalisation et Cartographie",
+                    items: [
+                        "Flutter Map (OpenStreetMap) : Intégration de cartes interactives pour la localisation des points de vente sans dépendance aux services payants propriétaires.",
+                        "Geolocator & Geocoding : Services de calcul de distance et de transformation d'adresses en coordonnées GPS."
+                    ]
+                },
+                {
+                    category: "Expérience Utilisateur (UX/UI)",
+                    items: [
+                        "FL Chart : Tableaux de bord analytiques interactifs pour le suivi des ventes et des commissions des affiliés.",
+                        "Shimmer : Amélioration de la perception de vitesse via des indicateurs de chargement élégants.",
+                        "QR Flutter : Système de génération de QR codes pour la validation rapide des transactions ou le partage de profils vendeurs."
+                    ]
+                },
+                {
+                    category: "Multimédia et Outils",
+                    items: [
+                        "Just Audio & Record : Support des messages vocaux ou descriptions audio au sein de la plateforme.",
+                        "Image & File Picker : Gestion fluide de l'upload des catalogues produits et des documents d'identité.",
+                        "Share Plus : Fonctionnalités de partage social pour booster le marketing d'affiliation."
+                    ]
+                }
+            ],
+            credentials: [
+                { role: "Acheteur", email: "acheteur@test.com" },
+                { role: "Vendeur", email: "vendeur@test.com" },
+                { role: "Affilié", email: "affilie@test.com" }
             ]
         }
     ];
