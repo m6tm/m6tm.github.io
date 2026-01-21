@@ -18,4 +18,5 @@ export interface Project {
     credentials?: { role: string, email: string }[];
     downloadUrl?: string;
     downloadSize?: string;
+    hidden?: boolean;
 }

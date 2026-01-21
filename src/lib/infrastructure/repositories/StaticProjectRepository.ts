@@ -23,7 +23,8 @@ export class StaticProjectRepository implements ProjectRepository {
             image: '/projects/meetly-ai.png',
             tags: ['NextJs', 'Supabase', 'Livekit', 'Docker', 'Inngest'],
             demoUrl: 'https://meetly-six.vercel.app/',
-            githubUrl: 'https://github.com/m6tm/meetly'
+            githubUrl: 'https://github.com/m6tm/meetly',
+            hidden: true
         },
         {
             id: 'medin-plus',
@@ -36,7 +37,7 @@ export class StaticProjectRepository implements ProjectRepository {
         },
         {
             id: 'hugbot',
-            title: 'Hubbot Chat AI - All in one chat',
+            title: 'Hugbot Chat AI - All in one chat',
             description: "Un chatbot qui intègre de plus en plus de réseaux et tunels de vente afin d'avoir l'information voulue sans avoir besoin de se rendre dans ses différentes plateformes. On peut suivre tout en un seul endroit.",
             image: '/projects/hugbot-ai.png',
             tags: ['Svelte', 'Huggin Face', 'Dexiejs', 'Supabase', 'Langchain'],
@@ -118,6 +119,7 @@ export class StaticProjectRepository implements ProjectRepository {
     ];
 
     async findAll(): Promise<Project[]> {
-        return this.projects;
+        return this.projects.filter(p => !p.hidden);
     }
+
 }
