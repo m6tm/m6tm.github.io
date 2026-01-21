@@ -125,106 +125,10 @@
                 facile à tester et prête à évoluer.
               </p>
             </div>
-
-            <!-- Detailed Stack Category by Category -->
-            {#if project.stackDetails}
-              {#each project.stackDetails as category}
-                <div class="stack-category-box">
-                  <h4 class="stack-category-title">
-                    {category.category}
-                  </h4>
-                  <ul class="stack-items-list">
-                    {#each category.items as item}
-                      <li class="stack-item">
-                        <span class="stack-dot"></span>
-                        <span>
-                          {#if item.includes(":")}
-                            <strong>{item.split(":")[0]}:</strong>{item.split(
-                              ":",
-                            )[1]}
-                          {:else}
-                            {item}
-                          {/if}
-                        </span>
-                      </li>
-                    {/each}
-                  </ul>
-                </div>
-              {/each}
-            {/if}
-
-            <!-- Demo Access Section -->
-            {#if project.credentials}
-              <div class="demo-access-box">
-                <div class="demo-badge">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-                    ></path>
-                    <line x1="12" y1="9" x2="12" y2="13"></line>
-                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                  </svg>
-                  Accès Démo
-                </div>
-
-                <p
-                  style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.5rem; font-style: italic;"
-                >
-                  Cette version de démonstration fonctionne sans backend
-                  persistant. Utilisez les identifiants suivants pour tester les
-                  différents rôles :
-                </p>
-
-                <div class="demo-grid">
-                  {#each project.credentials as cred}
-                    <div class="credential-card">
-                      <span class="credential-label">{cred.role}</span>
-                      <span class="credential-value">{cred.email}</span>
-                    </div>
-                  {/each}
-                  <div class="credential-card">
-                    <span class="credential-label">Mot de passe (Tous)</span>
-                    <span class="credential-value">test123</span>
-                  </div>
-                </div>
-              </div>
-            {/if}
-
-            <!-- Download Button -->
-            <div style="margin-top: 3rem;">
-              <button
-                class="btn btn-primary btn-full"
-                style="height: 56px; font-size: 1.1rem; border-radius: var(--radius-xl); background: linear-gradient(135deg, #6366f1 0%, #d946ef 100%);"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                Télécharger l'application
-              </button>
-            </div>
-
-            <!-- La galerie est retirée d'ici pour être mise plus bas -->
           </div>
+          <!-- Fin modal-main -->
 
-          <!-- Colonne Droite : Infos & Liens -->
+          <!-- Sidebar transférée ici pour rester groupée avec le haut -->
           <aside class="modal-sidebar">
             <div class="modal-info-card">
               <div class="info-item">
@@ -245,67 +149,115 @@
                   {/each}
                 </div>
               </div>
-
               <div class="modal-actions">
                 {#if project.demoUrl}
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    class="btn btn-primary btn-full"
+                    class="btn btn-primary btn-full">Voir la démo live</a
                   >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                      ></path>
-                      <polyline points="15 3 21 3 21 9"></polyline>
-                      <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                    Voir la démo live
-                  </a>
-                {/if}
-                {#if project.githubUrl}
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    class="btn btn-secondary btn-full"
-                  >
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                      ></path>
-                    </svg>
-                    Code Source
-                  </a>
                 {/if}
               </div>
             </div>
           </aside>
         </div>
+        <!-- Fin modal-grid -->
 
+        <!-- Galerie en PLEINE LARGEUR -->
         {#if project.gallery && project.gallery.length > 0}
           <div
             class="gallery-section-full"
-            style="margin-top: 4rem; width: 100%;"
+            style="margin: 4rem 0; width: 100%;"
           >
             <h3 class="modal-section-title">Aperçus du projet</h3>
             <MediaCarousel items={project.gallery} title={project.title} />
           </div>
         {/if}
+
+        <!-- Suite du contenu -->
+        <div class="modal-main-extended">
+          <!-- Detailed Stack Category by Category -->
+          {#if project.stackDetails}
+            {#each project.stackDetails as category}
+              <div class="stack-category-box">
+                <h4 class="stack-category-title">
+                  {category.category}
+                </h4>
+                <ul class="stack-items-list">
+                  {#each category.items as item}
+                    <li class="stack-item">
+                      <span class="stack-dot"></span>
+                      <span>
+                        {#if item.includes(":")}
+                          <strong>{item.split(":")[0]}:</strong>{item.split(
+                            ":",
+                          )[1]}
+                        {:else}
+                          {item}
+                        {/if}
+                      </span>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
+            {/each}
+          {/if}
+
+          <!-- Demo Access Section -->
+          {#if project.credentials}
+            <div class="demo-access-box">
+              <div class="demo-badge">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                  ></path>
+                  <line x1="12" y1="9" x2="12" y2="13"></line>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Accès Démo
+              </div>
+
+              <p
+                style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.5rem; font-style: italic;"
+              >
+                Cette version de démonstration fonctionne sans backend
+                persistant. Utilisez les identifiants suivants pour tester les
+                différents rôles :
+              </p>
+
+              <div class="demo-grid">
+                {#each project.credentials as cred}
+                  <div class="credential-card">
+                    <span class="credential-label">{cred.role}</span>
+                    <span class="credential-value">{cred.email}</span>
+                  </div>
+                {/each}
+                <div class="credential-card">
+                  <span class="credential-label">Mot de passe (Tous)</span>
+                  <span class="credential-value">test123</span>
+                </div>
+              </div>
+            </div>
+          {/if}
+
+          <!-- Download Button -->
+          <div
+            style="margin-top: 4rem; display: flex; justify-content: center;"
+          >
+            <button class="btn btn-primary"> Télécharger l'application </button>
+          </div>
+        </div>
       </div>
+      <!-- Fin modal-body -->
     </div>
+    <!-- Fin modal-container -->
   </div>
+  <!-- Fin modal-overlay -->
 {/if}
