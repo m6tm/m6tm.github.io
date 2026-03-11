@@ -1,5 +1,15 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { _, locale } from "svelte-i18n";
+
+  // Ordre du titre selon la langue (fullstack toujours avec gradient)
+  const titleOrders: Record<string, string[]> = {
+    en: ["fullstack", "title"],
+    fr: ["title", "fullstack"],
+    es: ["title", "fullstack"],
+  };
+
+  $: titleOrder = titleOrders[$locale ?? "en"] || titleOrders["en"];
 
   /**
    * Animation des nombres dans les statistiques.
@@ -56,20 +66,19 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Disponible pour de nouveaux projets
+        {$_('hero.available')}
       </div>
       <h1 class="hero-title">
-        <span class="title-line">Développeur</span>
-        <span class="title-line gradient-text">Fullstack</span>
+        {#each titleOrder as key}
+          <span class="title-line" class:gradient-text={key === 'fullstack'}>{$_(`hero.${key}`)}</span>
+        {/each}
       </h1>
       <p class="hero-description">
-        Développeur FullStack avec plus de 3 ans d'expérience dans la conception
-        et le déploiement d'applications web et mobiles performantes. Expert en
-        optimisation des processus via CI/CD et Docker.
+        {$_('hero.description')}
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">
-          <span>Voir mes projets</span>
+          <span>{$_('hero.viewProjects')}</span>
           <svg
             width="20"
             height="20"
@@ -81,20 +90,20 @@
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
         </a>
-        <a href="#contact" class="btn btn-secondary">Me contacter</a>
+        <a href="#contact" class="btn btn-secondary">{$_('hero.contactMe')}</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-number" data-count="3">0</span>
-          <span class="stat-label">Années d'expérience</span>
+          <span class="stat-label">{$_('hero.stats.years')}</span>
         </div>
         <div class="stat">
           <span class="stat-number" data-count="10">0</span>
-          <span class="stat-label">Projets réalisés</span>
+          <span class="stat-label">{$_('hero.stats.projects')}</span>
         </div>
         <div class="stat">
           <span class="stat-number-2">2</span>
-          <span class="stat-label">Entreprises</span>
+          <span class="stat-label">{$_('hero.stats.companies')}</span>
         </div>
       </div>
     </div>
@@ -115,7 +124,7 @@
                 >"MABOA Daniel Emmanuel"</span
               >,
   <span class="code-property">role</span>: <span class="code-string"
-                >"FullStack Developer"</span
+                >"{$_('hero.codeRole')}"</span
               >,
   <span class="code-property">skills</span>: [
     <span class="code-string">"NextJs"</span>,
@@ -124,7 +133,7 @@
     <span class="code-string">"Docker"</span>
   ],
   <span class="code-property">passion</span>: <span class="code-string"
-                >"Building innovative products"</span
+                >"{$_('hero.passion')}"</span
               >
 {"}"};</code
             ></pre>

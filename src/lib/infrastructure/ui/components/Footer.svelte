@@ -1,3 +1,7 @@
+<script lang="ts">
+  import { _ } from "svelte-i18n";
+</script>
+
 <footer class="footer">
   <div class="container">
     <div class="footer-content">
@@ -8,21 +12,20 @@
           >
         </a>
         <p>
-          Développeur FullStack passionné par la création de solutions digitales
-          innovantes.
+          {$_('footer.brand')}
         </p>
       </div>
       <div class="footer-links">
-        <a href="#accueil">Accueil</a>
-        <a href="#about">A propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
+        <a href="#accueil">{$_('nav.home')}</a>
+        <a href="#about">{$_('nav.about')}</a>
+        <a href="#skills">{$_('nav.skills')}</a>
+        <a href="#projects">{$_('nav.projects')}</a>
+        <a href="#contact">{$_('nav.contact')}</a>
       </div>
     </div>
     <div class="footer-bottom">
       <p>
-        &copy; {new Date().getFullYear()} MABOA Daniel Emmanuel. Tous droits réservés.
+        &copy; {new Date().getFullYear()} MABOA Daniel Emmanuel. {$_('footer.rights')}
       </p>
     </div>
   </div>

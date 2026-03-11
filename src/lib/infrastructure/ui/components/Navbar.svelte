@@ -1,5 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { _ } from "svelte-i18n";
+  import LanguageSwitcher from "./LanguageSwitcher.svelte";
 
   let scrolled = $state(false);
   let mobileMenuOpen = $state(false);
@@ -54,12 +56,15 @@
     </button>
     <!-- Desktop Menu -->
     <ul class="nav-menu nav-menu-desktop">
-      <li><a href="#accueil" class="nav-link">Accueil</a></li>
-      <li><a href="#about" class="nav-link">A propos</a></li>
-      <li><a href="#skills" class="nav-link">Compétences</a></li>
-      <li><a href="#projects" class="nav-link">Projets</a></li>
-      <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+      <li><a href="#accueil" class="nav-link">{$_('nav.home')}</a></li>
+      <li><a href="#about" class="nav-link">{$_('nav.about')}</a></li>
+      <li><a href="#skills" class="nav-link">{$_('nav.skills')}</a></li>
+      <li><a href="#projects" class="nav-link">{$_('nav.projects')}</a></li>
+      <li><a href="#contact" class="nav-link nav-cta">{$_('nav.contact')}</a></li>
     </ul>
+    <div class="nav-language-switcher">
+      <LanguageSwitcher />
+    </div>
   </div>
 </nav>
 
@@ -74,12 +79,14 @@
 <!-- Mobile Menu Sidebar -->
 <div class="mobile-menu" class:active={mobileMenuOpen}>
   <div class="mobile-menu-header">
-    <a href="#accueil" class="nav-logo">
-      <span class="logo-text">MABOA Daniel</span><span class="logo-accent"
-        >.</span
-      >
-    </a>
-    <span class="mobile-menu-subtitle">Développeur FullStack</span>
+    <div class="mobile-menu-brand">
+      <a href="#accueil" class="nav-logo">
+        <span class="logo-text">MABOA Daniel</span><span class="logo-accent"
+          >.</span
+        >
+      </a>
+      <span class="mobile-menu-subtitle">{$_('hero.codeRole')}</span>
+    </div>
     <button
       class="mobile-menu-close"
       onclick={closeMobileMenu}
@@ -115,7 +122,7 @@
             />
             <polyline points="9 22 9 12 15 12 15 22" />
           </svg>
-          <span>Accueil</span>
+          <span>{$_('nav.home')}</span>
           <svg
             class="arrow"
             width="16"
@@ -142,7 +149,7 @@
             <circle cx="12" cy="8" r="4" />
             <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
           </svg>
-          <span>A propos</span>
+          <span>{$_('nav.about')}</span>
           <svg
             class="arrow"
             width="16"
@@ -170,7 +177,7 @@
             <path d="M2 17l10 5 10-5" />
             <path d="M2 12l10 5 10-5" />
           </svg>
-          <span>Compétences</span>
+          <span>{$_('nav.skills')}</span>
           <svg
             class="arrow"
             width="16"
@@ -198,7 +205,7 @@
             <path d="M8 21h8" />
             <path d="M12 17v4" />
           </svg>
-          <span>Projets</span>
+          <span>{$_('nav.projects')}</span>
           <svg
             class="arrow"
             width="16"
@@ -215,8 +222,9 @@
     </ul>
   </div>
   <div class="mobile-menu-footer">
+    <LanguageSwitcher />
     <a href="#contact" class="mobile-menu-cta" onclick={closeMobileMenu}>
-      <span>Me contacter</span>
+      <span>{$_('hero.contactMe')}</span>
       <svg
         width="20"
         height="20"

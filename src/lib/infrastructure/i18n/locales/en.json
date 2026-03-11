@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Available for new projects",
+    "fullstack": "Fullstack",
+    "title": "Developer",
+    "titleOrder": ["fullstack", "title"],
+    "codeRole": "Fullstack Developer",
+    "description": "FullStack Developer with over 3 years of experience in designing and deploying high-performance web and mobile applications. Expert in process optimization via CI/CD and Docker.",
+    "viewProjects": "View my projects",
+    "contactMe": "Contact me",
+    "passion": "Building innovative products",
+    "stats": {
+      "years": "Years of experience",
+      "projects": "Projects completed",
+      "companies": "Companies"
+    }
+  },
+  "about": {
+    "tag": "About",
+    "title": "Who am I?",
+    "altImage": "MABOA Daniel Emmanuel - FullStack Developer",
+    "experienceBadge": "years of experience",
+    "intro": "Passionate FullStack Developer with over 3 years of experience in designing and deploying high-performance web and mobile applications.",
+    "paragraph1": "Expert in development process optimization through CI/CD pipelines and Docker, I am passionate about AI solutions integration and Agile project management.",
+    "paragraph2": "I master NextJs, Angular, Flutter for frontend, Node.js, Laravel, Springboot for backend, as well as Docker, Github Action and Google Cloud Platform for DevOps.",
+    "highlights": {
+      "cleanCode": "Clean and maintainable code",
+      "performance": "Optimized performance",
+      "agile": "Agile methodology"
+    },
+    "discussProject": "Let's discuss your project",
+    "downloadCv": "Download Resume"
+  },
+  "skills": {
+    "tag": "Skills",
+    "title": "My technical arsenal",
+    "description": "Modern technologies to build robust and scalable applications",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "devops": "DevOps & Tools"
+    }
+  },
+  "projects": {
+    "tag": "Portfolio",
+    "title": "Recent projects",
+    "description": "A selection of my most notable achievements",
+    "visit": "Visit",
+    "code": "Code",
+    "private": "Private",
+    "viewDetails": "View Details",
+    "modal": {
+      "close": "Close modal",
+      "features": "Objectives and Key Points",
+      "architecture": {
+        "title": "My standard: Hexagonal Architecture",
+        "description": "I use this architecture to cleanly separate business logic (the app's core) from technical tools (databases, interfaces). It's like building a house where you can change the decoration or the type of air conditioner without touching the load-bearing walls: the application is more stable, easier to test and ready to evolve."
+      },
+      "projectType": "Project Type",
+      "fullStack": "Full-Stack Development",
+      "keyTechnologies": "Key Technologies",
+      "viewDemo": "View live demo",
+      "gallery": "Project previews",
+      "demoAccess": "Demo Access",
+      "demoIntro": "This demo version works without a persistent backend. Use the following credentials to test different roles:",
+      "password": "Password (All)",
+      "download": "Download"
+    }
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Let's work together",
+    "description": "Have a project in mind? Don't hesitate to contact me",
+    "email": "Email",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "startDiscussion": "Start a discussion",
+    "location": "Location",
+    "form": {
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject of your message",
+      "message": "Message",
+      "messagePlaceholder": "Describe your project...",
+      "sending": "Sending...",
+      "sent": "Message sent!",
+      "send": "Send message"
+    }
+  },
+  "footer": {
+    "brand": "FullStack Developer passionate about creating innovative digital solutions.",
+    "rights": "All rights reserved."
+  }
+}

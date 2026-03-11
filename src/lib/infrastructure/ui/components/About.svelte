@@ -1,38 +1,47 @@
+<script lang="ts">
+  import { _ } from "svelte-i18n";
+  import { locale } from "$lib/infrastructure/i18n";
+
+  // Mapping des CV disponibles par langue
+  const cvFiles: Record<string, string> = {
+    fr: "/maboa_daniel_emmanuel_fr.pdf",
+    en: "/maboa_daniel_emmanuel_en.pdf",
+    es: "/maboa_daniel_emmanuel_en.pdf", // Fallback vers anglais
+  };
+
+  // CV à télécharger selon la langue (fallback anglais)
+  $: cvPath = cvFiles[$locale ?? "en"] || cvFiles["en"];
+</script>
+
 <section class="section about" id="about">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">A propos</span>
-      <h2 class="section-title">Qui suis-je ?</h2>
+      <span class="section-tag">{$_('about.tag')}</span>
+      <h2 class="section-title">{$_('about.title')}</h2>
     </div>
     <div class="about-content">
       <div class="about-image">
         <div class="image-frame">
           <img
             src="/poster.png"
-            alt="MABOA Daniel Emmanuel - Développeur FullStack"
+            alt={$_('about.altImage')}
             class="about-photo"
           />
         </div>
         <div class="experience-badge">
           <span class="exp-number">3+</span>
-          <span class="exp-text">ans d'expérience</span>
+          <span class="exp-text">{$_('about.experienceBadge')}</span>
         </div>
       </div>
       <div class="about-text">
         <p class="about-intro">
-          Développeur FullStack passionné avec plus de 3 ans d'expérience dans
-          la conception et le déploiement d'applications web et mobiles
-          performantes.
+          {$_('about.intro')}
         </p>
         <p>
-          Expert en optimisation des processus de développement via les
-          pipelines CI/CD et Docker, je suis passionné par l'intégration de
-          solutions IA et la gestion de projet Agile.
+          {$_('about.paragraph1')}
         </p>
         <p>
-          Je maîtrise NextJs, Angular, Flutter pour le frontend, Node.js,
-          Laravel, Springboot pour le backend, ainsi que Docker, Github Action
-          et Google Cloud Platform pour le DevOps.
+          {$_('about.paragraph2')}
         </p>
         <div class="about-highlights">
           <div class="highlight">
@@ -47,7 +56,7 @@
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span>Code propre et maintenable</span>
+            <span>{$_('about.highlights.cleanCode')}</span>
           </div>
           <div class="highlight">
             <svg
@@ -61,7 +70,7 @@
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span>Performance optimisée</span>
+            <span>{$_('about.highlights.performance')}</span>
           </div>
           <div class="highlight">
             <svg
@@ -75,12 +84,12 @@
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            <span>Méthodologie Agile</span>
+            <span>{$_('about.highlights.agile')}</span>
           </div>
         </div>
         <div class="about-actions">
           <a href="#contact" class="btn btn-primary">
-            Discutons de votre projet
+            {$_('about.discussProject')}
             <svg
               width="20"
               height="20"
@@ -94,32 +103,11 @@
           </a>
           <div class="cv-buttons">
             <a
-              href="/maboa_daniel_emmanuel_fr.pdf"
-              download="maboa_daniel_emmanuel_fr.pdf"
+              href={cvPath}
+              download
               class="btn btn-secondary"
-              id="cvButton"
             >
-              <span>CV (Français)</span>
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-            </a>
-            <a
-              href="/maboa_daniel_emmanuel_en.pdf"
-              download="maboa_daniel_emmanuel_en.pdf"
-              class="btn btn-secondary"
-              id="cvButtonEn"
-            >
-              <span>CV (English)</span>
+              <span>{$_('about.downloadCv')}</span>
               <svg
                 width="20"
                 height="20"

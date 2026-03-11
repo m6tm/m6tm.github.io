@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Project } from "$lib/domain/entities/Project";
   import MediaCarousel from "./MediaCarousel.svelte";
+  import { _ } from "svelte-i18n";
 
   let { project, onclose } = $props<{
     project: Project | null;
@@ -33,7 +34,7 @@
       <button
         class="modal-close"
         onclick={onclose}
-        aria-label="Fermer la modale"
+        aria-label={$_('projects.modal.close')}
       >
         <svg
           width="24"
@@ -90,7 +91,7 @@
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                     <polyline points="22 4 12 14.01 9 11.01"></polyline>
                   </svg>
-                  Objectifs et Points Forts
+                  {$_('projects.modal.features')}
                 </h4>
                 <ul class="features-list">
                   {#each project.features as feature}
@@ -106,15 +107,10 @@
             <!-- Architecture Hexagonale Highlight -->
             <div class="architecture-box">
               <span class="architecture-title"
-                >Mon standard : L'Architecture Hexagonale</span
+                >{$_('projects.modal.architecture.title')}</span
               >
               <p class="architecture-text">
-                J'utilise cette architecture pour séparer proprement la logique
-                métier (le cœur de l'app) des outils techniques (bases de
-                données, interfaces). C'est comme construire une maison dont on
-                peut changer la décoration ou le type de climatiseur sans
-                toucher aux murs porteurs : l'application est plus stable,
-                facile à tester et prête à évoluer.
+                {$_('projects.modal.architecture.description')}
               </p>
             </div>
           </div>
@@ -124,11 +120,11 @@
           <aside class="modal-sidebar">
             <div class="modal-info-card">
               <div class="info-item">
-                <span class="info-label">Type de Projet</span>
-                <span class="info-value">Développement Full-Stack</span>
+                <span class="info-label">{$_('projects.modal.projectType')}</span>
+                <span class="info-value">{$_('projects.modal.fullStack')}</span>
               </div>
               <div class="info-item">
-                <span class="info-label">Technologies Clés</span>
+                <span class="info-label">{$_('projects.modal.keyTechnologies')}</span>
                 <div class="modal-hero-tags sidebar-tags">
                   {#each project.tags as tag}
                     <span class="sidebar-tag-item">{tag}</span>
@@ -140,7 +136,7 @@
                   <a
                     href={project.demoUrl}
                     target="_blank"
-                    class="btn btn-primary btn-full">Voir la démo live</a
+                    class="btn btn-primary btn-full">{$_('projects.modal.viewDemo')}</a
                   >
                 {/if}
               </div>
@@ -152,7 +148,7 @@
         <!-- Galerie en PLEINE LARGEUR -->
         {#if project.gallery && project.gallery.length > 0}
           <div class="gallery-section-full">
-            <h3 class="modal-section-title">Aperçus du projet</h3>
+            <h3 class="modal-section-title">{$_('projects.modal.gallery')}</h3>
             <MediaCarousel items={project.gallery} title={project.title} />
           </div>
         {/if}
@@ -204,13 +200,11 @@
                   <line x1="12" y1="9" x2="12" y2="13"></line>
                   <line x1="12" y1="17" x2="12.01" y2="17"></line>
                 </svg>
-                Accès Démo
+                {$_('projects.modal.demoAccess')}
               </div>
 
               <p class="demo-intro-text">
-                Cette version de démonstration fonctionne sans backend
-                persistant. Utilisez les identifiants suivants pour tester les
-                différents rôles :
+                {$_('projects.modal.demoIntro')}
               </p>
 
               <div class="demo-grid">
@@ -221,7 +215,7 @@
                   </div>
                 {/each}
                 <div class="credential-card">
-                  <span class="credential-label">Mot de passe (Tous)</span>
+                  <span class="credential-label">{$_('projects.modal.password')}</span>
                   <span class="credential-value">test123</span>
                 </div>
               </div>
@@ -253,7 +247,7 @@
                 </svg>
                 <div class="download-text">
                   <span
-                    >Télécharger <span class="download-text-title"
+                    >{$_('projects.modal.download')} <span class="download-text-title"
                       >{project.title}</span
                     ></span
                   >

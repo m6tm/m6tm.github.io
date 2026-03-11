@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "A propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "available": "Disponible pour de nouveaux projets",
+    "fullstack": "Fullstack",
+    "title": "Développeur",
+    "titleOrder": ["title", "fullstack"],
+    "codeRole": "Développeur Fullstack",
+    "description": "Développeur FullStack avec plus de 3 ans d'expérience dans la conception et le déploiement d'applications web et mobiles performantes. Expert en optimisation des processus via CI/CD et Docker.",
+    "viewProjects": "Voir mes projets",
+    "contactMe": "Me contacter",
+    "passion": "Construire des produits innovants",
+    "stats": {
+      "years": "Années d'expérience",
+      "projects": "Projets réalisés",
+      "companies": "Entreprises"
+    }
+  },
+  "about": {
+    "tag": "A propos",
+    "title": "Qui suis-je ?",
+    "altImage": "MABOA Daniel Emmanuel - Développeur FullStack",
+    "experienceBadge": "ans d'expérience",
+    "intro": "Développeur FullStack passionné avec plus de 3 ans d'expérience dans la conception et le déploiement d'applications web et mobiles performantes.",
+    "paragraph1": "Expert en optimisation des processus de développement via les pipelines CI/CD et Docker, je suis passionné par l'intégration de solutions IA et la gestion de projet Agile.",
+    "paragraph2": "Je maîtrise NextJs, Angular, Flutter pour le frontend, Node.js, Laravel, Springboot pour le backend, ainsi que Docker, Github Action et Google Cloud Platform pour le DevOps.",
+    "highlights": {
+      "cleanCode": "Code propre et maintenable",
+      "performance": "Performance optimisée",
+      "agile": "Méthodologie Agile"
+    },
+    "discussProject": "Discutons de votre projet",
+    "downloadCv": "Télécharger mon CV"
+  },
+  "skills": {
+    "tag": "Compétences",
+    "title": "Mon arsenal technique",
+    "description": "Des technologies modernes pour construire des applications robustes et évolutives",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de données",
+      "devops": "DevOps & Tools"
+    }
+  },
+  "projects": {
+    "tag": "Portfolio",
+    "title": "Projets récents",
+    "description": "Une sélection de mes réalisations les plus marquantes",
+    "visit": "Visiter",
+    "code": "Code",
+    "private": "Privé",
+    "viewDetails": "Voir Détails",
+    "modal": {
+      "close": "Fermer la modale",
+      "features": "Objectifs et Points Forts",
+      "architecture": {
+        "title": "Mon standard : L'Architecture Hexagonale",
+        "description": "J'utilise cette architecture pour séparer proprement la logique métier (le cœur de l'app) des outils techniques (bases de données, interfaces). C'est comme construire une maison dont on peut changer la décoration ou le type de climatiseur sans toucher aux murs porteurs : l'application est plus stable, facile à tester et prête à évoluer."
+      },
+      "projectType": "Type de Projet",
+      "fullStack": "Développement Full-Stack",
+      "keyTechnologies": "Technologies Clés",
+      "viewDemo": "Voir la démo live",
+      "gallery": "Aperçus du projet",
+      "demoAccess": "Accès Démo",
+      "demoIntro": "Cette version de démonstration fonctionne sans backend persistant. Utilisez les identifiants suivants pour tester les différents rôles :",
+      "password": "Mot de passe (Tous)",
+      "download": "Télécharger"
+    }
+  },
+  "contact": {
+    "tag": "Contact",
+    "title": "Travaillons ensemble",
+    "description": "Vous avez un projet en tête ? N'hésitez pas à me contacter",
+    "email": "Email",
+    "phone": "Téléphone",
+    "whatsapp": "WhatsApp",
+    "startDiscussion": "Démarrer une discussion",
+    "location": "Localisation",
+    "form": {
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Sujet de votre message",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre projet...",
+      "sending": "Envoi en cours...",
+      "sent": "Message envoyé !",
+      "send": "Envoyer le message"
+    }
+  },
+  "footer": {
+    "brand": "Développeur FullStack passionné par la création de solutions digitales innovantes.",
+    "rights": "Tous droits réservés."
+  }
+}

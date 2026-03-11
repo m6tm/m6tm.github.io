@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+
   let name = $state("");
   let email = $state("");
   let subject = $state("");
@@ -30,10 +32,10 @@
 <section class="section contact" id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Contact</span>
-      <h2 class="section-title">Travaillons ensemble</h2>
+      <span class="section-tag">{$_('contact.tag')}</span>
+      <h2 class="section-title">{$_('contact.title')}</h2>
       <p class="section-description">
-        Vous avez un projet en tête ? N'hésitez pas à me contacter
+        {$_('contact.description')}
       </p>
     </div>
     <div class="contact-content">
@@ -55,7 +57,7 @@
             </svg>
           </div>
           <div>
-            <h4>Email</h4>
+            <h4>{$_('contact.email')}</h4>
             <a href="mailto:maboadaniel.55@gmail.com"
               >maboadaniel.55@gmail.com</a
             >
@@ -77,7 +79,7 @@
             </svg>
           </div>
           <div>
-            <h4>Téléphone</h4>
+            <h4>{$_('contact.phone')}</h4>
             <a href="tel:+237692095572">+237 692 095 572</a>
           </div>
         </div>
@@ -97,11 +99,11 @@
             </svg>
           </div>
           <div>
-            <h4>WhatsApp</h4>
+            <h4>{$_('contact.whatsapp')}</h4>
             <a
               href="https://wa.me/237692095572"
               target="_blank"
-              class="whatsapp-link">Démarrer une discussion</a
+              class="whatsapp-link">{$_('contact.startDiscussion')}</a
             >
           </div>
         </div>
@@ -120,7 +122,7 @@
             </svg>
           </div>
           <div>
-            <h4>Localisation</h4>
+            <h4>{$_('contact.location')}</h4>
             <p>Logbessou, Douala, Cameroun</p>
           </div>
         </div>
@@ -169,47 +171,47 @@
       </div>
       <form class="contact-form" onsubmit={handleSubmit}>
         <div class="form-group">
-          <label for="name">Nom complet</label>
+          <label for="name">{$_('contact.form.name')}</label>
           <input
             type="text"
             id="name"
             name="name"
             bind:value={name}
             required
-            placeholder="Votre nom"
+            placeholder={$_('contact.form.namePlaceholder')}
           />
         </div>
         <div class="form-group">
-          <label for="email">Email</label>
+          <label for="email">{$_('contact.form.email')}</label>
           <input
             type="email"
             id="email"
             name="email"
             bind:value={email}
             required
-            placeholder="votre@email.com"
+            placeholder={$_('contact.form.emailPlaceholder')}
           />
         </div>
         <div class="form-group">
-          <label for="subject">Sujet</label>
+          <label for="subject">{$_('contact.form.subject')}</label>
           <input
             type="text"
             id="subject"
             name="subject"
             bind:value={subject}
             required
-            placeholder="Sujet de votre message"
+            placeholder={$_('contact.form.subjectPlaceholder')}
           />
         </div>
         <div class="form-group">
-          <label for="message">Message</label>
+          <label for="message">{$_('contact.form.message')}</label>
           <textarea
             id="message"
             name="message"
             bind:value={message}
             rows="5"
             required
-            placeholder="Décrivez votre projet..."
+            placeholder={$_('contact.form.messagePlaceholder')}
           ></textarea>
         </div>
         <button
@@ -218,11 +220,11 @@
           disabled={status !== "idle"}
         >
           {#if status === "sending"}
-            <span>Envoi en cours...</span>
+            <span>{$_('contact.form.sending')}</span>
           {:else if status === "sent"}
-            <span>Message envoyé !</span>
+            <span>{$_('contact.form.sent')}</span>
           {:else}
-            <span>Envoyer le message</span>
+            <span>{$_('contact.form.send')}</span>
             <svg
               width="20"
               height="20"

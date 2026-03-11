@@ -2,6 +2,7 @@
   import { StaticSkillRepository } from "$lib/infrastructure/repositories/StaticSkillRepository";
   import { GetSkillCategories } from "$lib/application/use-cases/GetSkillCategories";
   import type { SkillCategory } from "$lib/domain/entities/Skill";
+  import { _ } from "svelte-i18n";
 
   const skillRepository = new StaticSkillRepository();
   const getSkillCategoriesUseCase = new GetSkillCategories(skillRepository);
@@ -16,11 +17,10 @@
 <section class="section skills" id="skills">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">Compétences</span>
-      <h2 class="section-title">Mon arsenal technique</h2>
+      <span class="section-tag">{$_('skills.tag')}</span>
+      <h2 class="section-title">{$_('skills.title')}</h2>
       <p class="section-description">
-        Des technologies modernes pour construire des applications robustes et
-        évolutives
+        {$_('skills.description')}
       </p>
     </div>
     <div class="skills-grid">
@@ -82,7 +82,7 @@
               </svg>
             {/if}
           </div>
-          <h3>{category.name}</h3>
+          <h3>{$_(`skills.categories.${category.id}`)}</h3>
           <div class="skill-tags">
             {#each category.skills as skill}
               <span class="skill-tag">{skill}</span>

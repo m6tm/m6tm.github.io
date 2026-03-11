@@ -237,6 +237,12 @@ body {
   justify-content: space-between;
 }
 
+.nav-language-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -1313,6 +1319,14 @@ body {
     padding: 4rem 0;
   }
 
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .nav-language-switcher {
+    display: none;
+  }
+
   /* Hide desktop menu */
   .nav-menu-desktop {
     display: none;
@@ -1356,21 +1370,32 @@ body {
 
   .mobile-menu-header {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border);
-    position: relative;
+  }
+
+  .mobile-menu-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+    min-width: 0;
+    padding-right: 0.75rem;
   }
 
   .mobile-menu-header .nav-logo {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   .mobile-menu-header .logo-text {
     color: var(--text-primary);
     font-size: 1.25rem;
+    line-height: 1.15;
   }
 
   .mobile-menu-header .logo-accent {
@@ -1379,16 +1404,15 @@ body {
   }
 
   .mobile-menu-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
     color: var(--text-muted);
     font-weight: 400;
+    max-width: 100%;
   }
 
   .mobile-menu-close {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+    flex-shrink: 0;
     width: 36px;
     height: 36px;
     display: flex;
@@ -1474,6 +1498,29 @@ body {
   .mobile-menu-footer {
     padding: 1.5rem;
     border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .mobile-menu-footer .language-switcher {
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .mobile-menu-footer .lang-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .mobile-menu-footer .lang-separator {
+    opacity: 0.5;
   }
 
   .mobile-menu-cta {

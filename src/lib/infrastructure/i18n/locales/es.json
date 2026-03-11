@@ -1,0 +1,105 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "available": "Disponible para nuevos proyectos",
+    "fullstack": "Fullstack",
+    "title": "Desarrollador",
+    "titleOrder": ["title", "fullstack"],
+    "codeRole": "Desarrollador Fullstack",
+    "description": "Desarrollador FullStack con más de 3 años de experiencia en el diseño y despliegue de aplicaciones web y móviles de alto rendimiento. Experto en optimización de procesos mediante CI/CD y Docker.",
+    "viewProjects": "Ver mis proyectos",
+    "contactMe": "Contactarme",
+    "passion": "Construir productos innovadores",
+    "stats": {
+      "years": "Años de experiencia",
+      "projects": "Proyectos completados",
+      "companies": "Empresas"
+    }
+  },
+  "about": {
+    "tag": "Sobre mí",
+    "title": "¿Quién soy?",
+    "altImage": "MABOA Daniel Emmanuel - Desarrollador FullStack",
+    "experienceBadge": "años de experiencia",
+    "intro": "Desarrollador FullStack apasionado con más de 3 años de experiencia en el diseño y despliegue de aplicaciones web y móviles de alto rendimiento.",
+    "paragraph1": "Experto en optimización de procesos de desarrollo mediante pipelines CI/CD y Docker, apasionado por la integración de soluciones de IA y la gestión de proyectos Agile.",
+    "paragraph2": "Domino NextJs, Angular, Flutter para el frontend, Node.js, Laravel, Springboot para el backend, así como Docker, Github Action y Google Cloud Platform para DevOps.",
+    "highlights": {
+      "cleanCode": "Código limpio y mantenible",
+      "performance": "Rendimiento optimizado",
+      "agile": "Metodología Agile"
+    },
+    "discussProject": "Hablemos de tu proyecto",
+    "downloadCv": "Descargar mi CV"
+  },
+  "skills": {
+    "tag": "Habilidades",
+    "title": "Mi arsenal técnico",
+    "description": "Tecnologías modernas para construir aplicaciones robustas y escalables",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Base de datos",
+      "devops": "DevOps y Herramientas"
+    }
+  },
+  "projects": {
+    "tag": "Portafolio",
+    "title": "Proyectos recientes",
+    "description": "Una selección de mis logros más destacados",
+    "visit": "Visitar",
+    "code": "Código",
+    "private": "Privado",
+    "viewDetails": "Ver Detalles",
+    "modal": {
+      "close": "Cerrar modal",
+      "features": "Objetivos y Puntos Clave",
+      "architecture": {
+        "title": "Mi estándar: Arquitectura Hexagonal",
+        "description": "Utilizo esta arquitectura para separar limpiamente la lógica de negocio (el núcleo de la app) de las herramientas técnicas (bases de datos, interfaces). Es como construir una casa donde se puede cambiar la decoración o el tipo de aire acondicionado sin tocar los muros portantes: la aplicación es más estable, fácil de probar y lista para evolucionar."
+      },
+      "projectType": "Tipo de Proyecto",
+      "fullStack": "Desarrollo Full-Stack",
+      "keyTechnologies": "Tecnologías Clave",
+      "viewDemo": "Ver demo en vivo",
+      "gallery": "Vistas previas del proyecto",
+      "demoAccess": "Acceso Demo",
+      "demoIntro": "Esta versión de demostración funciona sin backend persistente. Usa las siguientes credenciales para probar diferentes roles:",
+      "password": "Contraseña (Todos)",
+      "download": "Descargar"
+    }
+  },
+  "contact": {
+    "tag": "Contacto",
+    "title": "Trabajemos juntos",
+    "description": "¿Tienes un proyecto en mente? No dudes en contactarme",
+    "email": "Email",
+    "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
+    "startDiscussion": "Iniciar una discusión",
+    "location": "Ubicación",
+    "form": {
+      "name": "Nombre completo",
+      "namePlaceholder": "Tu nombre",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "Asunto de tu mensaje",
+      "message": "Mensaje",
+      "messagePlaceholder": "Describe tu proyecto...",
+      "sending": "Enviando...",
+      "sent": "¡Mensaje enviado!",
+      "send": "Enviar mensaje"
+    }
+  },
+  "footer": {
+    "brand": "Desarrollador FullStack apasionado por crear soluciones digitales innovadoras.",
+    "rights": "Todos los derechos reservados."
+  }
+}
