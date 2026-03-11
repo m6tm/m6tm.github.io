@@ -101,5 +101,143 @@
   "footer": {
     "brand": "FullStack Developer passionate about creating innovative digital solutions.",
     "rights": "All rights reserved."
+  },
+  "projectData": {
+    "linkyza": {
+      "title": "Linkyza - Digital Products Sales Platform",
+      "description": "Simple and fast digital products sales platform that aims to replace traditional sales platforms and integrate more turnkey options to manage everything in one place."
+    },
+    "k-sport": {
+      "title": "K-Sport Agency",
+      "description": "Sports management agency specializing in supporting high-level athletes (football, basketball and more). Career management, negotiation and image development.",
+      "longDescription": "K-Sport is a sports management agency dedicated to the support, development and enhancement of athletes' careers, with a modern, strategic and human vision of the professional athlete. Founded with the ambition to reveal and structure talents, K-Sport acts as a trusted partner for athletes, their families and clubs.",
+      "features": [
+        "Global and strategic career management",
+        "Professional contract research and negotiation",
+        "Image management and media communication",
+        "Strategic advice and personalized support"
+      ],
+      "stackDetails": [
+        {
+          "category": "Mission & Vision",
+          "items": [
+            "Optimization of the athlete's sporting progression",
+            "Securing and guiding career choices",
+            "Development of visibility and brand image",
+            "Facilitating opportunities with international clubs"
+          ]
+        },
+        {
+          "category": "Business Expertise",
+          "items": [
+            "Career management: Global management from the field to strategic choices",
+            "Negotiation: Active search for clubs and contracts with licensed agents",
+            "Image & Com: Development of media and digital visibility",
+            "Advice: Personalized support at every stage of the journey"
+          ]
+        }
+      ]
+    },
+    "meetly": {
+      "title": "Meetly - AI Meeting Hub",
+      "description": "Online meeting application assisted by AI with AWS S3 recording, Gemini AI transcription, synthesis and meeting analysis."
+    },
+    "medin-plus": {
+      "title": "Medin Plus - Medical Network",
+      "description": "Social network web application for doctors with clinical case sharing and professional collaboration. Closed and secure access available only for registered doctors."
+    },
+    "hugbot": {
+      "title": "Hugbot Chat AI - All in one chat",
+      "description": "A chatbot that integrates more and more networks and sales channels to get the desired information without having to go to different platforms. You can follow everything in one place."
+    },
+    "fluidio": {
+      "title": "Fluidio Shop",
+      "description": "Innovative e-commerce platform connecting sellers, buyers and affiliates. A smooth shopping experience with geolocation and integrated affiliation system.",
+      "longDescription": "To build this multi-actor e-commerce platform (sellers, buyers, affiliates), I selected a set of robust libraries focused on performance, scalability and user experience.",
+      "features": [
+        "Multi-layer affiliation system for partners",
+        "Real-time geolocation of shops and products",
+        "Complete stock and order management for sellers",
+        "Optimized buyer interface for smooth navigation",
+        "Detailed analytical dashboard for sales tracking"
+      ],
+      "stackDetails": [
+        {
+          "category": "Architecture and State Management",
+          "items": [
+            "BLoC (Business Logic Component): Using the BLoC design pattern for a strict separation between the user interface and business logic, ensuring a testable and maintainable application.",
+            "GetIt: Implementation of dependency injection to decouple modules and facilitate instance management (services, repositories).",
+            "Freezed & JsonSerializable: Code generation for immutable data models and secure JSON serialization."
+          ]
+        },
+        {
+          "category": "Persistence and Network",
+          "items": [
+            "Isar Database: Ultra-fast NoSQL database for local storage and offline support.",
+            "Dio & Http: Advanced REST API call management with interceptors and global error handling.",
+            "Cached Network Image: Bandwidth and fluidity optimization through intelligent image caching."
+          ]
+        },
+        {
+          "category": "Geolocation and Mapping",
+          "items": [
+            "Flutter Map (OpenStreetMap): Integration of interactive maps for sales point location without dependency on proprietary paid services.",
+            "Geolocator & Geocoding: Distance calculation services and address to GPS coordinates transformation."
+          ]
+        },
+        {
+          "category": "User Experience (UX/UI)",
+          "items": [
+            "FL Chart: Interactive analytical dashboards for sales and affiliate commission tracking.",
+            "Shimmer: Improving speed perception through elegant loading indicators.",
+            "QR Flutter: QR code generation system for quick transaction validation or seller profile sharing."
+          ]
+        },
+        {
+          "category": "Multimedia and Tools",
+          "items": [
+            "Just Audio & Record: Support for voice messages or audio descriptions within the platform.",
+            "Image & File Picker: Smooth management of product catalog uploads and identity documents.",
+            "Share Plus: Social sharing features to boost affiliate marketing."
+          ]
+        }
+      ],
+      "credentials": [
+        { "role": "Buyer" },
+        { "role": "Seller" },
+        { "role": "Affiliate" }
+      ]
+    },
+    "pepites-academy": {
+      "title": "Pépites Academy",
+      "description": "Elite training center for young African football talents. The training division of K-Sport Agency.",
+      "longDescription": "Pepites Academy was born from a simple vision: to offer young African talents the resources, supervision and opportunity to reach the top of world football. As the training division of K-Sport Agency, the academy ensures a smooth transition between training and the professional world.",
+      "features": [
+        "High-level sports and academic training",
+        "Detection and personalized support for young talents",
+        "Unique synergy with K-Sport Agency for career management",
+        "Modern and innovative development infrastructures"
+      ],
+      "stackDetails": [
+        {
+          "category": "Key Figures",
+          "items": [
+            "150+ Young people supervised and trained",
+            "10+ Talents already detected at national level",
+            "5+ Elite partners internationally",
+            "Creation in 2025 for lasting impact"
+          ]
+        },
+        {
+          "category": "Values & Vision",
+          "items": [
+            "Excellence: High standards in all activities",
+            "Discipline: Rigor at the heart of training",
+            "Inclusivity: Welcome of all talents",
+            "Passion: Love of football as the driving force"
+          ]
+        }
+      ]
+    }
   }
 }

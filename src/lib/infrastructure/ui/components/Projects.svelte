@@ -3,6 +3,7 @@
   import { GetProjects } from "$lib/application/use-cases/GetProjects";
   import type { Project } from "$lib/domain/entities/Project";
   import { _ } from "svelte-i18n";
+  import { locale, getTranslatedProject } from "$lib/infrastructure/i18n";
 
   let { onOpenDetails } = $props<{
     onOpenDetails: (project: Project) => void;
@@ -12,9 +13,16 @@
   const getProjectsUseCase = new GetProjects(projectRepository);
 
   let projects = $state<Project[]>([]);
+  let translatedProjects = $state<Project[]>([]);
 
   $effect(() => {
     getProjectsUseCase.execute().then((data) => (projects = data));
+  });
+
+  // Traduit les projets de manière réactive au changement de langue
+  $effect(() => {
+    $locale; // Déclenche la réactivité au changement de langue
+    translatedProjects = projects.map(p => getTranslatedProject(p));
   });
 </script>
 
@@ -28,7 +36,7 @@
       </p>
     </div>
     <div class="projects-grid">
-      {#each projects as project}
+      {#each translatedProjects as project}
         <article class="project-card" class:featured={project.featured}>
           <div class="project-image">
             <img src={project.image} alt={project.title} class="project-img" />

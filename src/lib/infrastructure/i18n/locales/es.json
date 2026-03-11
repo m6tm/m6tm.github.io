@@ -101,5 +101,143 @@
   "footer": {
     "brand": "Desarrollador FullStack apasionado por crear soluciones digitales innovadoras.",
     "rights": "Todos los derechos reservados."
+  },
+  "projectData": {
+    "linkyza": {
+      "title": "Linkyza - Plataforma de venta de productos digitales",
+      "description": "Plataforma de venta de productos digitales simple y rápida que ambiciona reemplazar las plataformas de venta tradicionales y permitir integrar cada vez más opciones llave en mano para gestionar todo en un solo lugar."
+    },
+    "k-sport": {
+      "title": "K-Sport Agency",
+      "description": "Agencia de gestión deportiva especializada en el acompañamiento de atletas de alto nivel (fútbol, baloncesto y más). Gestión de carrera, negociación y desarrollo de imagen.",
+      "longDescription": "K-Sport es una agencia de gestión deportiva dedicada al acompañamiento, desarrollo y valoración de la carrera de los atletas, con una visión moderna, estratégica y humana del deportista profesional. Fundada con la ambición de revelar y estructurar talentos, K-Sport interviene como socio de confianza para los atletas, sus familias y los clubes.",
+      "features": [
+        "Gestión de carrera global y estratégica",
+        "Búsqueda y negociación de contratos profesionales",
+        "Gestión de imagen y comunicación mediática",
+        "Consejo estratégico y acompañamiento personalizado"
+      ],
+      "stackDetails": [
+        {
+          "category": "Misión y Visión",
+          "items": [
+            "Optimización de la progresión deportiva del atleta",
+            "Seguridad y orientación de las elecciones de carrera",
+            "Desarrollo de la visibilidad y de la imagen de marca",
+            "Facilitación de oportunidades con clubes internacionales"
+          ]
+        },
+        {
+          "category": "Experiencia Profesional",
+          "items": [
+            "Gestión de carrera: Gestión global del campo a las elecciones estratégicas",
+            "Negociación: Búsqueda activa de clubes y contratos con agentes acreditados",
+            "Imagen y Com: Desarrollo de la visibilidad mediática y digital",
+            "Consejo: Acompañamiento personalizado en cada etapa del recorrido"
+          ]
+        }
+      ]
+    },
+    "meetly": {
+      "title": "Meetly - AI Meeting Hub",
+      "description": "Aplicación de reuniones en línea asistida por IA con grabación AWS S3, transcripción Gemini AI, síntesis y análisis de reuniones."
+    },
+    "medin-plus": {
+      "title": "Medin Plus - Red Médica",
+      "description": "Aplicación web de red social para médicos con compartir casos clínicos y colaboración profesional. Acceso cerrado y seguro disponible solo para médicos inscritos."
+    },
+    "hugbot": {
+      "title": "Hugbot Chat AI - All in one chat",
+      "description": "Un chatbot que integra cada vez más redes y canales de venta para tener la información deseada sin tener que ir a diferentes plataformas. Se puede seguir todo en un solo lugar."
+    },
+    "fluidio": {
+      "title": "Fluidio Shop",
+      "description": "Plataforma e-commerce innovadora que conecta vendedores, compradores y afiliados. Una experiencia de compra fluida con geolocalización y sistema de afiliación integrado.",
+      "longDescription": "Para construir esta plataforma e-commerce multi-actores (vendedores, compradores, afiliados), seleccioné un conjunto de bibliotecas robustas centradas en el rendimiento, la escalabilidad y la experiencia del usuario.",
+      "features": [
+        "Sistema de afiliación multicapa para socios",
+        "Geolocalización de tiendas y productos en tiempo real",
+        "Gestión completa de stock y pedidos para vendedores",
+        "Interfaz comprador optimizada para navegación fluida",
+        "Panel analítico detallado para seguimiento de ventas"
+      ],
+      "stackDetails": [
+        {
+          "category": "Arquitectura y Gestión de Estado",
+          "items": [
+            "BLoC (Business Logic Component): Uso del patrón de diseño BLoC para una separación estricta entre la interfaz de usuario y la lógica de negocio, garantizando una aplicación testeable y mantenible.",
+            "GetIt: Implementación de la inyección de dependencias para desacoplar módulos y facilitar la gestión de instancias (servicios, repositorios).",
+            "Freezed & JsonSerializable: Generación de código para modelos de datos inmutables y serialización JSON segura."
+          ]
+        },
+        {
+          "category": "Persistencia y Red",
+          "items": [
+            "Isar Database: Base de datos NoSQL ultra-rápida para almacenamiento local y soporte sin conexión.",
+            "Dio & Http: Gestión avanzada de llamadas API REST con interceptores y gestión global de errores.",
+            "Cached Network Image: Optimización del ancho de banda y fluidez mediante caché inteligente de imágenes."
+          ]
+        },
+        {
+          "category": "Geolocalización y Cartografía",
+          "items": [
+            "Flutter Map (OpenStreetMap): Integración de mapas interactivos para localización de puntos de venta sin dependencia de servicios propietarios de pago.",
+            "Geolocator & Geocoding: Servicios de cálculo de distancia y transformación de direcciones a coordenadas GPS."
+          ]
+        },
+        {
+          "category": "Experiencia de Usuario (UX/UI)",
+          "items": [
+            "FL Chart: Paneles analíticos interactivos para seguimiento de ventas y comisiones de afiliados.",
+            "Shimmer: Mejora de la percepción de velocidad mediante indicadores de carga elegantes.",
+            "QR Flutter: Sistema de generación de códigos QR para validación rápida de transacciones o compartir perfiles de vendedores."
+          ]
+        },
+        {
+          "category": "Multimedia y Herramientas",
+          "items": [
+            "Just Audio & Record: Soporte de mensajes de voz o descripciones de audio dentro de la plataforma.",
+            "Image & File Picker: Gestión fluida de carga de catálogos de productos y documentos de identidad.",
+            "Share Plus: Funcionalidades de compartir social para impulsar el marketing de afiliación."
+          ]
+        }
+      ],
+      "credentials": [
+        { "role": "Comprador" },
+        { "role": "Vendedor" },
+        { "role": "Afiliado" }
+      ]
+    },
+    "pepites-academy": {
+      "title": "Pépites Academy",
+      "description": "Centro de formación de élite para jóvenes talentos del fútbol africano. El polo formación de K-Sport Agency.",
+      "longDescription": "Pepites Academy nació de una visión simple: ofrecer a los jóvenes talentos africanos los recursos, el acompañamiento y la oportunidad de alcanzar la cima del fútbol mundial. Como polo formación de K-Sport Agency, la academia asegura una transición fluida entre la formación y el mundo profesional.",
+      "features": [
+        "Formación deportiva y académica de alto nivel",
+        "Detección y acompañamiento personalizado de jóvenes talentos",
+        "Sinergia única con K-Sport Agency para la gestión de carrera",
+        "Infraestructuras de desarrollo modernas e innovadoras"
+      ],
+      "stackDetails": [
+        {
+          "category": "Cifras Clave",
+          "items": [
+            "150+ Jóvenes acompañados y formados",
+            "10+ Talentos ya detectados a nivel nacional",
+            "5+ Socios élite a nivel internacional",
+            "Creación en 2025 para un impacto duradero"
+          ]
+        },
+        {
+          "category": "Valores y Visión",
+          "items": [
+            "Excelencia: Estándares elevados en todas las actividades",
+            "Disciplina: Rigor en el corazón de la formación",
+            "Inclusividad: Acogida de todos los talentos",
+            "Pasión: El amor al fútbol como motor"
+          ]
+        }
+      ]
+    }
   }
 }
