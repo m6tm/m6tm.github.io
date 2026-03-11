@@ -92,26 +92,48 @@
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
-          <a
-            href="/Maboa Daniel Emmanuel CV.pdf"
-            download="CV_Maboa_Daniel.pdf"
-            class="btn btn-secondary"
-            id="cvButton"
-          >
-            <span>Télécharger mon CV</span>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+          <div class="cv-buttons">
+            <a
+              href="/maboa_daniel_emmanuel_fr.pdf"
+              download="maboa_daniel_emmanuel_fr.pdf"
+              class="btn btn-secondary"
+              id="cvButton"
             >
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-          </a>
+              <span>CV (Français)</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </a>
+            <a
+              href="/maboa_daniel_emmanuel_en.pdf"
+              download="maboa_daniel_emmanuel_en.pdf"
+              class="btn btn-secondary"
+              id="cvButtonEn"
+            >
+              <span>CV (English)</span>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
