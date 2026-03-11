@@ -1,11 +1,13 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
+  import { contactService } from "$lib/application/services/ContactService";
 
   let name = $state("");
   let email = $state("");
   let subject = $state("");
   let message = $state("");
-  let status = $state<"idle" | "sending" | "sent">("idle");
+  let status = $state<"idle" | "sending" | "sent" | "error">("idle");
+  let errorMessage = $state("");
 
   /**
    * Gestion de la soumission du formulaire de contact.
@@ -13,19 +15,34 @@
   async function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
     status = "sending";
+    errorMessage = "";
 
-    // Simulation d'envoi
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const result = await contactService.sendMessage({
+      name: name.trim(),
+      email: email.trim(),
+      subject: subject.trim(),
+      message: message.trim(),
+    });
 
-    status = "sent";
-    name = "";
-    email = "";
-    subject = "";
-    message = "";
+    if (result.success) {
+      status = "sent";
+      name = "";
+      email = "";
+      subject = "";
+      message = "";
 
-    setTimeout(() => {
-      status = "idle";
-    }, 3000);
+      setTimeout(() => {
+        status = "idle";
+      }, 3000);
+    } else {
+      status = "error";
+      errorMessage = result.message;
+
+      setTimeout(() => {
+        status = "idle";
+        errorMessage = "";
+      }, 5000);
+    }
   }
 </script>
 
@@ -214,6 +231,23 @@
             placeholder={$_('contact.form.messagePlaceholder')}
           ></textarea>
         </div>
+        {#if status === "error"}
+          <div class="error-message">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+            <span>{errorMessage}</span>
+          </div>
+        {/if}
         <button
           type="submit"
           class="btn btn-primary btn-full"
@@ -223,6 +257,8 @@
             <span>{$_('contact.form.sending')}</span>
           {:else if status === "sent"}
             <span>{$_('contact.form.sent')}</span>
+          {:else if status === "error"}
+            <span>{$_('contact.form.send')}</span>
           {:else}
             <span>{$_('contact.form.send')}</span>
             <svg
