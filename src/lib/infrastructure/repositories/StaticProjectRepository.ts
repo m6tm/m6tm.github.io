@@ -186,6 +186,49 @@ export class StaticProjectRepository implements ProjectRepository {
                 }
             ],
         },
+        {
+            id: 'poweralert',
+            title: 'PowerAlert - Desktop Battery Monitoring',
+            description: "Solution desktop moderne et performante pour surveiller la batterie de votre ordinateur. Conçue avec Tauri et Rust, elle assure une surveillance temps réel et des alertes intelligentes.",
+            image: '/projects/poweralert/poweralert.jpeg',
+            gallery: [
+                { type: 'image', src: '/projects/poweralert/dashboard.png' },
+                { type: 'image', src: '/projects/poweralert/notification.png' },
+                { type: 'image', src: '/projects/poweralert/tray.png' }
+            ],
+            tags: ['Tauri', 'Rust', 'Astro', 'TypeScript'],
+            githubUrl: 'https://github.com/m6tm/poweralert',
+            featured: false,
+            features: [
+                "Surveillance précise et temps réel du niveau de batterie",
+                "Alertes intelligentes pour les seuils critiques et de fin de charge",
+                "Option de lancement automatique au démarrage système (Windows)",
+                "Accès rapide via une icône dédiée dans la barre des tâches (Systray)",
+                "Architecture hexagonale robuste et hautement testable"
+            ],
+            longDescription: "PowerAlert est une application desktop premium conçue pour maximiser l'autonomie et la durée de vie de votre batterie. En combinant la puissance de Rust pour les accès système bas niveau et la flexibilité d'Astro pour l'interface utilisateur, elle offre une expérience utilisateur fluide et moderne. Son architecture, basée sur les principes de la Clean Architecture, garantit une maintenance simplifiée et une robustesse à toute épreuve.",
+            stackDetails: [
+                {
+                    category: "Architecture Logicielle",
+                    items: [
+                        "Clean Architecture (Hexagonale) : Séparation stricte du domaine, de l'application et de l'infrastructure.",
+                        "Ports & Adaptateurs : Découplage total des services externes et de l'interface utilisateur.",
+                        "Inversion de Dépendances : Favorise la testabilité et l'évolution modulaire du système."
+                    ]
+                },
+                {
+                    category: "Stack de Développement",
+                    items: [
+                        "Tauri & Rust : Pour un moteur backend léger, sécurisé et performant.",
+                        "Astro : Framework moderne pour une UI ultra-rapide et responsive.",
+                        "TypeScript : Pour un typage fort et une meilleure fiabilité du code frontend.",
+                        "Pnpm : Gestionnaire de paquets optimisé pour la rapidité."
+                    ]
+                }
+            ],
+            downloadUrl: '/projects/poweralert/PowerAlert_1.0.0_x64-setup.exe',
+            downloadSize: '2.1 Mo'
+        },
     ];
 
     async findAll(): Promise<Project[]> {
