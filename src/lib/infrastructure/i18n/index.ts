@@ -70,7 +70,7 @@ export function getStoredLocale(): string {
     return defaultLocale;
 }
 
-export { localeStore as locale };
+export { localeStore as locale, waitLocale };
 
 /**
  * Récupère les données traduites d'un projet pour la locale courante.
