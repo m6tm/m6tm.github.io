@@ -1,33 +1,18 @@
 <script lang="ts">
   import { locale, setLocale } from "$lib/infrastructure/i18n";
 
-  let currentLocale = $state<string>("fr");
-
-  /**
-   * Abonnement aux changements de locale.
-   */
-  $effect(() => {
-    const unsubscribe = locale.subscribe((value) => {
-      if (value) {
-        currentLocale = value;
-      }
-    });
-    return unsubscribe;
-  });
-
   /**
    * Change la langue de l'application.
    */
   function switchLocale(newLocale: string): void {
     setLocale(newLocale);
-    currentLocale = newLocale;
   }
 </script>
 
 <div class="language-switcher">
   <button
     class="lang-btn"
-    class:active={currentLocale === "fr"}
+    class:active={$locale === "fr"}
     onclick={() => switchLocale("fr")}
     aria-label="Français"
   >
@@ -36,7 +21,7 @@
   <span class="lang-separator">|</span>
   <button
     class="lang-btn"
-    class:active={currentLocale === "en"}
+    class:active={$locale === "en"}
     onclick={() => switchLocale("en")}
     aria-label="English"
   >
@@ -45,7 +30,7 @@
   <span class="lang-separator">|</span>
   <button
     class="lang-btn"
-    class:active={currentLocale === "es"}
+    class:active={$locale === "es"}
     onclick={() => switchLocale("es")}
     aria-label="Español"
   >

@@ -1,6 +1,7 @@
-import { init, register, getLocaleFromNavigator, locale as localeStore, dictionary } from 'svelte-i18n';
+import { init, register, getLocaleFromNavigator, locale as localeStore, dictionary, addMessages } from 'svelte-i18n';
 import { get } from 'svelte/store';
 import type { Project } from '$lib/domain/entities/Project';
+import en from './locales/en.json';
 
 const defaultLocale = 'en';
 const supportedLocales = ['fr', 'en', 'es'];
@@ -8,8 +9,8 @@ const supportedLocales = ['fr', 'en', 'es'];
 /**
  * Configuration de l'internationalisation.
  */
+addMessages('en', en);
 register('fr', () => import('./locales/fr.json'));
-register('en', () => import('./locales/en.json'));
 register('es', () => import('./locales/es.json'));
 
 /**
@@ -38,7 +39,7 @@ function detectNavigatorLocale(): string {
 
 init({
     fallbackLocale: defaultLocale,
-    initialLocale: detectNavigatorLocale(),
+    initialLocale: defaultLocale, // Toujours commencer par la langue par défaut pour correspondre au contenu pré-rendu (SSR)
 });
 
 /**
