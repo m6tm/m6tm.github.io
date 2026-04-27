@@ -226,7 +226,7 @@ export class StaticProjectRepository implements ProjectRepository {
                     ]
                 }
             ],
-            downloadUrl: '/projects/poweralert/PowerAlert_1.0.0_x64-setup.exe',
+            downloadUrl: '/projects/poweralert/PowerAlert_1.2.0_x64-setup.exe',
             downloadSize: '2.1 Mo'
         },
     ];
