@@ -7,6 +7,51 @@ import type { ProjectRepository } from '../../domain/repositories/ProjectReposit
 export class StaticProjectRepository implements ProjectRepository {
     private projects: Project[] = [
         {
+            id: 'facturello',
+            title: 'Facturello - Facturation simplifiée pour freelances',
+            description: "Micro-SaaS de facturation simplifiée pour freelances et solopreneurs en Europe, en Amérique et en Afrique. Créez des factures élégantes, suivez vos paiements et relancez vos clients en quelques clics.",
+            image: '/projects/facturello.png',
+            tags: ['Astro', 'Svelte', 'Tailwind CSS', 'Supabase', 'Prisma'],
+            demoUrl: 'https://facturello.work',
+            isPrivate: true,
+            featured: true,
+            features: [
+                "Création de factures professionnelles en 60 secondes",
+                "Suivi des paiements et relances automatiques",
+                "Support multi-devises (EUR, CHF, USD, XOF) et multi-pays",
+                "Tableau de bord analytique pour le suivi de l'activité",
+                "Authentification sécurisée et stockage cloud avec Supabase"
+            ],
+            longDescription: "Facturello est un micro-SaaS de facturation conçu pour simplifier la vie des freelances et solopreneurs. Il permet de créer des factures élégantes, de suivre les paiements, d'envoyer des relances automatiques et de gérer plusieurs devises et pays. L'application repose sur une architecture moderne avec Astro pour le rendu performant, Svelte pour l'interactivité, Tailwind CSS pour l'interface, et Supabase avec Prisma pour la persistance des données.",
+            stackDetails: [
+                {
+                    category: "Frontend & Performance",
+                    items: [
+                        "Astro 7 : Rendu statique et hydratation partielle pour des performances optimales",
+                        "Svelte 5 : Composants interactifs réactifs avec runes",
+                        "Tailwind CSS 4 : Styling utilitaire moderne et responsive"
+                    ]
+                },
+                {
+                    category: "Backend & Données",
+                    items: [
+                        "Supabase : Authentification, base de données PostgreSQL et stockage",
+                        "Prisma 7 : ORM type-safe avec migrations structurées",
+                        "PostgreSQL : Base de données relationnelle robuste"
+                    ]
+                },
+                {
+                    category: "Expérience Utilisateur",
+                    items: [
+                        "Interface épurée et accessible avec bits-ui",
+                        "Génération de PDF professionnels",
+                        "Relances programmées par email",
+                        "Tableau de bord avec indicateurs clés"
+                    ]
+                }
+            ]
+        },
+        {
             id: 'linkyza',
             title: 'Linkyza - Plateforme de vente de produits digitaux',
             description: "Plateforme de vente de produits digitaux simple et rapide qui ambitionne de remplacer les plateformes de vente traditionnelles et de permettre d'intégrer de plus en plus d'options clés en main pour tout gérer en un seul endroit.",

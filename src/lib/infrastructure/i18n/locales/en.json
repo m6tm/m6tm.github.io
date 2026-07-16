@@ -103,6 +103,45 @@
     "rights": "All rights reserved."
   },
   "projectData": {
+    "facturello": {
+      "title": "Facturello - Simplified invoicing for freelancers",
+      "description": "Simplified invoicing micro-SaaS for freelancers and solopreneurs in Europe, America and Africa. Create elegant invoices, track payments and follow up with your clients in just a few clicks.",
+      "longDescription": "Facturello is an invoicing micro-SaaS designed to simplify the lives of freelancers and solopreneurs. It allows you to create elegant invoices, track payments, send automatic reminders and manage multiple currencies and countries. The application relies on a modern architecture with Astro for performant rendering, Svelte for interactivity, Tailwind CSS for the interface, and Supabase with Prisma for data persistence.",
+      "features": [
+        "Create professional invoices in 60 seconds",
+        "Payment tracking and automatic reminders",
+        "Multi-currency support (EUR, CHF, USD, XOF) and multi-country",
+        "Analytical dashboard for activity tracking",
+        "Secure authentication and cloud storage with Supabase"
+      ],
+      "stackDetails": [
+        {
+          "category": "Frontend & Performance",
+          "items": [
+            "Astro 7: Static rendering and partial hydration for optimal performance",
+            "Svelte 5: Reactive interactive components with runes",
+            "Tailwind CSS 4: Modern and responsive utility styling"
+          ]
+        },
+        {
+          "category": "Backend & Data",
+          "items": [
+            "Supabase: Authentication, PostgreSQL database and storage",
+            "Prisma 7: Type-safe ORM with structured migrations",
+            "PostgreSQL: Robust relational database"
+          ]
+        },
+        {
+          "category": "User Experience",
+          "items": [
+            "Clean and accessible interface with bits-ui",
+            "Professional PDF generation",
+            "Scheduled email reminders",
+            "Dashboard with key indicators"
+          ]
+        }
+      ]
+    },
     "linkyza": {
       "title": "Linkyza - Digital Products Sales Platform",
       "description": "Simple and fast digital products sales platform that aims to replace traditional sales platforms and integrate more turnkey options to manage everything in one place."

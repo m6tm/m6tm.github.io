@@ -103,9 +103,48 @@
     "rights": "Todos los derechos reservados."
   },
   "projectData": {
+    "facturello": {
+      "title": "Facturello - Facturación simplificada para freelances",
+      "description": "Micro-SaaS de facturación simplificada para freelances y solopreneurs en Europa, América y África. Crea facturas elegantes, sigue los pagos y reclama a tus clientes en pocos clics.",
+      "longDescription": "Facturello es un micro-SaaS de facturación diseñado para simplificar la vida de los freelances y solopreneurs. Permite crear facturas elegantes, seguir los pagos, enviar recordatorios automáticos y gestionar varias divisas y países. La aplicación se basa en una arquitectura moderna con Astro para el renderizado de alto rendimiento, Svelte para la interactividad, Tailwind CSS para la interfaz, y Supabase con Prisma para la persistencia de datos.",
+      "features": [
+        "Creación de facturas profesionales en 60 segundos",
+        "Seguimiento de pagos y recordatorios automáticos",
+        "Soporte multi-divisa (EUR, CHF, USD, XOF) y multi-país",
+        "Panel analítico para el seguimiento de la actividad",
+        "Autenticación segura y almacenamiento en la nube con Supabase"
+      ],
+      "stackDetails": [
+        {
+          "category": "Frontend y Rendimiento",
+          "items": [
+            "Astro 7: Renderizado estático e hidratación parcial para un rendimiento óptimo",
+            "Svelte 5: Componentes interactivos reactivos con runas",
+            "Tailwind CSS 4: Estilos utilitarios modernos y responsive"
+          ]
+        },
+        {
+          "category": "Backend y Datos",
+          "items": [
+            "Supabase: Autenticación, base de datos PostgreSQL y almacenamiento",
+            "Prisma 7: ORM type-safe con migraciones estructuradas",
+            "PostgreSQL: Base de datos relacional robusta"
+          ]
+        },
+        {
+          "category": "Experiencia de Usuario",
+          "items": [
+            "Interfaz limpia y accesible con bits-ui",
+            "Generación de PDF profesionales",
+            "Recordatorios programados por email",
+            "Panel con indicadores clave"
+          ]
+        }
+      ]
+    },
     "linkyza": {
       "title": "Linkyza - Plataforma de venta de productos digitales",
-      "description": "Plataforma de venta de productos digitales simple y rápida que ambiciona reemplazar las plataformas de venta tradicionales y permitir integrar cada vez más opciones llave en mano para gestionar todo en un solo lugar."
+      "description": "Plataforma de venta de productos digitales simple y rápida que ambiciona reemplazar las plateformas de venta tradicionales y permitir integrar cada vez más opciones llave en mano para gestionar todo en un solo lugar."
     },
     "k-sport": {
       "title": "K-Sport Agency",
