@@ -1,4 +1,4 @@
-import { init, register, getLocaleFromNavigator, locale as localeStore, dictionary, addMessages } from 'svelte-i18n';
+import { init, register, getLocaleFromNavigator, locale as localeStore, dictionary, addMessages, waitLocale } from 'svelte-i18n';
 import { get } from 'svelte/store';
 import type { Project } from '$lib/domain/entities/Project';
 import en from './locales/en.json';
