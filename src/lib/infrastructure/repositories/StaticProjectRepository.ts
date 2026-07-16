@@ -58,8 +58,7 @@ export class StaticProjectRepository implements ProjectRepository {
             image: '/projects/linkyza.png',
             tags: ['Nextjs', 'Supabase', 'Docker', 'Inngest'],
             demoUrl: 'https://linkyza.vercel.app/',
-            isPrivate: true,
-            featured: true
+            isPrivate: true
         },
         {
             id: 'k-sport',
