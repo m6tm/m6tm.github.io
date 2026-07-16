@@ -1,2 +1,13 @@
+overrides:
+  cookie: ^0.7.0
+  esbuild: ^0.25.0
+
+minimumReleaseAgeExclude:
+  - svelte-check@4.7.3
+  - vite@8.1.5
+
 onlyBuiltDependencies:
   - esbuild
+
+allowBuilds:
+  esbuild: true
