@@ -5,7 +5,7 @@
   const cvFiles: Record<string, string> = {
     fr: "/maboa_daniel_emmanuel_fr.pdf",
     en: "/maboa_daniel_emmanuel_en.pdf",
-    es: "/maboa_daniel_emmanuel_en.pdf",
+    es: "/maboa_daniel_emmanuel_es.pdf",
   };
 
   $: cvPath = cvFiles[$locale ?? "en"] || cvFiles["en"];
