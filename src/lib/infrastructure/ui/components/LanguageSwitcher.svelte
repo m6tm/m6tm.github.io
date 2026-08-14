@@ -20,10 +20,7 @@
 </script>
 
 <div class="language-switcher" role="group" aria-label="Sélection de la langue">
-  <div
-    class="lang-indicator"
-    style="transform: translateX(calc({activeIndex} * 100%))"
-  ></div>
+  <div class="lang-indicator" style="--active-index: {activeIndex}"></div>
   {#each languages as lang}
     <button
       class="lang-btn"
@@ -61,8 +58,10 @@
     border: 1px solid var(--border);
     border-radius: var(--radius-full);
     box-shadow: var(--shadow-md);
-    transition: transform 0.5s var(--ease-spring), width 0.5s var(--ease-spring);
+    transform: translate3d(calc(var(--active-index) * 100%), 0, 0);
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 0;
+    pointer-events: none;
     will-change: transform;
   }
 
