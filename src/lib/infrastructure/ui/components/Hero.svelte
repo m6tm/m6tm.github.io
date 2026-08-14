@@ -87,7 +87,7 @@
       </div>
       <div class="hero-stats reveal stagger-4">
         <div class="stat">
-          <span class="stat-number" data-count="3">0</span>
+          <span class="stat-number" data-count="5">0</span>
           <span class="stat-label">{$_('hero.stats.years')}</span>
         </div>
         <div class="stat">

@@ -12,7 +12,7 @@
     "title": "Developer",
     "titleOrder": ["fullstack", "title"],
     "codeRole": "Fullstack Developer",
-    "description": "FullStack Developer with over 3 years of experience in designing and deploying high-performance web and mobile applications. Expert in process optimization via CI/CD and Docker.",
+    "description": "FullStack Developer with over 5 years of experience in designing and deploying high-performance web and mobile applications. Expert in process optimization via CI/CD and Docker.",
     "viewProjects": "View my projects",
     "contactMe": "Contact me",
     "passion": "Building innovative products",
@@ -27,7 +27,7 @@
     "title": "Who am I?",
     "altImage": "MABOA Daniel Emmanuel - FullStack Developer",
     "experienceBadge": "years of experience",
-    "intro": "Passionate FullStack Developer with over 3 years of experience in designing and deploying high-performance web and mobile applications.",
+    "intro": "Passionate FullStack Developer with over 5 years of experience in designing and deploying high-performance web and mobile applications.",
     "paragraph1": "Expert in development process optimization through CI/CD pipelines and Docker, I am passionate about AI solutions integration and Agile project management.",
     "paragraph2": "I master NextJs, Angular, Flutter for frontend, Node.js, Laravel, Springboot for backend, as well as Docker, Github Action and Google Cloud Platform for DevOps.",
     "highlights": {

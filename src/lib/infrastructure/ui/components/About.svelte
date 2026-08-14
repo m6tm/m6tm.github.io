@@ -28,7 +28,7 @@
           </div>
         </div>
         <div class="experience-badge">
-          <span class="exp-number">3+</span>
+          <span class="exp-number">5+</span>
           <span class="exp-text">{$_('about.experienceBadge')}</span>
         </div>
       </div>
