@@ -22,22 +22,13 @@
   let swiperInstance: Swiper | null = null;
   let nextBtn = $state<HTMLElement>();
   let prevBtn = $state<HTMLElement>();
-
-  // État du visualiseur plein écran
   let selectedMedia = $state<MediaItem | null>(null);
 
-  /**
-   * Ouvre le média en plein écran
-   */
   function openFullscreen(item: MediaItem) {
     selectedMedia = item;
-    // Empêcher le défilement du corps pendant que la modale est ouverte
     document.body.style.overflow = "hidden";
   }
 
-  /**
-   * Ferme le visualiseur
-   */
   function closeFullscreen() {
     selectedMedia = null;
     document.body.style.overflow = "";
@@ -50,7 +41,7 @@
       swiperInstance = new Swiper(swiperContainer, {
         modules: [Navigation, Pagination, Autoplay, Keyboard],
         slidesPerView: 1,
-        spaceBetween: 15,
+        spaceBetween: 16,
         loop: items.length > 4,
         keyboard: { enabled: true },
         autoplay: {
@@ -70,11 +61,11 @@
         breakpoints: {
           640: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 16,
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 16,
           },
         },
         grabCursor: true,
@@ -110,12 +101,11 @@
               </video>
               <div class="play-overlay">
                 <svg
-                  width="40"
-                  height="40"
+                  width="32"
+                  height="32"
                   viewBox="0 0 24 24"
-                  fill="white"
-                  stroke="currentColor"
-                  stroke-width="2"
+                  fill="currentColor"
+                  stroke="none"
                 >
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>
@@ -130,11 +120,11 @@
             {/if}
             <div class="zoom-overlay">
               <svg
-                width="24"
-                height="24"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="white"
+                stroke="currentColor"
                 stroke-width="2.5"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -150,41 +140,31 @@
       {/each}
     </div>
 
-    <!-- Pagination -->
     <div class="swiper-pagination"></div>
   </div>
 
-  <!-- Boutons de navigation -->
-  <button
-    bind:this={prevBtn}
-    class="carousel-nav-btn prev"
-    aria-label="Précédent"
-  >
+  <button bind:this={prevBtn} class="carousel-nav-btn prev" aria-label="Précédent">
     <svg
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="3"
+      stroke-width="2.5"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
       <polyline points="15 18 9 12 15 6"></polyline>
     </svg>
   </button>
-  <button
-    bind:this={nextBtn}
-    class="carousel-nav-btn next"
-    aria-label="Suivant"
-  >
+  <button bind:this={nextBtn} class="carousel-nav-btn next" aria-label="Suivant">
     <svg
-      width="20"
-      height="20"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="3"
+      stroke-width="2.5"
       stroke-linecap="round"
       stroke-linejoin="round"
     >
@@ -193,23 +173,19 @@
   </button>
 </div>
 
-<!-- Lightbox / Visualiseur Plein Écran -->
+<!-- Lightbox -->
 {#if selectedMedia}
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div class="lightbox-overlay" onclick={closeFullscreen}>
-    <button
-      class="lightbox-close"
-      onclick={closeFullscreen}
-      aria-label="Fermer"
-    >
+    <button class="lightbox-close" onclick={closeFullscreen} aria-label="Fermer">
       <svg
-        width="24"
-        height="24"
+        width="22"
+        height="22"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="3"
+        stroke-width="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
@@ -221,14 +197,9 @@
     <div class="lightbox-content" onclick={(e) => e.stopPropagation()}>
       {#if selectedMedia.type === "video"}
         <!-- svelte-ignore a11y_media_has_caption -->
-        <video src={selectedMedia.src} controls autoplay class="lightbox-media"
-        ></video>
+        <video src={selectedMedia.src} controls autoplay class="lightbox-media"></video>
       {:else}
-        <img
-          src={selectedMedia.src}
-          alt="Vue plein écran"
-          class="lightbox-media"
-        />
+        <img src={selectedMedia.src} alt="Vue plein écran" class="lightbox-media" />
       {/if}
     </div>
   </div>
@@ -238,20 +209,20 @@
   .media-carousel-wrapper {
     width: 100%;
     position: relative;
-    padding: 10px 0 40px; /* Espace pour les boutons et pagination */
+    padding: 10px 0 44px;
   }
 
   .media-item-container {
     width: 100%;
-    /* Ratio typique pour une application mobile dans une galerie */
     aspect-ratio: 9/16;
     border-radius: var(--radius-lg);
     overflow: hidden;
-    background: #05070a;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
     position: relative;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-base), border-color var(--transition-base),
+      box-shadow var(--transition-base);
     cursor: zoom-in;
     padding: 0;
     display: block;
@@ -259,9 +230,9 @@
   }
 
   .media-item-container:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: var(--primary);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+    transform: translateY(-6px) scale(1.01);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-lg);
   }
 
   .media-item-container:hover .zoom-overlay {
@@ -271,13 +242,14 @@
   .zoom-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(99, 102, 241, 0.2);
+    background: var(--accent-subtle);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity var(--transition-base);
     z-index: 5;
+    color: var(--accent);
   }
 
   .play-overlay {
@@ -285,17 +257,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background: rgba(99, 102, 241, 0.8);
+    width: 52px;
+    height: 52px;
+    background: var(--accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     z-index: 4;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    padding-left: 5px;
+    box-shadow: var(--shadow-lg);
+    padding-left: 4px;
   }
 
   .carousel-image,
@@ -309,11 +281,11 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    background: var(--primary);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.6rem;
+    background: var(--accent);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.625rem;
     font-weight: 700;
     text-transform: uppercase;
     z-index: 10;
@@ -321,43 +293,51 @@
 
   .carousel-nav-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-100%); /* Ajusté car pagination en bas */
-    width: 36px;
-    height: 36px;
-    background: rgba(15, 23, 42, 0.8);
+    top: calc(50% - 22px);
+    width: 40px;
+    height: 40px;
+    background: var(--bg-secondary);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 50;
-    transition: all 0.3s ease;
+    z-index: 10;
+    transition: background-color var(--transition-fast), color var(--transition-fast),
+      transform var(--transition-fast), border-color var(--transition-fast);
   }
 
   .carousel-nav-btn:hover {
-    background: var(--primary);
-    transform: translateY(-100%) scale(1.1);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+    transform: scale(1.1);
   }
 
   .carousel-nav-btn.prev {
-    left: -18px;
+    left: -20px;
   }
   .carousel-nav-btn.next {
-    right: -18px;
+    right: -20px;
   }
 
   :global(.swiper-pagination) {
     bottom: 0 !important;
   }
 
+  :global(.swiper-pagination-bullet) {
+    background: var(--text-muted) !important;
+    opacity: 0.4 !important;
+  }
+
   :global(.swiper-pagination-bullet-active) {
-    background: var(--primary) !important;
+    background: var(--accent) !important;
+    opacity: 1 !important;
     width: 20px !important;
-    border-radius: 5px !important;
+    border-radius: var(--radius-full) !important;
   }
 
   @media (max-width: 1200px) {
@@ -371,7 +351,7 @@
 
   @media (max-width: 640px) {
     .media-item-container {
-      aspect-ratio: 4/5; /* Plus grand verticalement pour les apps mobiles */
+      aspect-ratio: 4/5;
     }
   }
 
@@ -379,8 +359,8 @@
   .lightbox-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(5, 7, 10, 0.95);
-    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(12px);
     z-index: 3000;
     display: flex;
     align-items: center;
@@ -402,7 +382,7 @@
     max-width: 95%;
     max-height: 90vh;
     border-radius: var(--radius-lg);
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-xl);
     object-fit: contain;
   }
 
@@ -410,22 +390,22 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
     z-index: 3010;
   }
 
   .lightbox-close:hover {
-    background: var(--primary);
+    background: var(--accent);
     transform: rotate(90deg);
   }
 
@@ -439,6 +419,12 @@
       right: 1rem;
       width: 44px;
       height: 44px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .media-item-container {
+      transition: none;
     }
   }
 </style>

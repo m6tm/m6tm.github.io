@@ -3,20 +3,15 @@
 
   let visible = $state(false);
 
-  /**
-   * Gestion de la visibilité du bouton de retour en haut de page.
-   */
   onMount(() => {
     const handleScroll = () => {
       visible = window.scrollY > 400;
     };
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   });
 
-  /**
-   * Retourne en haut de la page de manière fluide.
-   */
   function scrollToTop() {
     window.scrollTo({
       top: 0,
@@ -32,13 +27,15 @@
   aria-label="Retour en haut"
 >
   <svg
-    width="24"
-    height="24"
+    width="22"
+    height="22"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   >
-    <path d="M18 15l-6-6-6 6" />
+    <polyline points="18 15 12 9 6 15"></polyline>
   </svg>
 </button>

@@ -2,32 +2,16 @@
   import { onMount } from "svelte";
   import { _ } from "svelte-i18n";
   import LanguageSwitcher from "./LanguageSwitcher.svelte";
+  import ThemeToggle from "./ThemeToggle.svelte";
 
-  let scrolled = $state(false);
   let mobileMenuOpen = $state(false);
-
-  /**
-   * Initialisation de l'effet de défilement sur la barre de navigation.
-   */
-  onMount(() => {
-    const handleScroll = () => {
-      scrolled = window.scrollY > 50;
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
 
   /**
    * Basculement du menu mobile.
    */
   function toggleMobileMenu() {
     mobileMenuOpen = !mobileMenuOpen;
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
   }
 
   /**
@@ -37,23 +21,39 @@
     mobileMenuOpen = false;
     document.body.style.overflow = "";
   }
+
+  /**
+   * Gestion de la touche Echap pour fermer le menu mobile.
+   */
+  function handleKeyDown(event: KeyboardEvent) {
+    if (event.key === "Escape") closeMobileMenu();
+  }
+
+  onMount(() => {
+    return () => {
+      document.body.style.overflow = "";
+    };
+  });
 </script>
 
-<nav class="navbar" class:scrolled id="navbar">
-  <div class="nav-container">
+<svelte:window onkeydown={handleKeyDown} />
+
+<nav class="navbar" id="navbar">
+  <div class="nav-pill">
     <a href="#accueil" class="nav-logo">
-      <span class="logo-text">MABOA Daniel</span><span class="logo-accent"
-        >.</span
-      >
+      <span>MABOA Daniel</span><span class="logo-accent">.</span>
     </a>
+
     <button
       class="nav-toggle"
       onclick={toggleMobileMenu}
-      aria-label="Menu"
+      aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
       class:active={mobileMenuOpen}
+      aria-expanded={mobileMenuOpen}
     >
       <span class="hamburger"></span>
     </button>
+
     <!-- Desktop Menu -->
     <ul class="nav-menu nav-menu-desktop">
       <li><a href="#accueil" class="nav-link">{$_('nav.home')}</a></li>
@@ -62,8 +62,12 @@
       <li><a href="#projects" class="nav-link">{$_('nav.projects')}</a></li>
       <li><a href="#contact" class="nav-link nav-cta">{$_('nav.contact')}</a></li>
     </ul>
-    <div class="nav-language-switcher">
-      <LanguageSwitcher />
+
+    <div class="nav-actions">
+      <div class="nav-language-switcher desktop">
+        <LanguageSwitcher />
+      </div>
+      <ThemeToggle />
     </div>
   </div>
 </nav>
@@ -79,14 +83,9 @@
 <!-- Mobile Menu Sidebar -->
 <div class="mobile-menu" class:active={mobileMenuOpen}>
   <div class="mobile-menu-header">
-    <div class="mobile-menu-brand">
-      <a href="#accueil" class="nav-logo">
-        <span class="logo-text">MABOA Daniel</span><span class="logo-accent"
-          >.</span
-        >
-      </a>
-      <span class="mobile-menu-subtitle">{$_('hero.codeRole')}</span>
-    </div>
+    <a href="#accueil" class="nav-logo" onclick={closeMobileMenu}>
+      <span>MABOA Daniel</span><span class="logo-accent">.</span>
+    </a>
     <button
       class="mobile-menu-close"
       onclick={closeMobileMenu}
@@ -99,16 +98,24 @@
         fill="none"
         stroke="currentColor"
         stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
-        <path d="M18 6L6 18M6 6l12 12" />
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
   </div>
   <div class="mobile-menu-nav">
-    <span class="mobile-menu-label">NAVIGATION</span>
+    <span class="mobile-menu-label">Navigation</span>
     <ul class="mobile-menu-list">
       <li>
-        <a href="#accueil" class="mobile-nav-link" onclick={closeMobileMenu}>
+        <a
+          href="#accueil"
+          class="mobile-nav-link"
+          onclick={closeMobileMenu}
+          style="--index: 0"
+        >
           <svg
             width="20"
             height="20"
@@ -116,11 +123,11 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path
-              d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-            />
-            <polyline points="9 22 9 12 15 12 15 22" />
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
           <span>{$_('nav.home')}</span>
           <svg
@@ -131,13 +138,20 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M9 18l6-6-6-6" />
+            <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </a>
       </li>
       <li>
-        <a href="#about" class="mobile-nav-link" onclick={closeMobileMenu}>
+        <a
+          href="#about"
+          class="mobile-nav-link"
+          onclick={closeMobileMenu}
+          style="--index: 1"
+        >
           <svg
             width="20"
             height="20"
@@ -145,9 +159,11 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 20c0-4 4-6 8-6s8 2 8 6" />
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 20c0-4 4-6 8-6s8 2 8 6"></path>
           </svg>
           <span>{$_('nav.about')}</span>
           <svg
@@ -158,13 +174,20 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M9 18l6-6-6-6" />
+            <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </a>
       </li>
       <li>
-        <a href="#skills" class="mobile-nav-link" onclick={closeMobileMenu}>
+        <a
+          href="#skills"
+          class="mobile-nav-link"
+          onclick={closeMobileMenu}
+          style="--index: 2"
+        >
           <svg
             width="20"
             height="20"
@@ -172,10 +195,12 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
           </svg>
           <span>{$_('nav.skills')}</span>
           <svg
@@ -186,13 +211,20 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M9 18l6-6-6-6" />
+            <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </a>
       </li>
       <li>
-        <a href="#projects" class="mobile-nav-link" onclick={closeMobileMenu}>
+        <a
+          href="#projects"
+          class="mobile-nav-link"
+          onclick={closeMobileMenu}
+          style="--index: 3"
+        >
           <svg
             width="20"
             height="20"
@@ -200,10 +232,12 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <rect x="2" y="3" width="20" height="14" rx="2" />
-            <path d="M8 21h8" />
-            <path d="M12 17v4" />
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
           </svg>
           <span>{$_('nav.projects')}</span>
           <svg
@@ -214,17 +248,25 @@
             fill="none"
             stroke="currentColor"
             stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <path d="M9 18l6-6-6-6" />
+            <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </a>
       </li>
     </ul>
   </div>
   <div class="mobile-menu-footer">
-    <LanguageSwitcher />
-    <a href="#contact" class="mobile-menu-cta" onclick={closeMobileMenu}>
-      <span>{$_('hero.contactMe')}</span>
+    <div style="display: flex; justify-content: center;">
+      <LanguageSwitcher />
+    </div>
+    <a
+      href="#contact"
+      class="mobile-menu-cta"
+      onclick={closeMobileMenu}
+    >
+      <span>{$_('nav.contact')}</span>
       <svg
         width="20"
         height="20"
@@ -232,8 +274,11 @@
         fill="none"
         stroke="currentColor"
         stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
-        <path d="M5 12h14M12 5l7 7-7 7" />
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
       </svg>
     </a>
   </div>

@@ -1,6 +1,16 @@
 <script lang="ts">
   import { locale, setLocale } from "$lib/infrastructure/i18n";
 
+  const languages = [
+    { code: "fr", label: "FR" },
+    { code: "en", label: "EN" },
+    { code: "es", label: "ES" },
+  ];
+
+  let activeIndex = $derived(
+    Math.max(0, languages.findIndex((lang) => lang.code === $locale))
+  );
+
   /**
    * Change la langue de l'application.
    */
@@ -9,63 +19,73 @@
   }
 </script>
 
-<div class="language-switcher">
-  <button
-    class="lang-btn"
-    class:active={$locale === "fr"}
-    onclick={() => switchLocale("fr")}
-    aria-label="Français"
-  >
-    FR
-  </button>
-  <span class="lang-separator">|</span>
-  <button
-    class="lang-btn"
-    class:active={$locale === "en"}
-    onclick={() => switchLocale("en")}
-    aria-label="English"
-  >
-    EN
-  </button>
-  <span class="lang-separator">|</span>
-  <button
-    class="lang-btn"
-    class:active={$locale === "es"}
-    onclick={() => switchLocale("es")}
-    aria-label="Español"
-  >
-    ES
-  </button>
+<div class="language-switcher" role="group" aria-label="Sélection de la langue">
+  <div
+    class="lang-indicator"
+    style="transform: translateX(calc({activeIndex} * 100%))"
+  ></div>
+  {#each languages as lang}
+    <button
+      class="lang-btn"
+      class:active={$locale === lang.code}
+      onclick={() => switchLocale(lang.code)}
+      aria-label={lang.code === "fr"
+        ? "Français"
+        : lang.code === "en"
+          ? "English"
+          : "Español"}
+    >
+      {lang.label}
+    </button>
+  {/each}
 </div>
 
 <style>
   .language-switcher {
-    display: flex;
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    padding: 0.25rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+  }
+
+  .lang-indicator {
+    position: absolute;
+    top: 0.25rem;
+    bottom: 0.25rem;
+    left: 0.25rem;
+    width: calc((100% - 0.5rem) / 3);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.5s var(--ease-spring), width 0.5s var(--ease-spring);
+    z-index: 0;
+    will-change: transform;
   }
 
   .lang-btn {
-    background: none;
+    position: relative;
+    z-index: 1;
+    width: 2.5rem;
+    background: transparent;
     border: none;
-    color: var(--text-muted, #64748b);
+    color: var(--text-muted);
     cursor: pointer;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.2s ease;
-    font-weight: 500;
+    padding: 0.375rem 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    transition: color var(--transition-fast);
   }
 
   .lang-btn:hover {
-    color: var(--text-primary, #f8fafc);
+    color: var(--text-primary);
   }
 
   .lang-btn.active {
-    color: var(--accent, #06b6d4);
-  }
-
-  .lang-separator {
-    color: var(--text-muted, #64748b);
+    color: var(--accent);
   }
 </style>

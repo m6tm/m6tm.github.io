@@ -27,19 +27,24 @@
   });
 </script>
 
-{#if isReady}
+<!-- Pendant l'hydratation, le contenu reste dans le DOM (même wrapper) pour que les
+     observers et les références soient conservés ; seule l'opacité change. -->
+<div class="layout-content" class:ready={isReady}>
   {@render children()}
-{:else}
-  <!-- Pendant l'hydratation, on affiche le contenu brut (qui correspond au HTML statique) -->
-  <div style="visibility: hidden">
-    {@render children()}
-  </div>
-{/if}
+</div>
 
 <style>
-  /* Empêche le flash de contenu si nécessaire */
   :global(body) {
     margin: 0;
     padding: 0;
+  }
+
+  .layout-content {
+    opacity: 0;
+    transition: opacity 0.25s ease-out;
+  }
+
+  .layout-content.ready {
+    opacity: 1;
   }
 </style>

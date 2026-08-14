@@ -14,10 +14,9 @@
   });
 </script>
 
-<section class="section skills" id="skills">
+<div class="section skills reveal" id="skills">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">{$_('skills.tag')}</span>
       <h2 class="section-title">{$_('skills.title')}</h2>
       <p class="section-description">
         {$_('skills.description')}
@@ -26,59 +25,67 @@
     <div class="skills-grid">
       {#each categories as category}
         <div class="skill-category">
-          <div class="category-icon {category.id}">
+          <div class="category-icon">
             {#if category.id === "frontend"}
               <svg
-                width="32"
-                height="32"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M3 9h18" />
-                <path d="M9 21V9" />
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
               </svg>
             {:else if category.id === "backend"}
               <svg
-                width="32"
-                height="32"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <rect x="2" y="2" width="20" height="8" rx="2" />
-                <rect x="2" y="14" width="20" height="8" rx="2" />
-                <circle cx="6" cy="6" r="1" />
-                <circle cx="6" cy="18" r="1" />
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
               </svg>
             {:else if category.id === "database"}
               <svg
-                width="32"
-                height="32"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
               </svg>
             {:else}
               <svg
-                width="32"
-                height="32"
+                width="28"
+                height="28"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
               </svg>
             {/if}
           </div>
@@ -92,4 +99,4 @@
       {/each}
     </div>
   </div>
-</section>
+</div>

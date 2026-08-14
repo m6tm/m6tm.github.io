@@ -7,9 +7,7 @@
     <div class="footer-content">
       <div class="footer-brand">
         <a href="#accueil" class="nav-logo">
-          <span class="logo-text">MABOA Daniel</span><span class="logo-accent"
-            >.</span
-          >
+          <span>MABOA Daniel</span><span class="logo-accent">.</span>
         </a>
         <p>
           {$_('footer.brand')}

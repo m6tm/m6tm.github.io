@@ -28,21 +28,17 @@
 {#if project}
   <!-- svelte-ignore a11y_click_events_have_key_events -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
-  <div class="modal-overlay" class:active={project} onclick={onclose}>
+  <div class="modal-overlay active" onclick={onclose}>
     <div class="modal-container" onclick={handleModalClick}>
       <!-- Bouton de fermeture -->
-      <button
-        class="modal-close"
-        onclick={onclose}
-        aria-label={$_("projects.modal.close")}
-      >
+      <button class="modal-close" onclick={onclose} aria-label={$_("projects.modal.close")}>
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.5"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
         >
@@ -79,12 +75,12 @@
               <div class="features-container">
                 <h4 class="features-header">
                   <svg
-                    width="22"
-                    height="22"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2.5"
+                    stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   >
@@ -96,7 +92,7 @@
                 <ul class="features-list">
                   {#each project.features as feature}
                     <li class="feature-item">
-                      <strong class="feature-check">✓</strong>
+                      <span class="feature-check">✓</span>
                       {feature}
                     </li>
                   {/each}
@@ -106,30 +102,21 @@
 
             <!-- Architecture Hexagonale Highlight -->
             <div class="architecture-box">
-              <span class="architecture-title"
-                >{$_("projects.modal.architecture.title")}</span
-              >
-              <p class="architecture-text">
-                {$_("projects.modal.architecture.description")}
-              </p>
+              <span class="architecture-title">{$_("projects.modal.architecture.title")}</span>
+              <p class="architecture-text">{$_("projects.modal.architecture.description")}</p>
             </div>
           </div>
-          <!-- Fin modal-main -->
 
-          <!-- Sidebar transférée ici pour rester groupée avec le haut -->
+          <!-- Sidebar -->
           <aside class="modal-sidebar">
             <div class="modal-info-card">
               <div class="info-item">
-                <span class="info-label"
-                  >{$_("projects.modal.projectType")}</span
-                >
+                <span class="info-label">{$_("projects.modal.projectType")}</span>
                 <span class="info-value">{$_("projects.modal.fullStack")}</span>
               </div>
               <div class="info-item">
-                <span class="info-label"
-                  >{$_("projects.modal.keyTechnologies")}</span
-                >
-                <div class="modal-hero-tags sidebar-tags">
+                <span class="info-label">{$_("projects.modal.keyTechnologies")}</span>
+                <div class="sidebar-tags">
                   {#each project.tags as tag}
                     <span class="sidebar-tag-item">{tag}</span>
                   {/each}
@@ -141,14 +128,14 @@
                     href={project.demoUrl}
                     target="_blank"
                     class="btn btn-primary btn-full"
-                    >{$_("projects.modal.viewDemo")}</a
                   >
+                    {$_("projects.modal.viewDemo")}
+                  </a>
                 {/if}
               </div>
             </div>
           </aside>
         </div>
-        <!-- Fin modal-grid -->
 
         <!-- Galerie en PLEINE LARGEUR -->
         {#if project.gallery && project.gallery.length > 0}
@@ -164,18 +151,14 @@
           {#if project.stackDetails}
             {#each project.stackDetails as category}
               <div class="stack-category-box">
-                <h4 class="stack-category-title">
-                  {category.category}
-                </h4>
+                <h4 class="stack-category-title">{category.category}</h4>
                 <ul class="stack-items-list">
                   {#each category.items as item}
                     <li class="stack-item">
                       <span class="stack-dot"></span>
                       <span>
                         {#if item.includes(":")}
-                          <strong>{item.split(":")[0]}:</strong>{item.split(
-                            ":",
-                          )[1]}
+                          <strong>{item.split(":")[0]}:</strong>{item.split(":")[1]}
                         {:else}
                           {item}
                         {/if}
@@ -192,12 +175,14 @@
             <div class="demo-access-box">
               <div class="demo-badge">
                 <svg
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
                   <path
                     d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
@@ -208,9 +193,7 @@
                 {$_("projects.modal.demoAccess")}
               </div>
 
-              <p class="demo-intro-text">
-                {$_("projects.modal.demoIntro")}
-              </p>
+              <p class="demo-intro-text">{$_("projects.modal.demoIntro")}</p>
 
               <div class="demo-grid">
                 {#each project.credentials as cred}
@@ -220,9 +203,7 @@
                   </div>
                 {/each}
                 <div class="credential-card">
-                  <span class="credential-label"
-                    >{$_("projects.modal.password")}</span
-                  >
+                  <span class="credential-label">{$_("projects.modal.password")}</span>
                   <span class="credential-value">test123</span>
                 </div>
               </div>
@@ -239,12 +220,12 @@
                 rel="noopener noreferrer"
               >
                 <svg
-                  width="28"
-                  height="28"
+                  width="24"
+                  height="24"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2.5"
+                  stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
@@ -253,10 +234,7 @@
                   <line x1="12" y1="15" x2="12" y2="3"></line>
                 </svg>
                 <div class="download-text">
-                  <span
-                    >{$_("projects.modal.download")}
-                    <!-- <span class="download-text-title">{project.title}</span> -->
-                  </span>
+                  <span>{$_("projects.modal.download")}</span>
                   {#if project.downloadSize}
                     <span class="file-size">{project.downloadSize}</span>
                   {/if}
@@ -266,9 +244,6 @@
           {/if}
         </div>
       </div>
-      <!-- Fin modal-body -->
     </div>
-    <!-- Fin modal-container -->
   </div>
-  <!-- Fin modal-overlay -->
 {/if}

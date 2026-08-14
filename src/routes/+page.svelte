@@ -41,7 +41,9 @@
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll(".animate-on-scroll");
+    const elements = document.querySelectorAll(
+      ".animate-on-scroll, .reveal, .reveal-left, .reveal-right, .reveal-scale"
+    );
     elements.forEach((el) => observer.observe(el));
   });
 </script>
@@ -50,22 +52,10 @@
 
 <main>
   <Hero />
-
-  <div class="animate-on-scroll fade-in">
-    <About />
-  </div>
-
-  <div class="animate-on-scroll fade-in">
-    <Skills />
-  </div>
-
-  <div class="animate-on-scroll fade-in">
-    <Projects onOpenDetails={openProjectDetails} />
-  </div>
-
-  <div class="animate-on-scroll fade-in">
-    <Contact />
-  </div>
+  <About />
+  <Skills />
+  <Projects onOpenDetails={openProjectDetails} />
+  <Contact />
 </main>
 
 <ProjectDetailsModal project={selectedProject} onclose={closeProjectDetails} />
