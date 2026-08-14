@@ -860,6 +860,7 @@ button {
   color: var(--text-secondary);
   white-space: pre;
   min-width: min-content;
+  text-align: left;
 }
 
 .code-keyword {
