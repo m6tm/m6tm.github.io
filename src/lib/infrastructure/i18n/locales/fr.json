@@ -295,70 +295,70 @@
     },
     "tagJustifications": {
       "facturello": {
-        "Astro": "Hydratation partielle : pages quasi instantanées, JavaScript chargé uniquement où l'interactivité l'exige.",
-        "Svelte": "Composants compilés sans virtual DOM : une interface réactive et légère.",
-        "Tailwind CSS": "Design system cohérent écrit dans le markup : responsive sans feuilles de style à maintenir.",
-        "Supabase": "Auth, PostgreSQL et stockage gérés : un backend complet sans serveur à administrer.",
-        "Prisma": "ORM type-safe : le schéma sert de contrat et sécurise les évolutions.",
-        "Inngest": "Relances et expirations d'abonnements fiables, déclenchées par événements avec reprise sur échec.",
-        "Vercel": "Déploiement continu sans configuration : chaque push est en production en quelques minutes."
+        "Astro": "Je l'ai choisi pour son hydratation partielle : les pages se chargent quasi instantanément, car le JavaScript n'est embarqué que là où j'ai besoin d'interactivité.",
+        "Svelte": "J'aime sa compacité : des composants compilés sans virtual DOM, ça me donne une interface réactive et très légère.",
+        "Tailwind CSS": "Je l'utilise pour itérer vite : tout le design system tient dans le markup, responsive inclus, sans feuilles de style à maintenir.",
+        "Supabase": "Ça m'a évité de monter un backend : auth, PostgreSQL et stockage sont gérés, je me concentre sur le produit.",
+        "Prisma": "Je ne me passe plus de son typage : le schéma me sert de contrat et mes évolutions restent sûres.",
+        "Inngest": "Je l'intègre pour tout ce qui doit tourner en tâche de fond : relances et expirations se déclenchent seules, avec reprise sur échec.",
+        "Vercel": "Je déploie sans y penser : chaque push est en production en quelques minutes, zéro configuration."
       },
       "linkyza": {
-        "Next.js 16": "App Router et rendu hybride : une marketplace SEO-friendly avec des interactions riches.",
-        "TypeScript": "Typage strict sur ~40 modèles métier : des refactorings sûrs même à grande échelle.",
-        "Supabase": "PostgreSQL managé, auth et stockage de fichiers réunis en un seul service.",
-        "Prisma": "Requêtes type-safe et migrations maîtrisées sur un schéma de 40+ modèles.",
-        "Inngest": "Synchronisation des paiements et emails transactionnels, avec reprises automatiques.",
-        "NotchPay": "Passerelle pensée pour l'Afrique : paiements Mobile Money en FCFA et payouts vendeurs."
+        "Next.js 16": "Je l'ai pris pour l'App Router et le rendu hybride : la marketplace reste bien référencée tout en offrant des interactions riches.",
+        "TypeScript": "Avec ~40 modèles métier, je ne prends pas de risque : le typage strict me permet de refactoriser l'esprit tranquille.",
+        "Supabase": "J'ai regroupé l'essentiel au même endroit : PostgreSQL managé, auth et stockage de fichiers dans un seul service.",
+        "Prisma": "Le schéma dépasse 40 modèles, et Prisma me garde type-safe de bout en bout avec des migrations maîtrisées.",
+        "Inngest": "Je m'en sers pour fiabiliser les paiements : synchronisation des transactions et emails, avec retries automatiques.",
+        "NotchPay": "C'est la passerelle pensée pour l'Afrique : paiements Mobile Money en FCFA et payouts vendeurs, je n'ai rien trouvé d'aussi adapté."
       },
       "k-sport": {
-        "SvelteKit": "Rendu serveur et transitions fluides : un site premium et très rapide.",
-        "Tailwind CSS": "Identité visuelle maîtrisée grâce à un design system utilitaire.",
-        "Supabase": "Contenus et formulaires de contact gérés sans backend dédié.",
-        "SEO": "Balises, sitemap et performances soignés pour être visible des clubs et des athlètes."
+        "SvelteKit": "Je voulais un site premium et très rapide : le rendu serveur et les transitions fluides font le job.",
+        "Tailwind CSS": "J'ai construit l'identité visuelle avec : un design system utilitaire, cohérent du premier au dernier écran.",
+        "Supabase": "Pour un site vitrine, pas besoin de backend dédié : je gère contenus et formulaires directement avec.",
+        "SEO": "J'y ai passé du temps exprès : balises, sitemap et performances soignés pour que clubs et athlètes nous trouvent."
       },
       "meetly": {
-        "Next.js": "Une seule base de code full-stack : l'app et ses API routes vivent ensemble.",
-        "Supabase": "OAuth, 2FA et PostgreSQL pour les réunions, les équipes et les enregistrements.",
-        "LiveKit": "WebRTC open source et auto-hébergeable pour la visioconférence.",
-        "Gemini AI": "Transcription et résumés des réunions via l'API Gemini.",
-        "Inngest": "Pipeline asynchrone transcription puis résumé, tolérant aux pannes.",
-        "AWS S3": "Stockage durable et économique des enregistrements, avec URLs pré-signées sécurisées."
+        "Next.js": "J'ai aimé garder une seule base de code : l'app et ses API routes vivent ensemble, ça simplifie tout.",
+        "Supabase": "Je m'appuie dessus pour l'auth OAuth, la 2FA et PostgreSQL : réunions, équipes et enregistrements y trouvent leur place.",
+        "LiveKit": "J'ai choisi du WebRTC open source et auto-hébergeable : pas de dépendance à un service de visio propriétaire.",
+        "Gemini AI": "Je l'utilise pour transcrire et résumer les réunions automatiquement, directement via l'API Gemini.",
+        "Inngest": "Ça orchestre mon pipeline transcription puis résumé en asynchrone, sans que je gère les pannes à la main.",
+        "AWS S3": "J'y stocke les enregistrements : durable, économique, et les URLs pré-signées sécurisent l'accès."
       },
       "medin-plus": {
-        "Angular": "Framework structuré et typé, adapté aux applications métier complexes.",
-        "Laravel": "Écosystème PHP mature pour l'API, avec un ORM expressif.",
-        "Supabase": "Données et auth managées, avec RLS pour isoler les données sensibles."
+        "Angular": "Pour une application métier complexe, je préfère sa structure typée : ça reste maintenable sur la durée.",
+        "Laravel": "Je connais bien son écosystème PHP : mature, avec un ORM expressif, parfait pour l'API.",
+        "Supabase": "Les données médicales sont sensibles : auth managée et RLS pour bien isoler chaque médecin."
       },
       "hugbot": {
-        "SvelteKit": "Réactivité fine et données serveur intégrées pour une expérience de chat instantanée.",
-        "Hugging Face": "LLM open source (DeepSeek, Qwen, Llama) via une API unique et économique.",
-        "Supabase": "Authentification et conversations persistées en temps quasi réel.",
-        "Prisma": "Modèle de données clair : conversations, messages, paramètres.",
-        "LangChain": "Chaînage RAG : embeddings, récupération de contexte, orchestration des prompts.",
-        "Inngest": "Synchronisation des paramètres et notifications sans bloquer l'utilisateur."
+        "SvelteKit": "Je voulais une expérience de chat instantanée : sa réactivité fine et ses données serveur intégrées s'y prêtent parfaitement.",
+        "Hugging Face": "Ça me donne accès aux meilleurs LLM open source (DeepSeek, Qwen, Llama) via une API unique et économique.",
+        "Supabase": "Je persiste les conversations et l'auth avec : tout arrive en temps quasi réel sans backend maison.",
+        "Prisma": "J'ai gardé un modèle de données limpide : conversations, messages, paramètres — rien de superflu.",
+        "LangChain": "Je m'en sers pour le RAG : embeddings, récupération de contexte et orchestration des prompts, sans tout réinventer.",
+        "Inngest": "Je l'ai branché pour synchroniser les paramètres et notifier, sans jamais bloquer l'utilisateur."
       },
       "fluidio": {
-        "Flutter": "Une seule base de code Dart pour Android et iOS, avec des performances natives.",
-        "Flask": "API Python légère, en architecture hexagonale pour une évolutivité maîtrisée.",
-        "PostgreSQL": "Intégrité des commandes, commissions et stocks via des contraintes relationnelles.",
-        "Soketi": "Temps réel auto-hébergé compatible Pusher : aucun coût par connexion.",
-        "Redis": "Cache et messagerie partagés entre les instances du service temps réel.",
-        "Docker": "Des environnements dev, staging et prod identiques, déployables en une commande."
+        "Flutter": "Je ne voulais pas écrire deux apps : une seule base Dart me donne Android et iOS avec des performances natives.",
+        "Flask": "Je l'ai choisi léger et modulaire : l'architecture hexagonale me permet de faire grandir l'API proprement.",
+        "PostgreSQL": "Pour des commandes, commissions et stocks, je veux de l'intégrité : ses contraintes relationnelles me la garantissent.",
+        "Soketi": "Je l'héberge moi-même : du temps réel compatible Pusher sans payer chaque connexion.",
+        "Redis": "Je le mets entre les instances : cache et messagerie partagés pour le service temps réel.",
+        "Docker": "Ça me garantit que dev, staging et prod sont identiques, et je déploie en une commande."
       },
       "pepites-academy": {
-        "SvelteKit": "Site public et back-office dans une seule app, rapide et SEO-friendly.",
-        "Flask": "API REST complète et documentée (Swagger) pour tous les modules métier.",
-        "Flutter": "App de terrain pensée hors-ligne : les présences sont scannées même sans réseau.",
-        "NestJS": "Microservice temps réel modulaire, prêt à se brancher sur un bus d'événements.",
-        "PostgreSQL": "Présences et bulletins : des données critiques à intégrité garantie.",
-        "Docker": "Backend reproductible du développement jusqu'à la production."
+        "SvelteKit": "J'ai réuni le site public et le back-office dans une seule app : rapide, et bien référencée.",
+        "Flask": "J'ai exposé tous les modules métier en REST, avec Swagger : les autres composants s'y branchent facilement.",
+        "Flutter": "Sur le terrain, le réseau n'est pas garanti : j'ai conçu l'app hors-ligne d'abord, les présences se scannent même sans réseau.",
+        "NestJS": "Je l'ai ajouté pour le temps réel : un microservice modulaire, prêt à se brancher sur un bus d'événements.",
+        "PostgreSQL": "Présences et bulletins ne souffrent aucune erreur : j'ai besoin de ses garanties d'intégrité.",
+        "Docker": "Je reproduis le même backend du dev à la prod : fini les « ça marchait sur ma machine »."
       },
       "poweralert": {
-        "Tauri": "Application desktop de 2 Mo : le webview du système remplace un Chromium embarqué.",
-        "Rust": "Accès bas niveau fiable à la batterie, sans fuite mémoire ni crash.",
-        "Astro": "Interface quasi sans JavaScript pour une app discrète en tâche de fond.",
-        "TypeScript": "Contrats typés entre l'interface et les commandes Rust via les IPC de Tauri."
+        "Tauri": "Je voulais une app de 2 Mo, pas un Chromium embarqué : le webview du système suffisait largement.",
+        "Rust": "Pour accéder à la batterie en bas niveau, je voulais de la fiabilité : pas de fuite mémoire, pas de crash.",
+        "Astro": "C'est une app qui vit en tâche de fond : je lui ai fait une interface quasi sans JavaScript, discrète et rapide.",
+        "TypeScript": "Ça me sécurise les échanges entre l'interface et les commandes Rust via les IPC de Tauri."
       }
     }
   }
