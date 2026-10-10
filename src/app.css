@@ -1085,7 +1085,6 @@ button {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  overflow: hidden;
   transition: transform var(--transition-base), border-color var(--transition-base),
     box-shadow var(--transition-base);
   position: relative;
@@ -1114,6 +1113,7 @@ button {
   border-color: var(--accent);
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
+  z-index: 5;
 }
 
 .project-card:hover::before {
@@ -1132,11 +1132,13 @@ button {
   aspect-ratio: 16/10;
   overflow: hidden;
   background: var(--bg-tertiary);
+  border-radius: calc(var(--radius-xl) - 1px) calc(var(--radius-xl) - 1px) 0 0;
 }
 
 .project-card.featured .project-image {
   aspect-ratio: auto;
   height: 100%;
+  border-radius: calc(var(--radius-xl) - 1px) 0 0 calc(var(--radius-xl) - 1px);
 }
 
 .project-img {
@@ -1771,6 +1773,25 @@ button {
   visibility: visible;
 }
 
+/* Sur les cartes, l'infobulle s'ouvre vers le bas pour ne jamais être tronquée */
+.project-tags .tag-tip::after {
+  bottom: auto;
+  top: calc(100% + 10px);
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.project-tags .tag-tip::before {
+  bottom: auto;
+  top: calc(100% + 4px);
+  border: 6px solid transparent;
+  border-bottom: 6px solid var(--border-strong);
+}
+
+.project-tags .tag-tip:hover::after,
+.project-tags .tag-tip:focus::after {
+  transform: translateX(-50%) translateY(0);
+}
+
 .modal-actions {
   display: flex;
   gap: 1rem;
@@ -2120,6 +2141,7 @@ button {
   .project-card.featured .project-image {
     aspect-ratio: 16/10;
     height: auto;
+    border-radius: calc(var(--radius-xl) - 1px) calc(var(--radius-xl) - 1px) 0 0;
   }
 
   .project-card.featured .project-content {
