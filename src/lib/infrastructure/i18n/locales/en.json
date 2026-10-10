@@ -216,7 +216,7 @@
         {
           "category": "Real-time",
           "items": [
-            "Socket.IO / Soketi (Pusher protocol) with Redis adapter for horizontal scaling",
+            "Soketi (WebSocket server with Pusher-compatible protocol) with Redis adapter for horizontal scaling",
             "Firebase Cloud Messaging for push notifications",
             "Multi-channel messaging, presence and notifications"
           ]

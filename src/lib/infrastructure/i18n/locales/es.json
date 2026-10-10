@@ -216,7 +216,7 @@
         {
           "category": "Tiempo Real",
           "items": [
-            "Socket.IO / Soketi (protocolo Pusher) con adaptador Redis para el escalado horizontal",
+            "Soketi (servidor WebSocket compatible con protocolo Pusher) con adaptador Redis para el escalado horizontal",
             "Firebase Cloud Messaging para las notificaciones push",
             "Mensajería, presencia y notificaciones multi-canal"
           ]

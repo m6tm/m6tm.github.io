@@ -130,7 +130,7 @@ export class StaticProjectRepository implements ProjectRepository {
             title: 'Fluidio Shop',
             description: "Marketplace e-commerce full-stack connectant vendeurs, acheteurs et affiliés : app mobile Flutter, API Flask, temps réel WebSocket, paiements mobile money (Orange Money, MTN MoMo) et géolocalisation des boutiques.",
             image: '/projects/fluidio/bannier.png',
-            tags: ['Flutter', 'Flask', 'PostgreSQL', 'Socket.IO', 'Redis', 'Docker'],
+            tags: ['Flutter', 'Flask', 'PostgreSQL', 'Soketi', 'Redis', 'Docker'],
             gallery: [
                 { type: 'video', src: '/projects/fluidio/acheteur.mp4' },
                 { type: 'video', src: '/projects/fluidio/affilie.mp4' },
@@ -162,7 +162,7 @@ export class StaticProjectRepository implements ProjectRepository {
                 {
                     category: "Temps réel",
                     items: [
-                        "Socket.IO / Soketi (protocole Pusher) avec adaptateur Redis pour le scaling horizontal",
+                        "Soketi (serveur WebSocket compatible protocole Pusher) avec adaptateur Redis pour le scaling horizontal",
                         "Firebase Cloud Messaging pour les notifications push",
                         "Messagerie, présence et notifications multi-canal"
                     ]
