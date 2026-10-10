@@ -58,7 +58,12 @@
           <div class="project-content">
             <div class="project-tags">
               {#each project.tags.slice(0, 4) as tag}
-                <span>{tag}</span>
+                {@const justification = project.tagJustifications?.[tag]}
+                <span
+                  class:tag-tip={justification}
+                  aria-label={justification ? `${tag} — ${justification}` : undefined}
+                  data-tip={justification ?? ""}
+                >{tag}</span>
               {/each}
             </div>
             <h3 class="project-title">{project.title}</h3>

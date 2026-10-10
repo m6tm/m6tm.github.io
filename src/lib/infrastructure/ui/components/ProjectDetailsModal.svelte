@@ -118,7 +118,15 @@
                 <span class="info-label">{$_("projects.modal.keyTechnologies")}</span>
                 <div class="sidebar-tags">
                   {#each project.tags as tag}
-                    <span class="sidebar-tag-item">{tag}</span>
+                    {@const justification = project.tagJustifications?.[tag]}
+                    <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
+                    <span
+                      class="sidebar-tag-item"
+                      class:tag-tip={justification}
+                      tabindex={justification ? 0 : undefined}
+                      aria-label={justification ? `${tag} — ${justification}` : undefined}
+                      data-tip={justification ?? ""}
+                    >{tag}</span>
                   {/each}
                 </div>
               </div>

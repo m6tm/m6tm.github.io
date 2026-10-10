@@ -15,6 +15,8 @@ export interface Project {
     features?: string[];
     longDescription?: string;
     stackDetails?: { category: string, items: string[] }[];
+    /** Justification de l'usage de chaque technologie (clé = tag). */
+    tagJustifications?: Record<string, string>;
     credentials?: { role: string, email: string }[];
     downloadUrl?: string;
     downloadSize?: string;

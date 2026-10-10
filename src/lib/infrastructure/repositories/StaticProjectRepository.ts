@@ -12,6 +12,15 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Micro-SaaS de facturation pour freelances et solopreneurs : factures élégantes, paiements en ligne multi-providers (NotchPay, KPay, PayPal), relances automatiques et assistant IA intégré pour gérer toute son activité en un seul endroit.",
             image: '/projects/facturello.png',
             tags: ['Astro', 'Svelte', 'Tailwind CSS', 'Supabase', 'Prisma', 'Inngest', 'Vercel'],
+            tagJustifications: {
+                'Astro': "Hydratation partielle : pages quasi instantanées, JavaScript chargé uniquement où l'interactivité l'exige.",
+                'Svelte': "Composants compilés sans virtual DOM : une interface réactive et légère.",
+                'Tailwind CSS': "Design system cohérent écrit dans le markup : responsive sans feuilles de style à maintenir.",
+                'Supabase': "Auth, PostgreSQL et stockage gérés : un backend complet sans serveur à administrer.",
+                'Prisma': "ORM type-safe : le schéma sert de contrat et sécurise les évolutions.",
+                'Inngest': "Relances et expirations d'abonnements fiables, déclenchées par événements avec reprise sur échec.",
+                'Vercel': "Déploiement continu sans configuration : chaque push est en production en quelques minutes."
+            },
             demoUrl: 'https://facturello.work',
             isPrivate: true,
             featured: true,
@@ -59,6 +68,14 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Plateforme de vente de produits digitaux et de cours en ligne pensée pour l'Afrique : boutiques multi-vendeurs, checkout avec paiement NotchPay (FCFA), livraison digitale et système de commissions intégré.",
             image: '/projects/linkyza.png',
             tags: ['Next.js 16', 'TypeScript', 'Supabase', 'Prisma', 'Inngest', 'NotchPay'],
+            tagJustifications: {
+                'Next.js 16': "App Router et rendu hybride : une marketplace SEO-friendly avec des interactions riches.",
+                'TypeScript': "Typage strict sur ~40 modèles métier : des refactorings sûrs même à grande échelle.",
+                'Supabase': "PostgreSQL managé, auth et stockage de fichiers réunis en un seul service.",
+                'Prisma': "Requêtes type-safe et migrations maîtrisées sur un schéma de 40+ modèles.",
+                'Inngest': "Synchronisation des paiements et emails transactionnels, avec reprises automatiques.",
+                'NotchPay': "Passerelle pensée pour l'Afrique : paiements Mobile Money en FCFA et payouts vendeurs."
+            },
             demoUrl: 'https://linkyza.vercel.app/',
             isPrivate: true
         },
@@ -68,6 +85,12 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Agence de management sportif spécialisée dans l'accompagnement d'athlètes de haut niveau (football, basketball et plus). Gestion de carrière, négociation et développement d'image.",
             image: '/projects/k-sportagency.png',
             tags: ['SvelteKit', 'Tailwind CSS', 'Supabase', 'SEO'],
+            tagJustifications: {
+                'SvelteKit': "Rendu serveur et transitions fluides : un site premium et très rapide.",
+                'Tailwind CSS': "Identité visuelle maîtrisée grâce à un design system utilitaire.",
+                'Supabase': "Contenus et formulaires de contact gérés sans backend dédié.",
+                'SEO': "Balises, sitemap et performances soignés pour être visible des clubs et des athlètes."
+            },
             demoUrl: 'https://k-sportagency.com/',
             features: [
                 "Management de carrière global et stratégique",
@@ -103,6 +126,14 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Plateforme de visioconférence assistée par IA : réunions instantanées ou planifiées, salles LiveKit avec enregistrement S3, transcription Gemini AI, résumés intelligents, gestion d'équipes et analytics.",
             image: '/projects/meetly-ai.png',
             tags: ['Next.js', 'Supabase', 'LiveKit', 'Gemini AI', 'Inngest', 'AWS S3'],
+            tagJustifications: {
+                'Next.js': "Une seule base de code full-stack : l'app et ses API routes vivent ensemble.",
+                'Supabase': "OAuth, 2FA et PostgreSQL pour les réunions, les équipes et les enregistrements.",
+                'LiveKit': "WebRTC open source et auto-hébergeable pour la visioconférence.",
+                'Gemini AI': "Transcription et résumés des réunions via l'API Gemini.",
+                'Inngest': "Pipeline asynchrone transcription puis résumé, tolérant aux pannes.",
+                'AWS S3': "Stockage durable et économique des enregistrements, avec URLs pré-signées sécurisées."
+            },
             demoUrl: 'https://meetly-six.vercel.app/',
             githubUrl: 'https://github.com/m6tm/meetly',
             hidden: true
@@ -113,6 +144,11 @@ export class StaticProjectRepository implements ProjectRepository {
             description: 'Application web de reseau social pour medecins avec partage de cas cliniques et collaboration professionnelle. Accès fermé et sécurisé disponible uniquement pour les medecins inscrits.',
             image: '/projects/medin-plus.png',
             tags: ['Angular', 'Laravel', 'Supabase'],
+            tagJustifications: {
+                'Angular': "Framework structuré et typé, adapté aux applications métier complexes.",
+                'Laravel': "Écosystème PHP mature pour l'API, avec un ORM expressif.",
+                'Supabase': "Données et auth managées, avec RLS pour isoler les données sensibles."
+            },
             demoUrl: 'https://www.medinplus.com/',
             isPrivate: true
         },
@@ -122,6 +158,14 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Application de chat IA multi-modèles : discutez avec les meilleurs LLM (Hugging Face, OpenAI, Gemini, Claude) depuis une interface unique, avec base de connaissances RAG, notifications Telegram et mode invité.",
             image: '/projects/hugbot-ai.png',
             tags: ['SvelteKit', 'Hugging Face', 'Supabase', 'Prisma', 'LangChain', 'Inngest'],
+            tagJustifications: {
+                'SvelteKit': "Réactivité fine et données serveur intégrées pour une expérience de chat instantanée.",
+                'Hugging Face': "LLM open source (DeepSeek, Qwen, Llama) via une API unique et économique.",
+                'Supabase': "Authentification et conversations persistées en temps quasi réel.",
+                'Prisma': "Modèle de données clair : conversations, messages, paramètres.",
+                'LangChain': "Chaînage RAG : embeddings, récupération de contexte, orchestration des prompts.",
+                'Inngest': "Synchronisation des paramètres et notifications sans bloquer l'utilisateur."
+            },
             demoUrl: 'https://hugbot-ai.vercel.app/',
             isPrivate: true
         },
@@ -131,6 +175,14 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Marketplace e-commerce full-stack connectant vendeurs, acheteurs et affiliés : app mobile Flutter, API Flask, temps réel WebSocket, paiements mobile money (Orange Money, MTN MoMo) et géolocalisation des boutiques.",
             image: '/projects/fluidio/bannier.png',
             tags: ['Flutter', 'Flask', 'PostgreSQL', 'Soketi', 'Redis', 'Docker'],
+            tagJustifications: {
+                'Flutter': "Une seule base de code Dart pour Android et iOS, avec des performances natives.",
+                'Flask': "API Python légère, en architecture hexagonale pour une évolutivité maîtrisée.",
+                'PostgreSQL': "Intégrité des commandes, commissions et stocks via des contraintes relationnelles.",
+                'Soketi': "Temps réel auto-hébergé compatible Pusher : aucun coût par connexion.",
+                'Redis': "Cache et messagerie partagés entre les instances du service temps réel.",
+                'Docker': "Des environnements dev, staging et prod identiques, déployables en une commande."
+            },
             gallery: [
                 { type: 'video', src: '/projects/fluidio/acheteur.mp4' },
                 { type: 'video', src: '/projects/fluidio/affilie.mp4' },
@@ -199,6 +251,14 @@ export class StaticProjectRepository implements ProjectRepository {
             description: "Plateforme complète de gestion d'académie de football : site web et back-office (SvelteKit), API REST (Flask), app mobile de terrain (Flutter) avec scan QR des présences, bulletins et SMS — le pôle formation de K-Sport Agency.",
             image: '/projects/pepites-acedemy.png',
             tags: ['SvelteKit', 'Flask', 'Flutter', 'NestJS', 'PostgreSQL', 'Docker'],
+            tagJustifications: {
+                'SvelteKit': "Site public et back-office dans une seule app, rapide et SEO-friendly.",
+                'Flask': "API REST complète et documentée (Swagger) pour tous les modules métier.",
+                'Flutter': "App de terrain pensée hors-ligne : les présences sont scannées même sans réseau.",
+                'NestJS': "Microservice temps réel modulaire, prêt à se brancher sur un bus d'événements.",
+                'PostgreSQL': "Présences et bulletins : des données critiques à intégrité garantie.",
+                'Docker': "Backend reproductible du développement jusqu'à la production."
+            },
             demoUrl: 'https://pepites-academy.vercel.app/',
             features: [
                 "Back-office complet : académiciens, encadreurs, séances, présences, bulletins",
@@ -256,6 +316,12 @@ export class StaticProjectRepository implements ProjectRepository {
                 { type: 'image', src: '/projects/poweralert/tray.png' }
             ],
             tags: ['Tauri', 'Rust', 'Astro', 'TypeScript'],
+            tagJustifications: {
+                'Tauri': "Application desktop de 2 Mo : le webview du système remplace un Chromium embarqué.",
+                'Rust': "Accès bas niveau fiable à la batterie, sans fuite mémoire ni crash.",
+                'Astro': "Interface quasi sans JavaScript pour une app discrète en tâche de fond.",
+                'TypeScript': "Contrats typés entre l'interface et les commandes Rust via les IPC de Tauri."
+            },
             githubUrl: 'https://github.com/m6tm/poweralert',
             featured: false,
             features: [

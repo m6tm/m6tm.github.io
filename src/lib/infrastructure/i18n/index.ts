@@ -141,6 +141,18 @@ function getProjectCredentialsTranslation(projectId: string): { role: string }[]
 }
 
 /**
+ * Récupère les justifications des technologies traduites depuis le dictionnaire.
+ * @param projectId - L'identifiant du projet
+ * @returns Les justifications traduites ou undefined si non trouvées
+ */
+function getProjectTagJustificationsTranslation(projectId: string): Record<string, string> | undefined {
+    const projectData = getProjectData(projectId);
+    if (!projectData) return undefined;
+
+    return projectData['tagJustifications'] as Record<string, string> | undefined;
+}
+
+/**
  * Retourne un projet avec ses données traduites selon la locale courante.
  * @param project - Le projet source
  * @returns Le projet avec les champs traduits
@@ -152,6 +164,7 @@ export function getTranslatedProject(project: Project): Project {
     const features = getProjectArrayTranslation(project.id, 'features');
     const stackDetails = getProjectStackDetailsTranslation(project.id);
     const credentials = getProjectCredentialsTranslation(project.id);
+    const tagJustifications = getProjectTagJustificationsTranslation(project.id);
 
     const translatedCredentials = project.credentials?.map((credential, index) => ({
         ...credential,
@@ -165,6 +178,7 @@ export function getTranslatedProject(project: Project): Project {
         longDescription: longDescription || project.longDescription,
         features: features || project.features,
         stackDetails: stackDetails || project.stackDetails,
-        credentials: translatedCredentials || project.credentials
+        credentials: translatedCredentials || project.credentials,
+        tagJustifications: tagJustifications || project.tagJustifications
     };
 }

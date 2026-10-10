@@ -292,6 +292,74 @@
           ]
         }
       ]
+    },
+    "tagJustifications": {
+      "facturello": {
+        "Astro": "Hidratación parcial: páginas casi instantáneas, JavaScript solo donde la interactividad lo exige.",
+        "Svelte": "Componentes compilados sin virtual DOM: interfaz reactiva y ligera.",
+        "Tailwind CSS": "Design system coherente escrito en el markup: responsive sin hojas de estilo que mantener.",
+        "Supabase": "Auth, PostgreSQL y almacenamiento gestionados: backend completo sin servidores que administrar.",
+        "Prisma": "ORM type-safe: el esquema sirve de contrato y asegura los cambios.",
+        "Inngest": "Recordatorios y expiraciones de suscripción fiables, por eventos, con reintentos.",
+        "Vercel": "Despliegue continuo sin configuración: cada push llega a producción en minutos."
+      },
+      "linkyza": {
+        "Next.js 16": "App Router y renderizado híbrido: marketplace SEO-friendly con interacciones ricas.",
+        "TypeScript": "Tipado estricto en ~40 modelos de negocio: refactorizaciones seguras a gran escala.",
+        "Supabase": "PostgreSQL gestionado, auth y almacenamiento de archivos en un solo servicio.",
+        "Prisma": "Consultas type-safe y migraciones controladas sobre un esquema de 40+ modelos.",
+        "Inngest": "Sincronización de pagos y emails transaccionales, con reintentos automáticos.",
+        "NotchPay": "Pasarela pensada para África: pagos Mobile Money en FCFA y payouts a vendedores."
+      },
+      "k-sport": {
+        "SvelteKit": "Renderizado en servidor y transiciones fluidas: un sitio premium y muy rápido.",
+        "Tailwind CSS": "Identidad visual coherente gracias a un design system utilitario.",
+        "Supabase": "Contenidos y formularios de contacto gestionados sin backend dedicado.",
+        "SEO": "Metaetiquetas, sitemap y rendimiento cuidados para ser visible para clubes y atletas."
+      },
+      "meetly": {
+        "Next.js": "Una sola base de código full-stack: la app y sus API routes conviven.",
+        "Supabase": "OAuth, 2FA y PostgreSQL para reuniones, equipos y grabaciones.",
+        "LiveKit": "WebRTC open source y autoalojable para la videoconferencia.",
+        "Gemini AI": "Transcripción y resúmenes de reuniones mediante la API Gemini.",
+        "Inngest": "Pipeline asíncrono de transcripción a resumen, tolerante a fallos.",
+        "AWS S3": "Almacenamiento duradero y económico de grabaciones, con URLs prefirmadas seguras."
+      },
+      "medin-plus": {
+        "Angular": "Framework estructurado y tipado, adecuado para aplicaciones de negocio complejas.",
+        "Laravel": "Ecosistema PHP maduro para la API, con un ORM expresivo.",
+        "Supabase": "Datos y auth gestionados, RLS para aislar los datos médicos sensibles."
+      },
+      "hugbot": {
+        "SvelteKit": "Reactividad fina y datos de servidor integrados para una experiencia de chat instantánea.",
+        "Hugging Face": "LLM open source (DeepSeek, Qwen, Llama) a través de una API única y económica.",
+        "Supabase": "Autenticación y conversaciones persistentes en tiempo casi real.",
+        "Prisma": "Modelo de datos claro: conversaciones, mensajes, ajustes.",
+        "LangChain": "Encadenamiento RAG: embeddings, recuperación de contexto, orquestación de prompts.",
+        "Inngest": "Sincronización de ajustes y notificaciones sin bloquear al usuario."
+      },
+      "fluidio": {
+        "Flutter": "Una base de código Dart para Android y iOS, con rendimiento nativo.",
+        "Flask": "API Python ligera, arquitectura hexagonal para un crecimiento controlado.",
+        "PostgreSQL": "Integridad de pedidos, comisiones y stocks mediante restricciones relacionales.",
+        "Soketi": "Tiempo real autoalojado compatible con Pusher: sin coste por conexión.",
+        "Redis": "Caché y mensajería compartidos entre instancias del servicio de tiempo real.",
+        "Docker": "Entornos dev, staging y prod idénticos, desplegables con un comando."
+      },
+      "pepites-academy": {
+        "SvelteKit": "Sitio público y back-office en una sola app, rápida y SEO-friendly.",
+        "Flask": "API REST completa y documentada (Swagger) para cada módulo de negocio.",
+        "Flutter": "App de campo pensada offline: asistencias escaneadas incluso sin red.",
+        "NestJS": "Microservicio de tiempo real modular, listo para un bus de eventos.",
+        "PostgreSQL": "Asistencias y boletas: datos críticos con integridad garantizada.",
+        "Docker": "Backend reproducible del desarrollo a la producción."
+      },
+      "poweralert": {
+        "Tauri": "App desktop de 2 MB: el webview del sistema reemplaza a Chromium embebido.",
+        "Rust": "Acceso de bajo nivel fiable a la batería, seguro en memoria por diseño.",
+        "Astro": "Interfaz casi sin JavaScript para una app discreta en segundo plano.",
+        "TypeScript": "Contratos tipados entre la UI y los comandos Rust vía IPC de Tauri."
+      }
     }
   }
 }

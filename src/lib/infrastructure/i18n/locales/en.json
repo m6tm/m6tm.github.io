@@ -292,6 +292,74 @@
           ]
         }
       ]
+    },
+    "tagJustifications": {
+      "facturello": {
+        "Astro": "Partial hydration: near-instant pages, JavaScript shipped only where interactivity requires it.",
+        "Svelte": "Compiled components with no virtual DOM: a reactive, lightweight UI.",
+        "Tailwind CSS": "Consistent design system written in markup: responsive with no stylesheets to maintain.",
+        "Supabase": "Managed auth, PostgreSQL and storage: a complete backend with no servers to run.",
+        "Prisma": "Type-safe ORM: the schema acts as a contract and keeps changes safe.",
+        "Inngest": "Reliable reminders and subscription expirations, event-driven with automatic retries.",
+        "Vercel": "Zero-config continuous deployment: every push reaches production in minutes."
+      },
+      "linkyza": {
+        "Next.js 16": "App Router and hybrid rendering: an SEO-friendly marketplace with rich interactions.",
+        "TypeScript": "Strict typing across ~40 business models: safe refactors even at scale.",
+        "Supabase": "Managed PostgreSQL, auth and file storage in a single service.",
+        "Prisma": "Type-safe queries and controlled migrations across a 40+ model schema.",
+        "Inngest": "Payment synchronization and transactional emails with automatic retries.",
+        "NotchPay": "Gateway built for Africa: Mobile Money payments in FCFA and vendor payouts."
+      },
+      "k-sport": {
+        "SvelteKit": "Server-side rendering and smooth transitions: a premium, very fast site.",
+        "Tailwind CSS": "Consistent brand identity through a utility design system.",
+        "Supabase": "Content and contact forms managed without a dedicated backend.",
+        "SEO": "Careful meta tags, sitemap and performance to be visible to clubs and athletes."
+      },
+      "meetly": {
+        "Next.js": "One full-stack codebase: the app and its API routes live together.",
+        "Supabase": "OAuth, 2FA and PostgreSQL for meetings, teams and recordings.",
+        "LiveKit": "Open-source, self-hostable WebRTC for video conferencing.",
+        "Gemini AI": "Meeting transcription and summaries through the Gemini API.",
+        "Inngest": "Asynchronous transcription-to-summary pipeline, failure-tolerant.",
+        "AWS S3": "Durable, cost-effective recording storage with secure pre-signed URLs."
+      },
+      "medin-plus": {
+        "Angular": "Structured, typed framework suited to complex business applications.",
+        "Laravel": "Mature PHP ecosystem for the API, with an expressive ORM.",
+        "Supabase": "Managed data and auth, RLS to isolate sensitive medical data."
+      },
+      "hugbot": {
+        "SvelteKit": "Fine-grained reactivity and built-in server data for an instant chat experience.",
+        "Hugging Face": "Open-source LLMs (DeepSeek, Qwen, Llama) through a single, affordable API.",
+        "Supabase": "Authentication and persisted conversations in near real time.",
+        "Prisma": "Clear data model: conversations, messages, settings.",
+        "LangChain": "RAG chaining: embeddings, context retrieval, prompt orchestration.",
+        "Inngest": "Settings sync and notifications without blocking the user."
+      },
+      "fluidio": {
+        "Flutter": "One Dart codebase for Android and iOS with native performance.",
+        "Flask": "Lightweight Python API, hexagonal architecture for controlled growth.",
+        "PostgreSQL": "Order, commission and stock integrity through relational constraints.",
+        "Soketi": "Self-hosted Pusher-compatible real time: no per-connection cost.",
+        "Redis": "Shared cache and messaging between real-time service instances.",
+        "Docker": "Identical dev, staging and prod environments, one-command deploys."
+      },
+      "pepites-academy": {
+        "SvelteKit": "Public website and back-office in a single fast, SEO-friendly app.",
+        "Flask": "Complete, Swagger-documented REST API for every business module.",
+        "Flutter": "Field app designed offline-first: attendance scanned without network.",
+        "NestJS": "Modular real-time microservice, ready for an event bus.",
+        "PostgreSQL": "Attendance and report cards: critical data with guaranteed integrity.",
+        "Docker": "Reproducible backend from development to production."
+      },
+      "poweralert": {
+        "Tauri": "2 MB desktop app: the OS webview replaces embedded Chromium.",
+        "Rust": "Reliable low-level battery access, memory-safe by design.",
+        "Astro": "Near-JavaScript-free UI for an app that stays discreet in the background.",
+        "TypeScript": "Typed contracts between the UI and Rust commands via Tauri IPC."
+      }
     }
   }
 }
