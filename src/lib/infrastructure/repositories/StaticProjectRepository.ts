@@ -9,20 +9,21 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'facturello',
             title: 'Facturello - Facturation simplifiée pour freelances',
-            description: "Micro-SaaS de facturation simplifiée pour freelances et solopreneurs en Europe, en Amérique et en Afrique. Créez des factures élégantes, suivez vos paiements et relancez vos clients en quelques clics.",
+            description: "Micro-SaaS de facturation pour freelances et solopreneurs : factures élégantes, paiements en ligne multi-providers (NotchPay, KPay, PayPal), relances automatiques et assistant IA intégré pour gérer toute son activité en un seul endroit.",
             image: '/projects/facturello.png',
-            tags: ['Astro', 'Svelte', 'Tailwind CSS', 'Supabase', 'Prisma'],
+            tags: ['Astro', 'Svelte', 'Tailwind CSS', 'Supabase', 'Prisma', 'Inngest', 'Vercel'],
             demoUrl: 'https://facturello.work',
             isPrivate: true,
             featured: true,
             features: [
                 "Création de factures professionnelles en 60 secondes",
-                "Suivi des paiements et relances automatiques",
-                "Support multi-devises (EUR, CHF, USD, XOF) et multi-pays",
-                "Tableau de bord analytique pour le suivi de l'activité",
-                "Authentification sécurisée et stockage cloud avec Supabase"
+                "Paiements en ligne multi-providers (NotchPay, KPay, PayPal) avec webhooks et déduplication des transactions",
+                "Relances automatiques des factures en retard par email",
+                "Assistant IA conversationnel avec RAG documentaire et serveur MCP",
+                "Abonnements à plans payants avec upgrade/downgrade automatique",
+                "MFA et passkeys WebAuthn pour une authentification renforcée"
             ],
-            longDescription: "Facturello est un micro-SaaS de facturation conçu pour simplifier la vie des freelances et solopreneurs. Il permet de créer des factures élégantes, de suivre les paiements, d'envoyer des relances automatiques et de gérer plusieurs devises et pays. L'application repose sur une architecture moderne avec Astro pour le rendu performant, Svelte pour l'interactivité, Tailwind CSS pour l'interface, et Supabase avec Prisma pour la persistance des données.",
+            longDescription: "Facturello est bien plus qu'un outil de facturation : une plateforme complète pour freelances et solopreneurs. Elle permet de créer des factures élégantes, d'encaisser en ligne via plusieurs providers de paiement (NotchPay, KPay, PayPal), d'automatiser les relances de factures en retard, de gérer ses clients et de s'abonner à des plans payants. Un assistant IA conversationnel (LangChain/LangGraph, RAG, serveur MCP) assiste la rédaction et l'analyse. L'application repose sur Astro 7 pour le rendu, Svelte 5 pour l'interactivité, Tailwind CSS 4 pour l'interface, et Supabase avec Prisma 7 pour la persistance des données.",
             stackDetails: [
                 {
                     category: "Frontend & Performance",
@@ -33,20 +34,21 @@ export class StaticProjectRepository implements ProjectRepository {
                     ]
                 },
                 {
-                    category: "Backend & Données",
+                    category: "Backend, Données & Paiements",
                     items: [
-                        "Supabase : Authentification, base de données PostgreSQL et stockage",
+                        "Supabase : Authentification (MFA, passkeys WebAuthn), PostgreSQL et stockage",
                         "Prisma 7 : ORM type-safe avec migrations structurées",
-                        "PostgreSQL : Base de données relationnelle robuste"
+                        "NotchPay, KPay & PayPal : Paiements en ligne avec webhooks et déduplication",
+                        "Inngest : Relances automatiques et expiration d'abonnements"
                     ]
                 },
                 {
-                    category: "Expérience Utilisateur",
+                    category: "IA & Automatisation",
                     items: [
-                        "Interface épurée et accessible avec bits-ui",
+                        "LangChain & LangGraph : Assistant IA conversationnel avec RAG documentaire",
+                        "Emails transactionnels avec Resend",
                         "Génération de PDF professionnels",
-                        "Relances programmées par email",
-                        "Tableau de bord avec indicateurs clés"
+                        "Déploiement Vercel, image Docker disponible"
                     ]
                 }
             ]
@@ -54,9 +56,9 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'linkyza',
             title: 'Linkyza - Plateforme de vente de produits digitaux',
-            description: "Plateforme de vente de produits digitaux simple et rapide qui ambitionne de remplacer les plateformes de vente traditionnelles et de permettre d'intégrer de plus en plus d'options clés en main pour tout gérer en un seul endroit.",
+            description: "Plateforme de vente de produits digitaux et de cours en ligne pensée pour l'Afrique : boutiques multi-vendeurs, checkout avec paiement NotchPay (FCFA), livraison digitale et système de commissions intégré.",
             image: '/projects/linkyza.png',
-            tags: ['Nextjs', 'Supabase', 'Docker', 'Inngest'],
+            tags: ['Next.js 16', 'TypeScript', 'Supabase', 'Prisma', 'Inngest', 'NotchPay'],
             demoUrl: 'https://linkyza.vercel.app/',
             isPrivate: true
         },
@@ -98,9 +100,9 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'meetly',
             title: 'Meetly - AI Meeting Hub',
-            description: 'Application de reunion en ligne assistee par IA avec enregistrement AWS S3, transcription Gemini AI, synthese et analyse des reunions.',
+            description: "Plateforme de visioconférence assistée par IA : réunions instantanées ou planifiées, salles LiveKit avec enregistrement S3, transcription Gemini AI, résumés intelligents, gestion d'équipes et analytics.",
             image: '/projects/meetly-ai.png',
-            tags: ['NextJs', 'Supabase', 'Livekit', 'Docker', 'Inngest'],
+            tags: ['Next.js', 'Supabase', 'LiveKit', 'Gemini AI', 'Inngest', 'AWS S3'],
             demoUrl: 'https://meetly-six.vercel.app/',
             githubUrl: 'https://github.com/m6tm/meetly',
             hidden: true
@@ -117,18 +119,18 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'hugbot',
             title: 'Hugbot Chat AI - All in one chat',
-            description: "Un chatbot qui intègre de plus en plus de réseaux et tunels de vente afin d'avoir l'information voulue sans avoir besoin de se rendre dans ses différentes plateformes. On peut suivre tout en un seul endroit.",
+            description: "Application de chat IA multi-modèles : discutez avec les meilleurs LLM (Hugging Face, OpenAI, Gemini, Claude) depuis une interface unique, avec base de connaissances RAG, notifications Telegram et mode invité.",
             image: '/projects/hugbot-ai.png',
-            tags: ['Svelte', 'Huggin Face', 'Dexiejs', 'Supabase', 'Langchain'],
+            tags: ['SvelteKit', 'Hugging Face', 'Supabase', 'Prisma', 'LangChain', 'Inngest'],
             demoUrl: 'https://hugbot-ai.vercel.app/',
             isPrivate: true
         },
         {
             id: 'fluidio',
             title: 'Fluidio Shop',
-            description: "Plateforme e-commerce innovante connectant vendeurs, acheteurs et affiliés. Une expérience d'achat fluide avec géolocalisation et système d'affiliation intégré.",
+            description: "Marketplace e-commerce full-stack connectant vendeurs, acheteurs et affiliés : app mobile Flutter, API Flask, temps réel WebSocket, paiements mobile money (Orange Money, MTN MoMo) et géolocalisation des boutiques.",
             image: '/projects/fluidio/bannier.png',
-            tags: ['Flutter', 'Supabase'],
+            tags: ['Flutter', 'Flask', 'PostgreSQL', 'Socket.IO', 'Redis', 'Docker'],
             gallery: [
                 { type: 'video', src: '/projects/fluidio/acheteur.mp4' },
                 { type: 'video', src: '/projects/fluidio/affilie.mp4' },
@@ -139,51 +141,47 @@ export class StaticProjectRepository implements ProjectRepository {
                 { type: 'image', src: '/projects/fluidio/vendeur_2.jpg' }
             ],
             features: [
-                "Système d'affiliation multicouches pour les partenaires",
-                "Géolocalisation des boutiques et produits en temps réel",
-                "Gestion complète des stocks et commandes pour les vendeurs",
-                "Interface acheteur optimisée pour une navigation fluide",
-                "Tableau de bord analytique détaillé pour le suivi des ventes"
+                "Trois espaces utilisateurs (acheteur, vendeur, affilié) avec conversion de profil",
+                "Boutiques privées : code boutique, QR code, deep links et thème personnalisable",
+                "Paiements Orange Money et MTN MoMo avec webhooks et notifications push",
+                "Messagerie temps réel : conversations, indicateur de frappe, accusés de lecture",
+                "Programme d'affiliation : parrainage, commissions et retraits",
+                "Géolocalisation des boutiques et produits en temps réel"
             ],
-            longDescription: "Pour bâtir cette plateforme e-commerce multi-acteurs (vendeurs, acheteurs, affiliés), j'ai sélectionné un ensemble de bibliothèques robustes axées sur la performance, la scalabilité et l'expérience utilisateur.",
+            longDescription: "Fluidio Shop est une marketplace multi-acteurs conçue pour le marché camerounais, et plus largement l'Afrique centrale. L'écosystème comprend une app mobile Flutter (espaces acheteur, vendeur et affilié à thèmes dédiés), une API Flask en architecture hexagonale (~25 modules métier), un service temps réel (messagerie, présence, notifications) et une orchestration Docker multi-environnements. Les paiements s'appuient sur Orange Money et MTN MoMo avec confirmation par webhook et notification push.",
             stackDetails: [
                 {
-                    category: "Architecture et Gestion d'État",
+                    category: "Backend & Infrastructure",
                     items: [
-                        "BLoC (Business Logic Component) : Utilisation du design pattern BLoC pour une séparation stricte entre l'interface utilisateur et la logique métier, garantissant une application testable et maintenable.",
-                        "GetIt : Mise en œuvre de l'injection de dépendances pour découpler les modules et faciliter la gestion des instances (services, dépôts).",
-                        "Freezed & JsonSerializable : Génération de code pour des modèles de données immuables et une sérialisation JSON sécurisée."
+                        "API Flask 3 en architecture hexagonale : JWT, rate limiting, documentation Swagger",
+                        "PostgreSQL hébergé sur Supabase avec migrations Alembic/SQLAlchemy",
+                        "Orchestration Docker multi-environnements (dev, staging, prod)",
+                        "Emails transactionnels Resend et jobs d'arrière-plan Inngest"
                     ]
                 },
                 {
-                    category: "Persistance et Réseau",
+                    category: "Temps réel",
                     items: [
-                        "Isar Database : Base de données NoSQL ultra-rapide pour le stockage local et le support du mode hors-ligne.",
-                        "Dio & Http : Gestion avancée des appels API REST avec intercepteurs et gestion globale des erreurs.",
-                        "Cached Network Image : Optimisation de la bande passante et de la fluidité via une mise en cache intelligente des images produits."
+                        "Socket.IO / Soketi (protocole Pusher) avec adaptateur Redis pour le scaling horizontal",
+                        "Firebase Cloud Messaging pour les notifications push",
+                        "Messagerie, présence et notifications multi-canal"
                     ]
                 },
                 {
-                    category: "Géolocalisation et Cartographie",
+                    category: "Application Mobile",
                     items: [
-                        "Flutter Map (OpenStreetMap) : Intégration de cartes interactives pour la localisation des points de vente sans dépendance aux services payants propriétaires.",
-                        "Geolocator & Geocoding : Services de calcul de distance et de transformation d'adresses en coordonnées GPS."
+                        "Flutter : BLoC pour la gestion d'état, GoRouter, injection de dépendances GetIt",
+                        "Isar : base de données locale pour le mode hors-ligne",
+                        "Client Pusher pour les événements temps réel, biométrie (Face ID / empreinte)"
                     ]
                 },
                 {
-                    category: "Expérience Utilisateur (UX/UI)",
+                    category: "Géolocalisation & Expérience Utilisateur",
                     items: [
-                        "FL Chart : Tableaux de bord analytiques interactifs pour le suivi des ventes et des commissions des affiliés.",
-                        "Shimmer : Amélioration de la perception de vitesse via des indicateurs de chargement élégants.",
-                        "QR Flutter : Système de génération de QR codes pour la validation rapide des transactions ou le partage de profils vendeurs."
-                    ]
-                },
-                {
-                    category: "Multimédia et Outils",
-                    items: [
-                        "Just Audio & Record : Support des messages vocaux ou descriptions audio au sein de la plateforme.",
-                        "Image & File Picker : Gestion fluide de l'upload des catalogues produits et des documents d'identité.",
-                        "Share Plus : Fonctionnalités de partage social pour booster le marketing d'affiliation."
+                        "OpenStreetMap (flutter_map, geolocator, geocoding) : cartes interactives sans dépendance propriétaire",
+                        "FL Chart : tableaux de bord vendeurs et affiliés",
+                        "QR codes (qr_flutter, mobile_scanner) : boutiques et validation rapide",
+                        "Multimédia : image picker, messages vocaux (record/just_audio), lecteur vidéo"
                     ]
                 }
             ],
@@ -198,34 +196,51 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'pepites-academy',
             title: 'Pépites Academy',
-            description: "Centre de formation d'élite pour les jeunes talents du football africain. Le pôle formation de K-Sport Agency.",
+            description: "Plateforme complète de gestion d'académie de football : site web et back-office (SvelteKit), API REST (Flask), app mobile de terrain (Flutter) avec scan QR des présences, bulletins et SMS — le pôle formation de K-Sport Agency.",
             image: '/projects/pepites-acedemy.png',
-            tags: ['SvelteKit', 'Tailwind CSS', 'Supabase'],
+            tags: ['SvelteKit', 'Flask', 'Flutter', 'NestJS', 'PostgreSQL', 'Docker'],
             demoUrl: 'https://pepites-academy.vercel.app/',
             features: [
-                "Formation sportive et académique de haut niveau",
-                "Détection et accompagnement personnalisé des jeunes talents",
-                "Synergie unique avec K-Sport Agency pour la gestion de carrière",
-                "Infrastructures de développement modernes et innovantes"
+                "Back-office complet : académiciens, encadreurs, séances, présences, bulletins",
+                "Scan QR des entrées et sorties au stade",
+                "App mobile de terrain : annotations, ateliers, bulletins PDF avec graphiques radar",
+                "Module SMS (passerelle NEXAH) avec import CSV/Excel et envois groupés",
+                "Notifications push Firebase et emails transactionnels (Resend)",
+                "Mode hors-ligne avec synchronisation résiliente (web et mobile)"
             ],
-            longDescription: "Pepites Academy est née d'une vision simple : offrir aux jeunes talents africains les ressources, l'encadrement et l'opportunité d'atteindre le sommet du football mondial. En tant que pôle formation de K-Sport Agency, l'académie assure une transition fluide entre la formation et le monde professionnel.",
+            longDescription: "Pépites Academy est passée d'un site vitrine à une plateforme complète de gestion d'académie en quatre composants : un site web SvelteKit avec back-office (académiciens, séances, présences, bulletins, candidatures, SMS), une API REST Flask documentée Swagger, une app mobile Flutter dédiée au terrain (scan QR des présences, annotations, bulletins PDF) et un microservice temps réel NestJS/Socket.io. Tous les composants suivent une architecture hexagonale.",
             stackDetails: [
                 {
-                    category: "Chiffres Clés",
+                    category: "Site Web & Back-office",
                     items: [
-                        "150+ Jeunes encadrés et formés",
-                        "10+ Talents déjà détectés au niveau national",
-                        "5+ Partenaires élite à l'international",
-                        "Création en 2025 pour un impact durable"
+                        "SvelteKit 2 / Svelte 5, Tailwind CSS 4, éditeur riche TipTap",
+                        "Dexie (IndexedDB) : données de secours et mode hors-ligne",
+                        "Scan QR web (html5-qrcode), imports/exports Excel (xlsx)",
+                        "Déploiement Vercel"
                     ]
                 },
                 {
-                    category: "Valeurs & Vision",
+                    category: "API REST",
                     items: [
-                        "Excellence : Standards élevés dans toutes les activités",
-                        "Discipline : Rigueur au cœur de la formation",
-                        "Inclusivité : Accueil de tous les talents",
-                        "Passion : L'amour du football comme moteur"
+                        "Flask 3, SQLAlchemy, PostgreSQL/Supabase, authentification JWT",
+                        "Documentation Swagger (Flasgger) et rate limiting",
+                        "Backend de stockage interchangeable (SQLite, PostgreSQL, MySQL, MongoDB)",
+                        "SMS via passerelle NEXAH, emails transactionnels Resend"
+                    ]
+                },
+                {
+                    category: "Application Mobile",
+                    items: [
+                        "Flutter : scan QR (mobile_scanner), base locale sqflite, synchro résiliente",
+                        "Firebase Messaging pour les notifications push, authentification biométrique",
+                        "Bulletins PDF avec graphiques radar (fl_chart, pdf, printing)"
+                    ]
+                },
+                {
+                    category: "Temps réel",
+                    items: [
+                        "Microservice NestJS 11 avec gateways Socket.io",
+                        "Redis prévu pour le scaling horizontal"
                     ]
                 }
             ],
@@ -233,7 +248,7 @@ export class StaticProjectRepository implements ProjectRepository {
         {
             id: 'poweralert',
             title: 'PowerAlert - Desktop Battery Monitoring',
-            description: "Solution desktop moderne et performante pour surveiller la batterie de votre ordinateur. Conçue avec Tauri et Rust, elle assure une surveillance temps réel et des alertes intelligentes.",
+            description: "Solution desktop moderne et performante pour surveiller la batterie de votre ordinateur : alertes intelligentes aux seuils configurables, dashboard de santé (cycles, usure, température, consommation) et historique analytique. Conçue avec Tauri et Rust.",
             image: '/projects/poweralert/poweralert.jpeg',
             gallery: [
                 { type: 'image', src: '/projects/poweralert/dashboard.png' },
@@ -246,6 +261,8 @@ export class StaticProjectRepository implements ProjectRepository {
             features: [
                 "Surveillance précise et temps réel du niveau de batterie",
                 "Alertes intelligentes pour les seuils critiques et de fin de charge",
+                "Dashboard de santé de la batterie : cycles, usure, température et consommation en watts",
+                "Historique analytique de la batterie avec persistance locale",
                 "Option de lancement automatique au démarrage système (Windows)",
                 "Accès rapide via une icône dédiée dans la barre des tâches (Systray)",
                 "Architecture hexagonale robuste et hautement testable"
@@ -263,10 +280,10 @@ export class StaticProjectRepository implements ProjectRepository {
                 {
                     category: "Stack de Développement",
                     items: [
-                        "Tauri & Rust : Pour un moteur backend léger, sécurisé et performant.",
-                        "Astro : Framework moderne pour une UI ultra-rapide et responsive.",
-                        "TypeScript : Pour un typage fort et une meilleure fiabilité du code frontend.",
-                        "Pnpm : Gestionnaire de paquets optimisé pour la rapidité."
+                        "Tauri 2.10 & Rust : moteur backend léger, sécurisé et performant (crates battery, tokio).",
+                        "Astro 6 : framework moderne pour une UI ultra-rapide et responsive.",
+                        "TypeScript : typage fort et meilleure fiabilité du code frontend.",
+                        "Pnpm : gestionnaire de paquets optimisé pour la rapidité."
                     ]
                 }
             ],

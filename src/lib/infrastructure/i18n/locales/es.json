@@ -105,14 +105,15 @@
   "projectData": {
     "facturello": {
       "title": "Facturello - Facturación simplificada para freelances",
-      "description": "Micro-SaaS de facturación simplificada para freelances y solopreneurs en Europa, América y África. Crea facturas elegantes, sigue los pagos y reclama a tus clientes en pocos clics.",
-      "longDescription": "Facturello es un micro-SaaS de facturación diseñado para simplificar la vida de los freelances y solopreneurs. Permite crear facturas elegantes, seguir los pagos, enviar recordatorios automáticos y gestionar varias divisas y países. La aplicación se basa en una arquitectura moderna con Astro para el renderizado de alto rendimiento, Svelte para la interactividad, Tailwind CSS para la interfaz, y Supabase con Prisma para la persistencia de datos.",
+      "description": "Micro-SaaS de facturación para freelances y solopreneurs: facturas elegantes, pagos en línea multi-providers (NotchPay, KPay, PayPal), recordatorios automáticos y asistente IA integrado para gestionar toda la actividad en un solo lugar.",
+      "longDescription": "Facturello es mucho más que una herramienta de facturación: una plataforma completa para freelances y solopreneurs. Permite crear facturas elegantes, cobrar en línea a través de varios proveedores de pago (NotchPay, KPay, PayPal), automatizar los recordatorios de facturas vencidas, gestionar los clientes y suscribirse a planes de pago. Un asistente IA conversacional (LangChain/LangGraph, RAG, servidor MCP) ayuda a la redacción y al análisis. La aplicación se basa en Astro 7 para el renderizado, Svelte 5 para la interactividad, Tailwind CSS 4 para la interfaz, y Supabase con Prisma 7 para la persistencia de los datos.",
       "features": [
         "Creación de facturas profesionales en 60 segundos",
-        "Seguimiento de pagos y recordatorios automáticos",
-        "Soporte multi-divisa (EUR, CHF, USD, XOF) y multi-país",
-        "Panel analítico para el seguimiento de la actividad",
-        "Autenticación segura y almacenamiento en la nube con Supabase"
+        "Pagos en línea multi-providers (NotchPay, KPay, PayPal) con webhooks y deduplicación de transacciones",
+        "Recordatorios automáticos de facturas vencidas por email",
+        "Asistente IA conversacional con RAG documental y servidor MCP",
+        "Suscripciones a planes de pago con upgrade/downgrade automático",
+        "MFA y passkeys WebAuthn para una autenticación reforzada"
       ],
       "stackDetails": [
         {
@@ -124,27 +125,28 @@
           ]
         },
         {
-          "category": "Backend y Datos",
+          "category": "Backend, Datos y Pagos",
           "items": [
-            "Supabase: Autenticación, base de datos PostgreSQL y almacenamiento",
+            "Supabase: autenticación (MFA, passkeys WebAuthn), PostgreSQL y almacenamiento",
             "Prisma 7: ORM type-safe con migraciones estructuradas",
-            "PostgreSQL: Base de datos relacional robusta"
+            "NotchPay, KPay y PayPal: pagos en línea con webhooks y deduplicación",
+            "Inngest: recordatorios automáticos y expiración de suscripciones"
           ]
         },
         {
-          "category": "Experiencia de Usuario",
+          "category": "IA y Automatización",
           "items": [
-            "Interfaz limpia y accesible con bits-ui",
+            "LangChain y LangGraph: asistente IA conversacional con RAG documental",
+            "Emails transaccionales con Resend",
             "Generación de PDF profesionales",
-            "Recordatorios programados por email",
-            "Panel con indicadores clave"
+            "Despliegue en Vercel, imagen Docker disponible"
           ]
         }
       ]
     },
     "linkyza": {
       "title": "Linkyza - Plataforma de venta de productos digitales",
-      "description": "Plataforma de venta de productos digitales simple y rápida que ambiciona reemplazar las plateformas de venta tradicionales y permitir integrar cada vez más opciones llave en mano para gestionar todo en un solo lugar."
+      "description": "Plataforma de venta de productos digitales y cursos en línea pensada para África: tiendas multi-vendedor, checkout con pago NotchPay (FCFA), entrega digital y sistema de comisiones integrado."
     },
     "k-sport": {
       "title": "K-Sport Agency",
@@ -179,7 +181,7 @@
     },
     "meetly": {
       "title": "Meetly - AI Meeting Hub",
-      "description": "Aplicación de reuniones en línea asistida por IA con grabación AWS S3, transcripción Gemini AI, síntesis y análisis de reuniones."
+      "description": "Plataforma de videoconferencia asistida por IA: reuniones instantáneas o planificadas, salas LiveKit con grabación S3, transcripción Gemini AI, resúmenes inteligentes, gestión de equipos y analítica."
     },
     "medin-plus": {
       "title": "Medin Plus - Red Médica",
@@ -187,57 +189,53 @@
     },
     "hugbot": {
       "title": "Hugbot Chat AI - All in one chat",
-      "description": "Un chatbot que integra cada vez más redes y canales de venta para tener la información deseada sin tener que ir a diferentes plataformas. Se puede seguir todo en un solo lugar."
+      "description": "Aplicación de chat IA multi-modelos: chatea con los mejores LLM (Hugging Face, OpenAI, Gemini, Claude) desde una interfaz única, con base de conocimientos RAG, notificaciones Telegram y modo invitado."
     },
     "fluidio": {
       "title": "Fluidio Shop",
-      "description": "Plataforma e-commerce innovadora que conecta vendedores, compradores y afiliados. Una experiencia de compra fluida con geolocalización y sistema de afiliación integrado.",
-      "longDescription": "Para construir esta plataforma e-commerce multi-actores (vendedores, compradores, afiliados), seleccioné un conjunto de bibliotecas robustas centradas en el rendimiento, la escalabilidad y la experiencia del usuario.",
+      "description": "Marketplace e-commerce full-stack que conecta vendedores, compradores y afiliados: app móvil Flutter, API Flask, tiempo real WebSocket, pagos mobile money (Orange Money, MTN MoMo) y geolocalización de tiendas.",
+      "longDescription": "Fluidio Shop es un marketplace multi-actores diseñado para el mercado camerunés, y más ampliamente África central. El ecosistema incluye una app móvil Flutter (espacios comprador, vendedor y afiliado con temas dedicados), una API Flask en arquitectura hexagonal (~25 módulos de negocio), un servicio de tiempo real (mensajería, presencia, notificaciones) y una orquestación Docker multi-entorno. Los pagos se apoyan en Orange Money y MTN MoMo con confirmación por webhook y notificación push.",
       "features": [
-        "Sistema de afiliación multicapa para socios",
-        "Geolocalización de tiendas y productos en tiempo real",
-        "Gestión completa de stock y pedidos para vendedores",
-        "Interfaz comprador optimizada para navegación fluida",
-        "Panel analítico detallado para seguimiento de ventas"
+        "Tres espacios de usuario (comprador, vendedor, afiliado) con conversión de perfil",
+        "Tiendas privadas: código de tienda, QR code, deep links y tema personalizable",
+        "Pagos Orange Money y MTN MoMo con webhooks y notificaciones push",
+        "Mensajería en tiempo real: conversaciones, indicador de escritura, acuses de lectura",
+        "Programa de afiliación: patrocinio, comisiones y retiros",
+        "Geolocalización de tiendas y productos en tiempo real"
       ],
       "stackDetails": [
         {
-          "category": "Arquitectura y Gestión de Estado",
+          "category": "Backend e Infraestructura",
           "items": [
-            "BLoC (Business Logic Component): Uso del patrón de diseño BLoC para una separación estricta entre la interfaz de usuario y la lógica de negocio, garantizando una aplicación testeable y mantenible.",
-            "GetIt: Implementación de la inyección de dependencias para desacoplar módulos y facilitar la gestión de instancias (servicios, repositorios).",
-            "Freezed & JsonSerializable: Generación de código para modelos de datos inmutables y serialización JSON segura."
+            "API hexagonal Flask 3: JWT, rate limiting, documentación Swagger",
+            "PostgreSQL alojado en Supabase con migraciones Alembic/SQLAlchemy",
+            "Orquestación Docker multi-entorno (dev, staging, prod)",
+            "Emails transaccionales Resend y trabajos en segundo plano Inngest"
           ]
         },
         {
-          "category": "Persistencia y Red",
+          "category": "Tiempo Real",
           "items": [
-            "Isar Database: Base de datos NoSQL ultra-rápida para almacenamiento local y soporte sin conexión.",
-            "Dio & Http: Gestión avanzada de llamadas API REST con interceptores y gestión global de errores.",
-            "Cached Network Image: Optimización del ancho de banda y fluidez mediante caché inteligente de imágenes."
+            "Socket.IO / Soketi (protocolo Pusher) con adaptador Redis para el escalado horizontal",
+            "Firebase Cloud Messaging para las notificaciones push",
+            "Mensajería, presencia y notificaciones multi-canal"
           ]
         },
         {
-          "category": "Geolocalización y Cartografía",
+          "category": "Aplicación Móvil",
           "items": [
-            "Flutter Map (OpenStreetMap): Integración de mapas interactivos para localización de puntos de venta sin dependencia de servicios propietarios de pago.",
-            "Geolocator & Geocoding: Servicios de cálculo de distancia y transformación de direcciones a coordenadas GPS."
+            "Flutter: gestión de estado BLoC, GoRouter, inyección de dependencias GetIt",
+            "Isar: base de datos local para el modo sin conexión",
+            "Cliente Pusher para eventos en tiempo real, biometría (Face ID / huella)"
           ]
         },
         {
-          "category": "Experiencia de Usuario (UX/UI)",
+          "category": "Geolocalización y Experiencia de Usuario",
           "items": [
-            "FL Chart: Paneles analíticos interactivos para seguimiento de ventas y comisiones de afiliados.",
-            "Shimmer: Mejora de la percepción de velocidad mediante indicadores de carga elegantes.",
-            "QR Flutter: Sistema de generación de códigos QR para validación rápida de transacciones o compartir perfiles de vendedores."
-          ]
-        },
-        {
-          "category": "Multimedia y Herramientas",
-          "items": [
-            "Just Audio & Record: Soporte de mensajes de voz o descripciones de audio dentro de la plataforma.",
-            "Image & File Picker: Gestión fluida de carga de catálogos de productos y documentos de identidad.",
-            "Share Plus: Funcionalidades de compartir social para impulsar el marketing de afiliación."
+            "Mapas OpenStreetMap (flutter_map, geolocator, geocoding): mapas interactivos sin dependencia propietaria",
+            "FL Chart: paneles de vendedores y afiliados",
+            "Códigos QR (qr_flutter, mobile_scanner): tiendas y validación rápida",
+            "Multimedia: selector de imágenes, mensajes de voz (record/just_audio), reproductor de vídeo"
           ]
         }
       ],
@@ -249,31 +247,48 @@
     },
     "pepites-academy": {
       "title": "Pépites Academy",
-      "description": "Centro de formación de élite para jóvenes talentos del fútbol africano. El polo formación de K-Sport Agency.",
-      "longDescription": "Pepites Academy nació de una visión simple: ofrecer a los jóvenes talentos africanos los recursos, el acompañamiento y la oportunidad de alcanzar la cima del fútbol mundial. Como polo formación de K-Sport Agency, la academia asegura una transición fluida entre la formación y el mundo profesional.",
+      "description": "Plataforma completa de gestión de academia de fútbol: sitio web y back-office (SvelteKit), API REST (Flask), app móvil de campo (Flutter) con escaneo QR de asistencias, boletas y SMS — el polo formación de K-Sport Agency.",
+      "longDescription": "Pépites Academy pasó de un sitio vitrina a una plataforma completa de gestión de academia con cuatro componentes: un sitio web SvelteKit con back-office (académicos, sesiones, asistencias, boletas, candidaturas, SMS), una API REST Flask documentada con Swagger, una app móvil Flutter de campo (escaneo QR de asistencias, anotaciones, boletas PDF) y un microservicio de tiempo real NestJS/Socket.io. Todos los componentes siguen una arquitectura hexagonal.",
       "features": [
-        "Formación deportiva y académica de alto nivel",
-        "Detección y acompañamiento personalizado de jóvenes talentos",
-        "Sinergia única con K-Sport Agency para la gestión de carrera",
-        "Infraestructuras de desarrollo modernas e innovadoras"
+        "Back-office completo: académicos, entrenadores, sesiones, asistencias, boletas",
+        "Escaneo QR de entradas y salidas en el estadio",
+        "App móvil de campo: anotaciones, talleres, boletas PDF con gráficos radar",
+        "Módulo SMS (pasarela NEXAH) con importación CSV/Excel y envíos masivos",
+        "Notificaciones push Firebase y emails transaccionales (Resend)",
+        "Modo sin conexión con sincronización resiliente (web y móvil)"
       ],
       "stackDetails": [
         {
-          "category": "Cifras Clave",
+          "category": "Sitio Web y Back-office",
           "items": [
-            "150+ Jóvenes acompañados y formados",
-            "10+ Talentos ya detectados a nivel nacional",
-            "5+ Socios élite a nivel internacional",
-            "Creación en 2025 para un impacto duradero"
+            "SvelteKit 2 / Svelte 5, Tailwind CSS 4, editor enriquecido TipTap",
+            "Dexie (IndexedDB): datos de respaldo y modo sin conexión",
+            "Escaneo QR web (html5-qrcode), importaciones/exportaciones Excel (xlsx)",
+            "Despliegue en Vercel"
           ]
         },
         {
-          "category": "Valores y Visión",
+          "category": "API REST",
           "items": [
-            "Excelencia: Estándares elevados en todas las actividades",
-            "Disciplina: Rigor en el corazón de la formación",
-            "Inclusividad: Acogida de todos los talentos",
-            "Pasión: El amor al fútbol como motor"
+            "Flask 3, SQLAlchemy, PostgreSQL/Supabase, autenticación JWT",
+            "Documentación Swagger (Flasgger) y rate limiting",
+            "Backend de almacenamiento intercambiable (SQLite, PostgreSQL, MySQL, MongoDB)",
+            "SMS vía pasarela NEXAH, emails transaccionales Resend"
+          ]
+        },
+        {
+          "category": "App Móvil",
+          "items": [
+            "Flutter: escaneo QR (mobile_scanner), base local sqflite, sincronización resiliente",
+            "Notificaciones push Firebase Messaging, autenticación biométrica",
+            "Boletas PDF con gráficos radar (fl_chart, pdf, printing)"
+          ]
+        },
+        {
+          "category": "Tiempo Real",
+          "items": [
+            "Microservicio NestJS 11 con gateways Socket.io",
+            "Redis previsto para el escalado horizontal"
           ]
         }
       ]

@@ -105,14 +105,15 @@
   "projectData": {
     "facturello": {
       "title": "Facturello - Simplified invoicing for freelancers",
-      "description": "Simplified invoicing micro-SaaS for freelancers and solopreneurs in Europe, America and Africa. Create elegant invoices, track payments and follow up with your clients in just a few clicks.",
-      "longDescription": "Facturello is an invoicing micro-SaaS designed to simplify the lives of freelancers and solopreneurs. It allows you to create elegant invoices, track payments, send automatic reminders and manage multiple currencies and countries. The application relies on a modern architecture with Astro for performant rendering, Svelte for interactivity, Tailwind CSS for the interface, and Supabase with Prisma for data persistence.",
+      "description": "Invoicing micro-SaaS for freelancers and solopreneurs: elegant invoices, online payments through multiple providers (NotchPay, KPay, PayPal), automatic reminders and a built-in AI assistant to manage your entire business in one place.",
+      "longDescription": "Facturello is far more than an invoicing tool: a complete platform for freelancers and solopreneurs. It lets you create elegant invoices, collect payments online through multiple payment providers (NotchPay, KPay, PayPal), automate overdue invoice reminders, manage clients and subscribe to paid plans. A conversational AI assistant (LangChain/LangGraph, RAG, MCP server) assists with writing and analysis. The application is built on Astro 7 for rendering, Svelte 5 for interactivity, Tailwind CSS 4 for the UI, and Supabase with Prisma 7 for data persistence.",
       "features": [
         "Create professional invoices in 60 seconds",
-        "Payment tracking and automatic reminders",
-        "Multi-currency support (EUR, CHF, USD, XOF) and multi-country",
-        "Analytical dashboard for activity tracking",
-        "Secure authentication and cloud storage with Supabase"
+        "Online payments via multiple providers (NotchPay, KPay, PayPal) with webhooks and transaction deduplication",
+        "Automatic email reminders for overdue invoices",
+        "Conversational AI assistant with document RAG and MCP server",
+        "Paid plan subscriptions with automatic upgrade/downgrade",
+        "MFA and WebAuthn passkeys for strengthened authentication"
       ],
       "stackDetails": [
         {
@@ -120,31 +121,32 @@
           "items": [
             "Astro 7: Static rendering and partial hydration for optimal performance",
             "Svelte 5: Reactive interactive components with runes",
-            "Tailwind CSS 4: Modern and responsive utility styling"
+            "Tailwind CSS 4: Modern responsive utility styling"
           ]
         },
         {
-          "category": "Backend & Data",
+          "category": "Backend, Data & Payments",
           "items": [
-            "Supabase: Authentication, PostgreSQL database and storage",
+            "Supabase: authentication (MFA, WebAuthn passkeys), PostgreSQL and storage",
             "Prisma 7: Type-safe ORM with structured migrations",
-            "PostgreSQL: Robust relational database"
+            "NotchPay, KPay & PayPal: online payments with webhooks and deduplication",
+            "Inngest: automatic reminders and subscription expiration"
           ]
         },
         {
-          "category": "User Experience",
+          "category": "AI & Automation",
           "items": [
-            "Clean and accessible interface with bits-ui",
+            "LangChain & LangGraph: conversational AI assistant with document RAG",
+            "Transactional emails with Resend",
             "Professional PDF generation",
-            "Scheduled email reminders",
-            "Dashboard with key indicators"
+            "Vercel deployment, Docker image available"
           ]
         }
       ]
     },
     "linkyza": {
       "title": "Linkyza - Digital Products Sales Platform",
-      "description": "Simple and fast digital products sales platform that aims to replace traditional sales platforms and integrate more turnkey options to manage everything in one place."
+      "description": "Digital products and online courses selling platform designed for Africa: multi-vendor shops, checkout with NotchPay payments (FCFA), digital delivery and a built-in commission system."
     },
     "k-sport": {
       "title": "K-Sport Agency",
@@ -179,7 +181,7 @@
     },
     "meetly": {
       "title": "Meetly - AI Meeting Hub",
-      "description": "Online meeting application assisted by AI with AWS S3 recording, Gemini AI transcription, synthesis and meeting analysis."
+      "description": "AI-assisted video conferencing platform: instant or scheduled meetings, LiveKit rooms with S3 recording, Gemini AI transcription, smart summaries, team management and analytics."
     },
     "medin-plus": {
       "title": "Medin Plus - Medical Network",
@@ -187,57 +189,53 @@
     },
     "hugbot": {
       "title": "Hugbot Chat AI - All in one chat",
-      "description": "A chatbot that integrates more and more networks and sales channels to get the desired information without having to go to different platforms. You can follow everything in one place."
+      "description": "Multi-model AI chat application: chat with the best LLMs (Hugging Face, OpenAI, Gemini, Claude) from a single interface, with a RAG knowledge base, Telegram notifications and a guest mode."
     },
     "fluidio": {
       "title": "Fluidio Shop",
-      "description": "Innovative e-commerce platform connecting sellers, buyers and affiliates. A smooth shopping experience with geolocation and integrated affiliation system.",
-      "longDescription": "To build this multi-actor e-commerce platform (sellers, buyers, affiliates), I selected a set of robust libraries focused on performance, scalability and user experience.",
+      "description": "Full-stack e-commerce marketplace connecting sellers, buyers and affiliates: Flutter mobile app, Flask API, real-time WebSocket, mobile money payments (Orange Money, MTN MoMo) and shop geolocation.",
+      "longDescription": "Fluidio Shop is a multi-actor marketplace designed for the Cameroonian market, and Central Africa more broadly. The ecosystem includes a Flutter mobile app (buyer, seller and affiliate spaces with dedicated themes), a hexagonal Flask API (~25 business modules), a real-time service (messaging, presence, notifications) and multi-environment Docker orchestration. Payments rely on Orange Money and MTN MoMo with webhook confirmation and push notifications.",
       "features": [
-        "Multi-layer affiliation system for partners",
-        "Real-time geolocation of shops and products",
-        "Complete stock and order management for sellers",
-        "Optimized buyer interface for smooth navigation",
-        "Detailed analytical dashboard for sales tracking"
+        "Three user spaces (buyer, seller, affiliate) with profile conversion",
+        "Private shops: shop code, QR code, deep links and customizable theme",
+        "Orange Money and MTN MoMo payments with webhooks and push notifications",
+        "Real-time messaging: conversations, typing indicator, read receipts",
+        "Affiliate program: referral, commissions and withdrawals",
+        "Real-time geolocation of shops and products"
       ],
       "stackDetails": [
         {
-          "category": "Architecture and State Management",
+          "category": "Backend & Infrastructure",
           "items": [
-            "BLoC (Business Logic Component): Using the BLoC design pattern for a strict separation between the user interface and business logic, ensuring a testable and maintainable application.",
-            "GetIt: Implementation of dependency injection to decouple modules and facilitate instance management (services, repositories).",
-            "Freezed & JsonSerializable: Code generation for immutable data models and secure JSON serialization."
+            "Flask 3 hexagonal API: JWT, rate limiting, Swagger documentation",
+            "PostgreSQL hosted on Supabase with Alembic/SQLAlchemy migrations",
+            "Multi-environment Docker orchestration (dev, staging, prod)",
+            "Resend transactional emails and Inngest background jobs"
           ]
         },
         {
-          "category": "Persistence and Network",
+          "category": "Real-time",
           "items": [
-            "Isar Database: Ultra-fast NoSQL database for local storage and offline support.",
-            "Dio & Http: Advanced REST API call management with interceptors and global error handling.",
-            "Cached Network Image: Bandwidth and fluidity optimization through intelligent image caching."
+            "Socket.IO / Soketi (Pusher protocol) with Redis adapter for horizontal scaling",
+            "Firebase Cloud Messaging for push notifications",
+            "Multi-channel messaging, presence and notifications"
           ]
         },
         {
-          "category": "Geolocation and Mapping",
+          "category": "Mobile Application",
           "items": [
-            "Flutter Map (OpenStreetMap): Integration of interactive maps for sales point location without dependency on proprietary paid services.",
-            "Geolocator & Geocoding: Distance calculation services and address to GPS coordinates transformation."
+            "Flutter: BLoC state management, GoRouter, GetIt dependency injection",
+            "Isar: local database for offline mode",
+            "Pusher client for real-time events, biometrics (Face ID / fingerprint)"
           ]
         },
         {
-          "category": "User Experience (UX/UI)",
+          "category": "Geolocation & User Experience",
           "items": [
-            "FL Chart: Interactive analytical dashboards for sales and affiliate commission tracking.",
-            "Shimmer: Improving speed perception through elegant loading indicators.",
-            "QR Flutter: QR code generation system for quick transaction validation or seller profile sharing."
-          ]
-        },
-        {
-          "category": "Multimedia and Tools",
-          "items": [
-            "Just Audio & Record: Support for voice messages or audio descriptions within the platform.",
-            "Image & File Picker: Smooth management of product catalog uploads and identity documents.",
-            "Share Plus: Social sharing features to boost affiliate marketing."
+            "OpenStreetMap maps (flutter_map, geolocator, geocoding): interactive maps without proprietary dependency",
+            "FL Chart: seller and affiliate dashboards",
+            "QR codes (qr_flutter, mobile_scanner): shops and quick validation",
+            "Rich media: image picker, voice messages (record/just_audio), video player"
           ]
         }
       ],
@@ -249,31 +247,48 @@
     },
     "pepites-academy": {
       "title": "Pépites Academy",
-      "description": "Elite training center for young African football talents. The training division of K-Sport Agency.",
-      "longDescription": "Pepites Academy was born from a simple vision: to offer young African talents the resources, supervision and opportunity to reach the top of world football. As the training division of K-Sport Agency, the academy ensures a smooth transition between training and the professional world.",
+      "description": "Complete football academy management platform: website and back-office (SvelteKit), REST API (Flask), field mobile app (Flutter) with QR attendance scanning, report cards and SMS — the training division of K-Sport Agency.",
+      "longDescription": "Pépites Academy grew from a showcase website into a complete academy management platform with four components: a SvelteKit website with a back-office (academics, sessions, attendance, report cards, applications, SMS), a Swagger-documented Flask REST API, a Flutter field mobile app (QR attendance scanning, annotations, PDF report cards) and a NestJS/Socket.io real-time microservice. All components follow a hexagonal architecture.",
       "features": [
-        "High-level sports and academic training",
-        "Detection and personalized support for young talents",
-        "Unique synergy with K-Sport Agency for career management",
-        "Modern and innovative development infrastructures"
+        "Complete back-office: academics, coaches, sessions, attendance, report cards",
+        "QR scanning of stadium entries and exits",
+        "Field mobile app: annotations, workshops, PDF report cards with radar charts",
+        "SMS module (NEXAH gateway) with CSV/Excel import and bulk sending",
+        "Firebase push notifications and transactional emails (Resend)",
+        "Offline mode with resilient synchronization (web and mobile)"
       ],
       "stackDetails": [
         {
-          "category": "Key Figures",
+          "category": "Website & Back-office",
           "items": [
-            "150+ Young people supervised and trained",
-            "10+ Talents already detected at national level",
-            "5+ Elite partners internationally",
-            "Creation in 2025 for lasting impact"
+            "SvelteKit 2 / Svelte 5, Tailwind CSS 4, TipTap rich editor",
+            "Dexie (IndexedDB): fallback data and offline mode",
+            "Web QR scanning (html5-qrcode), Excel imports/exports (xlsx)",
+            "Vercel deployment"
           ]
         },
         {
-          "category": "Values & Vision",
+          "category": "REST API",
           "items": [
-            "Excellence: High standards in all activities",
-            "Discipline: Rigor at the heart of training",
-            "Inclusivity: Welcome of all talents",
-            "Passion: Love of football as the driving force"
+            "Flask 3, SQLAlchemy, PostgreSQL/Supabase, JWT authentication",
+            "Swagger documentation (Flasgger) and rate limiting",
+            "Interchangeable storage backend (SQLite, PostgreSQL, MySQL, MongoDB)",
+            "SMS via NEXAH gateway, Resend transactional emails"
+          ]
+        },
+        {
+          "category": "Mobile App",
+          "items": [
+            "Flutter: QR scanning (mobile_scanner), sqflite local database, resilient sync",
+            "Firebase Messaging push notifications, biometric authentication",
+            "PDF report cards with radar charts (fl_chart, pdf, printing)"
+          ]
+        },
+        {
+          "category": "Real-time",
+          "items": [
+            "NestJS 11 microservice with Socket.io gateways",
+            "Redis planned for horizontal scaling"
           ]
         }
       ]
