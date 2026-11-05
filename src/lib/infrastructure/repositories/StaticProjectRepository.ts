@@ -296,7 +296,7 @@ export class StaticProjectRepository implements ProjectRepository {
                 { type: 'image', src: '/projects/pepites-academy/referentiel-postes.png' },
                 { type: 'image', src: '/projects/pepites-academy/securite.png' }
             ],
-            demoUrl: 'https://pepites-academy.vercel.app/',
+            demoUrl: 'https://pepitesacademy.com',
             features: [
                 "Back-office complet : académiciens, encadreurs, séances, présences, bulletins",
                 "Scan QR des entrées et sorties au stade",
